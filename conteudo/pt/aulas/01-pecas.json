@@ -37,7 +37,7 @@
           "forte": true
         },
         {
-          "icone": "usuario",
+          "icone": "arquivo",
           "titulo": "Identidade",
           "sub": "Quatro arquivos de texto",
           "itens": [{ "icone": "arquivo", "t": "SOUL, AGENTS, USER, MEMORY" }],

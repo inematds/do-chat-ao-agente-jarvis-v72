@@ -10,8 +10,8 @@
   },
   "lado_card": {
     "rot": "Prática deste degrau",
-    "t": "6 exercícios com \"pronto quando\"",
-    "texto": "Do desenho do assistente à rotina de uma semana. Só passe para o próximo quando ele for verdade.",
+    "t": "18 exercícios com \"pronto quando\"",
+    "texto": "Os 6 da sequência 2 e os aprofundamentos de cada aula, do desenho à rotina de uma semana. Só passe para o próximo quando ele for verdade.",
     "link": "Abrir a lista da sequência 2",
     "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md"
   },
@@ -63,7 +63,7 @@
     "numeros": [
       { "v": "8", "t": "aulas" },
       { "v": "7", "t": "peças de um agente" },
-      { "v": "6", "t": "exercícios práticos" },
+      { "v": "18", "t": "exercícios práticos" },
       { "v": "3", "t": "vídeos" }
     ],
     "aulas_titulo": "As aulas",

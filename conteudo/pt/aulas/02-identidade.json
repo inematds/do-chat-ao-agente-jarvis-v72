@@ -30,7 +30,7 @@
           "forte": true
         },
         {
-          "icone": "usuario",
+          "icone": "cerebro",
           "titulo": "SOUL.md",
           "sub": "A alma",
           "itens": [{ "icone": "chat", "t": "Personalidade, tom, valores" }],

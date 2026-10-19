@@ -1,0 +1,214 @@
+{
+  "slug": "cerebro",
+  "num": 6,
+  "menu": "Cérebro",
+  "titulo": "O cérebro: nuvem ou local, decidido com os seus números",
+  "titulo_curto": "Nuvem ou local",
+  "minutos": 15,
+  "lead": "O modelo de IA é a peça mais fácil de trocar. Na nuvem, o OpenRouter dá acesso a mais de cem modelos com uma chave. No seu computador, o Ollama roda sem custo por mensagem e sem mandar nada para fora. A escolha não é de gosto: é uma tabela com tempo, qualidade e custo.",
+  "objetivo": "comparar um modelo na nuvem e um local com a mesma pergunta e decidir, com os seus números, qual usar para quê.",
+  "competencias": ["escolher-modelo-nuvem-local", "medir-tempo-qualidade-custo", "proteger-chave-api"],
+  "aprende": [
+    { "t": "O que o OpenRouter e o Ollama fazem" },
+    { "t": "Por que trocar de cérebro não muda o resto" },
+    { "t": "Montar a tabela tempo × qualidade × custo" },
+    { "t": "Onde a chave da nuvem fica guardada" }
+  ],
+  "hero_alt": "Um mini computador de mesa ao lado de um notebook, cabos organizados sobre a mesa escura.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Um contrato, dois cérebros",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {
+          "icone": "relogio",
+          "titulo": "Loop",
+          "sub": "Pede uma resposta",
+          "itens": [{ "icone": "chat", "t": "Conversa + ferramentas" }],
+          "detalhe": "O loop não sabe qual modelo está do outro lado. Ele entrega a conversa e a lista de ferramentas e espera a resposta."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Provedor",
+          "sub": "O contrato",
+          "itens": [{ "icone": "seta", "t": "chat(mensagens, ferramentas)" }],
+          "detalhe": "O provedor é um contrato: recebe a conversa e as ferramentas, devolve a resposta. Nos testes, um provedor de mentira responde sem internet e sem custo. Trocar de cérebro é trocar de provedor na configuração.",
+          "forte": true
+        },
+        {
+          "icone": "nuvem",
+          "titulo": "OpenRouter",
+          "sub": "Nuvem",
+          "itens": [{ "icone": "check", "t": "Mais de 100 modelos, uma chave" }, { "icone": "grafico", "t": "Custo por uso" }],
+          "detalhe": "Uma chave dá acesso a Claude, GPT, Gemini, DeepSeek, Llama e outros. Tem novas tentativas automáticas quando o serviço falha e registra os tokens gastos, para você controlar o custo."
+        },
+        {
+          "icone": "chip",
+          "titulo": "Ollama",
+          "sub": "No seu computador",
+          "itens": [{ "icone": "check", "t": "Sem custo por mensagem" }, { "icone": "cadeado", "t": "Nada sai da máquina" }],
+          "detalhe": "O modelo roda local. Precisa de um computador que aguente (memória e, de preferência, placa de vídeo). No plano do INTELECTO ele também é o reserva automático se o OpenRouter falhar."
+        }
+      ],
+      "legenda": "Nuvem para potência, local para privacidade. Dá para usar os dois."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Como comparar de forma justa",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {
+          "titulo": "Uma pergunta real",
+          "sub": "Do seu trabalho",
+          "texto": [
+            "Escolha uma pergunta que você faria de verdade ao assistente, de preferência ligada a uma das tarefas do seu meu-jarvis.md.",
+            "Use exatamente o mesmo texto nos dois modelos."
+          ],
+          "exemplo": { "rot": "Exemplo", "texto": "Organize em três prioridades: fechar o relatório de vendas, responder dois clientes e preparar a reunião de quinta." }
+        },
+        {
+          "titulo": "Medir o tempo",
+          "sub": "Do envio à resposta",
+          "texto": [
+            "Cronometre do envio até a resposta completa. Rode duas vezes: a primeira chamada no modelo local costuma ser mais lenta, porque ele precisa carregar.",
+            "Anote o tempo da segunda."
+          ],
+          "exemplo": { "rot": "Anote", "texto": "Tempo em segundos, nuvem e local." }
+        },
+        {
+          "titulo": "Dar nota",
+          "sub": "Qualidade de 1 a 5",
+          "texto": [
+            "Leia as duas respostas sem saber qual é qual, se conseguir pedir a alguém para trocar a ordem. Dê nota de 1 a 5: acertou, seguiu o seu jeito, foi útil?",
+            "Uma nota curta por resposta basta."
+          ],
+          "exemplo": { "rot": "Critério", "texto": "Eu usaria esta resposta sem reescrever? Sim = 4 ou 5." }
+        },
+        {
+          "titulo": "Ver o custo",
+          "sub": "E decidir",
+          "texto": [
+            "Na nuvem, veja no painel do OpenRouter quanto a pergunta custou. No local, o custo por mensagem é zero; o custo é o computador ligado.",
+            "Escreva a decisão em uma linha: qual modelo para quê."
+          ],
+          "exemplo": { "rot": "Decisão", "texto": "Rotina do dia no local; texto para cliente na nuvem." }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Configuração e tabela",
+      "sub": "A chave da nuvem segue a mesma regra do token: só no .env ou no cofre.",
+      "blocos": [
+        {
+          "rot": ".env · chave da nuvem",
+          "icone": "cadeado",
+          "conteudo": "OPENROUTER_API_KEY=<cole aqui a chave criada em openrouter.ai/keys>"
+        },
+        {
+          "rot": "config.json · os dois provedores (do README)",
+          "icone": "arquivo",
+          "conteudo": "\"providers\": {\n  \"default\": \"openrouter\",\n  \"openrouter\": { \"model\": \"anthropic/claude-sonnet-4-20250514\" },\n  \"ollama\": { \"model\": \"llama3.2\", \"base_url\": \"http://localhost:11434\" }\n}"
+        },
+        {
+          "rot": "Pedido ao agente · trocar o cérebro",
+          "icone": "chat",
+          "conteudo": "Troque o provedor padrão para ollama (modelo llama3.2), mantenha o openrouter como alternativa e rode os testes de novo. Não mude nada fora da configuração."
+        },
+        {
+          "rot": "minha-comparacao.md",
+          "icone": "lista",
+          "conteudo": "Pergunta: \n\n| Modelo | Tempo (s) | Nota 1-5 | Custo |\n|--------|-----------|----------|-------|\n| Nuvem: |           |          |       |\n| Local: |           |          | 0     |\n\nDecisão: uso ____ para ____ e ____ para ____."
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Quando a nuvem ganha",
+            "html": "<ul><li>Pergunta difícil, texto longo, raciocínio em várias etapas.</li><li>Computador sem memória ou placa para um modelo local bom.</li><li>Você aceita pagar por uso e mandar o texto para fora.</li></ul>"
+          },
+          {
+            "rot": "Quando o local ganha",
+            "html": "<ul><li>Dado sensível que não pode sair da máquina.</li><li>Muitas mensagens simples por dia, em que o custo por uso somaria.</li><li>Funcionar sem internet, ou como reserva quando a nuvem cai.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: nuvem ou local",
+      "sub": "Exercício E5 da sequência 2.",
+      "exercicios": [
+        {
+          "id": "e5",
+          "titulo": "E5 · Nuvem ou local",
+          "min": "20 min",
+          "texto": "Rode a mesma pergunta num modelo da nuvem (OpenRouter) e num local (Ollama), se o seu computador aguentar. Preencha a tabela minha-comparacao.md.",
+          "pronto": "você sabe dizer qual modelo usar para quê, com os seus números."
+        },
+        {
+          "id": "e5b",
+          "titulo": "E5b · A chave guardada",
+          "min": "5 min",
+          "texto": "Confira que a chave do OpenRouter está só no .env (ou no cofre) e que o .env não aparece no git status.",
+          "pronto": "a busca pela chave fora do .env não acha nada."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {
+          "p": "Quando faz sentido um modelo local (Ollama)?",
+          "opcoes": [
+            "Sempre, porque é mais inteligente.",
+            "Quando o computador aguenta e os seus números de tempo, qualidade e custo mostram que vale, ou quando o dado não pode sair.",
+            "Nunca, o Telegram não aceita.",
+            "Só de madrugada."
+          ],
+          "certa": 1,
+          "explica": "A escolha é medida: mesma pergunta nos dois, tabela, decisão. Privacidade é o outro motivo forte: no local nada sai da máquina.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "Você trocou o OpenRouter pelo Ollama. O que precisa mudar no canal e na memória?",
+          "opcoes": [
+            "Tudo: canal e memória dependem do modelo.",
+            "Nada: o provedor é um contrato, e o resto do agente não sabe qual modelo está respondendo.",
+            "Só a memória.",
+            "Só o canal."
+          ],
+          "certa": 1,
+          "explica": "O loop chama o provedor pelo contrato. Trocar de cérebro é configuração; os testes rodam iguais.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Por que rodar a pergunta duas vezes no modelo local antes de anotar o tempo?",
+          "opcoes": [
+            "Porque a primeira resposta sempre está errada.",
+            "Porque a primeira chamada costuma ser mais lenta enquanto o modelo carrega.",
+            "Para gastar menos créditos.",
+            "Não precisa."
+          ],
+          "certa": 1,
+          "explica": "Comparação justa mede o uso normal. A primeira chamada inclui carregar o modelo na memória.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        { "t": "Curso INTELECTO: provedores de IA", "href": "https://inematds.github.io/intelecto-curso/curso/trilha4/modulo-4-1.html", "icone": "chip" },
+        { "t": "OpenRouter", "href": "https://openrouter.ai/", "icone": "nuvem" },
+        { "t": "Ollama", "href": "https://ollama.com/", "icone": "chip" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,986 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.590
+Qualquer um constrói o seu assistente de inteligência artificial, o seu Jarvis.
+
+2
+00:00:04.640 --> 00:00:06.490
+Veja como, é simples.
+
+3
+00:00:06.540 --> 00:00:11.050
+Ele cabe em umas três mil linhas e quatro arquivos de texto.
+
+4
+00:00:11.100 --> 00:00:13.090
+Não é mágica, é um loop.
+
+5
+00:00:13.140 --> 00:00:17.200
+Todo agente, do mais simples ao mais caro, tem as mesmas sete peças.
+
+6
+00:00:17.519 --> 00:00:18.379
+uma
+
+7
+00:00:18.379 --> 00:00:20.139
+porta, um coração,
+
+8
+00:00:20.139 --> 00:00:22.499
+uma identidade, um cérebro,
+
+9
+00:00:22.499 --> 00:00:24.439
+uma memória, mãos
+
+10
+00:00:24.439 --> 00:00:25.379
+e um cofre.
+
+11
+00:00:25.379 --> 00:00:28.119
+Neste vídeo eu abro o INTELECTO,
+
+12
+00:00:28.119 --> 00:00:30.119
+o assistente pessoal que a gente desenhou
+
+13
+00:00:30.119 --> 00:00:32.459
+do zero, e mostro peça por peça
+
+14
+00:00:32.459 --> 00:00:34.259
+o que cada uma faz e onde
+
+15
+00:00:34.259 --> 00:00:35.219
+fica.
+
+16
+00:00:35.219 --> 00:00:36.879
+E no fim eu conto o que
+
+17
+00:00:36.879 --> 00:00:37.859
+vem no próximo vídeo:
+
+18
+00:00:37.859 --> 00:00:40.279
+você configura os arquivos e instala o
+
+19
+00:00:40.279 --> 00:00:41.459
+seu, passo a passo.
+
+20
+00:00:41.459 --> 00:00:44.399
+O INTELECTO é um assistente de IA
+
+21
+00:00:44.399 --> 00:00:45.599
+pessoal,
+
+22
+00:00:45.979 --> 00:00:47.259
+para um dono só.
+
+23
+00:00:47.259 --> 00:00:49.519
+Ele foi desenhado para rodar no seu
+
+24
+00:00:49.519 --> 00:00:51.039
+computador, conversar
+
+25
+00:00:51.039 --> 00:00:52.199
+com você pelo Telegram,
+
+26
+00:00:52.199 --> 00:00:54.439
+lembrar do que você fala e ter
+
+27
+00:00:54.439 --> 00:00:56.279
+a personalidade que você escrever.
+
+28
+00:00:56.279 --> 00:00:58.119
+O que ele não é importa tanto
+
+29
+00:00:58.119 --> 00:00:58.639
+quanto.
+
+30
+00:00:58.639 --> 00:00:59.879
+Não é multiusuário,
+
+31
+00:00:59.879 --> 00:01:01.219
+não depende de nuvem,
+
+32
+00:01:01.219 --> 00:01:02.759
+não precisa de Docker,
+
+33
+00:01:02.759 --> 00:01:05.049
+não tem painel web e não é
+
+34
+00:01:05.049 --> 00:01:05.519
+caixa-preta.
+
+35
+00:01:05.519 --> 00:01:08.249
+O plano prevê sete dependências e umas
+
+36
+00:01:08.249 --> 00:01:09.579
+três mil linhas que dá para ler.
+
+37
+00:01:09.579 --> 00:01:11.719
+É o antídoto contra os frameworks de
+
+38
+00:01:11.719 --> 00:01:13.999
+agente inchados, em que ninguém sabe mais
+
+39
+00:01:13.999 --> 00:01:15.119
+o que está rodando.
+
+40
+00:01:15.119 --> 00:01:16.179
+Antes das peças,
+
+41
+00:01:16.179 --> 00:01:17.759
+o caminho inteiro de uma mensagem.
+
+42
+00:01:17.759 --> 00:01:19.359
+Você escreve no Telegram.
+
+43
+00:01:19.359 --> 00:01:21.279
+O canal recebe e entrega ao loop
+
+44
+00:01:21.279 --> 00:01:21.899
+do agente.
+
+45
+00:01:21.899 --> 00:01:23.899
+O loop monta o contexto:
+
+46
+00:01:23.899 --> 00:01:24.859
+quem ele é,
+
+47
+00:01:24.859 --> 00:01:26.179
+quem é você e o que ele
+
+48
+00:01:26.179 --> 00:01:27.959
+já sabe sobre o assunto.
+
+49
+00:01:27.959 --> 00:01:30.699
+Manda tudo ao modelo de IA.
+
+50
+00:01:30.699 --> 00:01:32.539
+Se o modelo pedir uma ferramenta,
+
+51
+00:01:32.539 --> 00:01:34.799
+o loop executa e devolve o resultado.
+
+52
+00:01:34.799 --> 00:01:36.559
+Quando o modelo responde com texto,
+
+53
+00:01:36.559 --> 00:01:38.659
+a resposta volta pelo canal até o
+
+54
+00:01:38.659 --> 00:01:39.859
+seu celular.
+
+55
+00:01:39.859 --> 00:01:42.159
+Sete peças, um caminho.
+
+56
+00:01:42.159 --> 00:01:43.639
+Agora, uma por uma.
+
+57
+00:01:43.639 --> 00:01:45.719
+Peça um: o canal,
+
+58
+00:01:45.719 --> 00:01:46.919
+a porta de entrada.
+
+59
+00:01:46.919 --> 00:01:50.099
+No plano do INTELECTO é o Telegram,
+
+60
+00:01:50.099 --> 00:01:51.779
+porque é o mais simples:
+
+61
+00:01:51.779 --> 00:01:53.479
+um token e pronto,
+
+62
+00:01:53.479 --> 00:01:54.419
+sem
+
+63
+00:01:54.419 --> 00:01:55.879
+endereço público na internet.
+
+64
+00:01:55.879 --> 00:01:57.079
+O
+
+65
+00:01:57.159 --> 00:02:00.519
+agente fica perguntando ao Telegram se chegou
+
+66
+00:02:00.519 --> 00:02:01.199
+mensagem nova.
+
+67
+00:02:01.199 --> 00:02:03.439
+Se a resposta passar de quatro mil
+
+68
+00:02:03.439 --> 00:02:05.299
+caracteres, ele
+
+69
+00:02:05.359 --> 00:02:06.799
+divide em várias mensagens.
+
+70
+00:02:06.799 --> 00:02:09.179
+E mostra o digitando enquanto pensa.
+
+71
+00:02:09.179 --> 00:02:11.419
+O canal é um contrato com três
+
+72
+00:02:11.419 --> 00:02:12.959
+funções: começar,
+
+73
+00:02:12.959 --> 00:02:13.899
+enviar
+
+74
+00:02:13.899 --> 00:02:14.739
+e parar.
+
+75
+00:02:14.739 --> 00:02:17.759
+Quer WhatsApp, Discord ou Slack?
+
+76
+00:02:17.759 --> 00:02:20.419
+É outro arquivo com o mesmo contrato,
+
+77
+00:02:20.419 --> 00:02:22.679
+sem mexer no resto.
+
+78
+00:02:22.879 --> 00:02:24.659
+Peça dois: o
+
+79
+00:02:24.659 --> 00:02:26.559
+loop, o coração do agente.
+
+80
+00:02:26.559 --> 00:02:28.399
+É aqui que ele deixa de ser
+
+81
+00:02:28.399 --> 00:02:29.099
+um chatbot.
+
+82
+00:02:29.099 --> 00:02:30.839
+Ele recebe a mensagem,
+
+83
+00:02:30.839 --> 00:02:32.039
+pensa,
+
+84
+00:02:32.139 --> 00:02:34.159
+usa uma ferramenta se precisar,
+
+85
+00:02:34.159 --> 00:02:36.579
+olha o resultado e pensa de novo,
+
+86
+00:02:36.579 --> 00:02:37.959
+até responder com texto.
+
+87
+00:02:37.959 --> 00:02:39.039
+Tem um freio:
+
+88
+00:02:39.039 --> 00:02:41.899
+no máximo cinco rodadas de ferramenta por
+
+89
+00:02:41.899 --> 00:02:42.679
+mensagem.
+
+90
+00:02:42.679 --> 00:02:45.819
+Passou disso, ele é obrigado a responder.
+
+91
+00:02:45.819 --> 00:02:46.919
+Sem esse freio,
+
+92
+00:02:46.919 --> 00:02:48.639
+um agente pode ficar girando,
+
+93
+00:02:48.639 --> 00:02:51.539
+gastando dinheiro, sem nunca terminar.
+
+94
+00:02:51.539 --> 00:02:52.599
+Um loop curto,
+
+95
+00:02:52.599 --> 00:02:54.359
+legível e com teto:
+
+96
+00:02:54.359 --> 00:02:56.459
+é isso que separa um agente de
+
+97
+00:02:56.459 --> 00:02:57.779
+uma conversa.
+
+98
+00:02:57.999 --> 00:03:00.319
+Peça três: a identidade.
+
+99
+00:03:00.319 --> 00:03:01.779
+E é a parte que você mais
+
+100
+00:03:01.779 --> 00:03:02.419
+vai mexer.
+
+101
+00:03:02.419 --> 00:03:04.499
+São quatro arquivos de texto simples,
+
+102
+00:03:04.499 --> 00:03:06.359
+numa pasta chamada workspace.
+
+103
+00:03:06.359 --> 00:03:08.059
+O soul é a alma:
+
+104
+00:03:08.059 --> 00:03:09.139
+personalidade,
+
+105
+00:03:09.139 --> 00:03:10.459
+tom e valores.
+
+106
+00:03:10.459 --> 00:03:13.659
+O agents traz as regras de comportamento:
+
+107
+00:03:13.819 --> 00:03:16.359
+consultar a memória antes de responder,
+
+108
+00:03:16.359 --> 00:03:18.199
+perguntar quando estiver em dúvida,
+
+109
+00:03:18.199 --> 00:03:19.959
+recusar comando perigoso.
+
+110
+00:03:19.959 --> 00:03:21.759
+O user é o seu perfil:
+
+111
+00:03:21.759 --> 00:03:24.139
+como você gosta das respostas e em
+
+112
+00:03:24.139 --> 00:03:24.999
+que língua.
+
+113
+00:03:24.999 --> 00:03:27.299
+E o memory traz os fatos iniciais.
+
+114
+00:03:27.299 --> 00:03:28.539
+A cada mensagem,
+
+115
+00:03:28.539 --> 00:03:30.759
+o agente lê os quatro e monta
+
+116
+00:03:30.759 --> 00:03:32.239
+o pedido para o modelo.
+
+117
+00:03:32.239 --> 00:03:33.279
+Mudou o texto,
+
+118
+00:03:33.279 --> 00:03:34.439
+mudou o assistente,
+
+119
+00:03:34.439 --> 00:03:35.479
+sem programar nada.
+
+120
+00:03:35.479 --> 00:03:36.679
+Peça
+
+121
+00:03:36.719 --> 00:03:37.999
+quatro: o cérebro,
+
+122
+00:03:37.999 --> 00:03:40.019
+o modelo de IA.
+
+123
+00:03:40.339 --> 00:03:42.599
+O INTELECTO fala com dois tipos.
+
+124
+00:03:42.599 --> 00:03:44.539
+Na nuvem, o Open Router:
+
+125
+00:03:44.539 --> 00:03:46.259
+uma chave só dá acesso a mais
+
+126
+00:03:46.259 --> 00:03:47.119
+de cem modelos,
+
+127
+00:03:47.119 --> 00:03:50.539
+de Claude e GPT a DeepSeek.
+
+128
+00:03:50.839 --> 00:03:52.199
+No seu computador,
+
+129
+00:03:52.199 --> 00:03:54.659
+o Olama: o modelo roda local,
+
+130
+00:03:54.659 --> 00:03:56.779
+sem custo por mensagem e sem mandar
+
+131
+00:03:56.779 --> 00:03:57.699
+nada para fora.
+
+132
+00:03:57.699 --> 00:03:59.739
+Dá para usar os dois:
+
+133
+00:04:00.119 --> 00:04:01.779
+nuvem para potência,
+
+134
+00:04:01.779 --> 00:04:04.135
+local para privacidade.
+
+135
+00:04:04.135 --> 00:04:06.319
+E trocar de cérebro não muda o
+
+136
+00:04:06.319 --> 00:04:08.279
+resto, porque o provedor também é um
+
+137
+00:04:08.279 --> 00:04:11.319
+contrato: recebe a conversa e as ferramentas,
+
+138
+00:04:11.319 --> 00:04:12.699
+devolve a resposta.
+
+139
+00:04:13.059 --> 00:04:15.719
+Peça cinco: a memória.
+
+140
+00:04:15.719 --> 00:04:18.039
+É a diferença entre uma IA que
+
+141
+00:04:18.039 --> 00:04:20.499
+esquece tudo ao reiniciar e uma que
+
+142
+00:04:20.499 --> 00:04:22.439
+te conhece há meses.
+
+143
+00:04:22.899 --> 00:04:25.199
+O INTELECTO guarda num banco de dados
+
+144
+00:04:25.199 --> 00:04:26.419
+no próprio computador,
+
+145
+00:04:26.419 --> 00:04:27.999
+com busca por palavras.
+
+146
+00:04:27.999 --> 00:04:30.219
+Sem custo de API e sem modelo
+
+147
+00:04:30.219 --> 00:04:32.839
+extra, e isso cobre a maior parte
+
+148
+00:04:32.839 --> 00:04:34.559
+do que você precisa lembrar.
+
+149
+00:04:34.559 --> 00:04:36.999
+Cada lembrança tem uma categoria:
+
+150
+00:04:36.999 --> 00:04:38.359
+fato sobre você,
+
+151
+00:04:38.359 --> 00:04:41.399
+resumo de conversa ou solução que funcionou.
+
+152
+00:04:41.399 --> 00:04:43.834
+Se uma lembrança nova for mais de
+
+153
+00:04:43.834 --> 00:04:45.599
+oitenta por cento igual a uma antiga,
+
+154
+00:04:45.599 --> 00:04:47.899
+ele atualiza em vez de duplicar.
+
+155
+00:04:47.899 --> 00:04:50.239
+E a cada mensagem ele busca o
+
+156
+00:04:50.239 --> 00:04:52.759
+que é relevante e coloca no contexto.
+
+157
+00:04:52.759 --> 00:04:53.679
+Peça
+
+158
+00:04:53.679 --> 00:04:55.279
+seis: as ferramentas,
+
+159
+00:04:55.279 --> 00:04:56.919
+as mãos do agente.
+
+160
+00:04:56.919 --> 00:04:58.739
+Sem elas ele só conversa.
+
+161
+00:04:58.739 --> 00:05:00.659
+Com elas ele faz.
+
+162
+00:05:00.659 --> 00:05:02.639
+No núcleo vêm ler arquivo,
+
+163
+00:05:02.639 --> 00:05:04.859
+escrever arquivo, listar pasta,
+
+164
+00:05:04.859 --> 00:05:05.839
+rodar um comando,
+
+165
+00:05:05.839 --> 00:05:07.739
+e salvar e buscar na memória.
+
+166
+00:05:07.739 --> 00:05:10.359
+Cada ferramenta se descreve sozinha:
+
+167
+00:05:10.359 --> 00:05:13.099
+nome, o que faz e quais parâmetros
+
+168
+00:05:13.099 --> 00:05:13.679
+aceita.
+
+169
+00:05:13.679 --> 00:05:15.539
+É essa descrição que o modelo lê
+
+170
+00:05:15.539 --> 00:05:16.699
+para decidir
+
+171
+00:05:16.699 --> 00:05:17.239
+usá-la.
+
+172
+00:05:17.239 --> 00:05:19.419
+Quer agenda, GitHub ou Notion?
+
+173
+00:05:19.419 --> 00:05:21.299
+É um arquivo novo que segue o
+
+174
+00:05:21.299 --> 00:05:22.119
+mesmo modelo.
+
+175
+00:05:22.119 --> 00:05:24.699
+O registro encontra a ferramenta sozinho,
+
+176
+00:05:24.699 --> 00:05:26.939
+sem você mexer no núcleo.
+
+177
+00:05:26.939 --> 00:05:28.779
+Peça sete: o cofre.
+
+178
+00:05:28.779 --> 00:05:31.699
+Um agente com mãos precisa de limites.
+
+179
+00:05:31.699 --> 00:05:34.079
+As chaves de API ficam criptografadas,
+
+180
+00:05:34.079 --> 00:05:35.819
+presas ao hardware da máquina:
+
+181
+00:05:35.819 --> 00:05:37.559
+se roubarem o arquivo,
+
+182
+00:05:37.559 --> 00:05:38.679
+não conseguem ler.
+
+183
+00:05:38.679 --> 00:05:40.939
+Todo comando passa por uma lista de
+
+184
+00:05:40.939 --> 00:05:41.839
+bloqueio:
+
+185
+00:05:41.839 --> 00:05:44.219
+apagar tudo, formatar disco,
+
+186
+00:05:44.219 --> 00:05:46.879
+reiniciar, nem chega a rodar.
+
+187
+00:05:46.879 --> 00:05:50.639
+Cada comando tem tempo-limite de sessenta segundos.
+
+188
+00:05:50.639 --> 00:05:52.519
+E tudo o que ele executa fica
+
+189
+00:05:52.519 --> 00:05:54.319
+registrado num log de auditoria.
+
+190
+00:05:54.319 --> 00:05:55.679
+Você sabe o que o seu agente
+
+191
+00:05:55.679 --> 00:05:58.739
+fez, quando e com qual comando.
+
+192
+00:05:58.739 --> 00:06:00.439
+Agora a ideia que segura as sete
+
+193
+00:06:00.439 --> 00:06:02.179
+peças: contratos.
+
+194
+00:06:02.219 --> 00:06:04.639
+Cada peça é definida por uma interface,
+
+195
+00:06:04.639 --> 00:06:06.659
+e a implementação pode ser trocada.
+
+196
+00:06:06.659 --> 00:06:08.719
+Troca o Telegram pelo WhatsApp,
+
+197
+00:06:08.719 --> 00:06:10.519
+o Open Router pelo Olama,
+
+198
+00:06:10.519 --> 00:06:11.979
+a memória por outra,
+
+199
+00:06:11.979 --> 00:06:13.539
+sem reescrever o agente.
+
+200
+00:06:13.539 --> 00:06:15.279
+E como ele foi construído?
+
+201
+00:06:15.279 --> 00:06:16.579
+Primeiro, a mercearia:
+
+202
+00:06:16.579 --> 00:06:19.115
+uma página que compara frameworks como Open
+
+203
+00:06:19.115 --> 00:06:20.779
+Claw, Nano Bot e Hermes,
+
+204
+00:06:20.779 --> 00:06:23.079
+onde você escolhe os ingredientes.
+
+205
+00:06:23.079 --> 00:06:26.459
+As escolhas viram um documento de especificação.
+
+206
+00:06:26.459 --> 00:06:27.939
+Você entrega ao Claude Code com uma
+
+207
+00:06:27.939 --> 00:06:29.879
+frase: leia e construa.
+
+208
+00:06:29.879 --> 00:06:31.159
+O exemplo Jarvis,
+
+209
+00:06:31.159 --> 00:06:33.959
+no repositório, saiu desse caminho e passa
+
+210
+00:06:33.959 --> 00:06:35.399
+nos nove testes.
+
+211
+00:06:35.399 --> 00:06:36.899
+E para crescer?
+
+212
+00:06:36.899 --> 00:06:39.299
+O guia de funcionalidades organiza
+
+213
+00:06:39.299 --> 00:06:41.259
+tudo em oito corredores:
+
+214
+00:06:41.519 --> 00:06:42.919
+identidade, segurança,
+
+215
+00:06:42.919 --> 00:06:45.579
+canais, memória, automação,
+
+216
+00:06:45.579 --> 00:06:46.739
+integrações,
+
+217
+00:06:46.739 --> 00:06:48.699
+skills e arquitetura.
+
+218
+00:06:48.699 --> 00:06:51.259
+Hoje o núcleo cobre o essencial.
+
+219
+00:06:52.059 --> 00:06:54.439
+Agendamento, como mandar um resumo toda segunda
+
+220
+00:06:54.439 --> 00:06:57.119
+às nove, e busca na web estão
+
+221
+00:06:57.119 --> 00:06:58.279
+no plano da próxima fase.
+
+222
+00:06:58.279 --> 00:07:00.879
+Cada corredor mostra o que os outros
+
+223
+00:07:00.879 --> 00:07:03.719
+frameworks oferecem e quais arquivos do INTELECTO
+
+224
+00:07:03.719 --> 00:07:04.099
+mexer.
+
+225
+00:07:04.099 --> 00:07:05.739
+Você não precisa de tudo.
+
+226
+00:07:05.739 --> 00:07:08.619
+Escolhe o que resolve o seu dia.
+
+227
+00:07:09.099 --> 00:07:11.739
+Recapitulando: todo agente tem sete peças.
+
+228
+00:07:11.739 --> 00:07:13.739
+A porta, que é o canal.
+
+229
+00:07:13.739 --> 00:07:15.859
+O coração, que é o loop com
+
+230
+00:07:15.859 --> 00:07:16.519
+freio.
+
+231
+00:07:16.519 --> 00:07:19.479
+A identidade, em quatro arquivos de texto.
+
+232
+00:07:19.479 --> 00:07:21.899
+O cérebro, na nuvem ou local.
+
+233
+00:07:21.899 --> 00:07:25.359
+A memória, as ferramentas e o cofre.
+
+234
+00:07:25.359 --> 00:07:26.839
+No próximo vídeo,
+
+235
+00:07:26.839 --> 00:07:28.039
+a
+
+236
+00:07:28.079 --> 00:07:29.609
+gente põe a mão na massa:
+
+237
+00:07:29.609 --> 00:07:30.859
+configura os arquivos,
+
+238
+00:07:30.859 --> 00:07:31.859
+escreve
+
+239
+00:07:31.859 --> 00:07:32.839
+a alma e o perfil do seu
+
+240
+00:07:32.839 --> 00:07:34.999
+assistente, cria o bot no Telegram,
+
+241
+00:07:34.999 --> 00:07:36.199
+escolhe o cérebro,
+
+242
+00:07:36.199 --> 00:07:38.139
+e monta e instala passo a passo,
+
+243
+00:07:38.139 --> 00:07:39.819
+até a primeira mensagem.
+
+244
+00:07:39.819 --> 00:07:42.352
+Enquanto isso, o INTELECTO está no INEMA
+
+245
+00:07:42.352 --> 00:07:44.839
+ponto club, na Trilha para Iniciantes.
+
+246
+00:07:44.839 --> 00:07:46.259
+Até o próximo vídeo.
+

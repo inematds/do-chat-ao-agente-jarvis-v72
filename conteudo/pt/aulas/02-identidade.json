@@ -1,0 +1,216 @@
+{
+  "slug": "identidade",
+  "num": 2,
+  "menu": "Identidade",
+  "titulo": "Desenhe o seu Jarvis antes de instalar",
+  "titulo_curto": "Desenho e identidade",
+  "minutos": 20,
+  "lead": "O assistente vira seu nos arquivos de texto, não no código. Antes de instalar qualquer coisa, você escreve quem ele é, o que deve e o que nunca deve fazer, e o que precisa lembrar de você. Esse desenho responde às perguntas da instalação e vira os quatro arquivos da identidade.",
+  "objetivo": "escrever o meu-jarvis.md e transformá-lo nos quatro arquivos da identidade: SOUL, AGENTS, USER e MEMORY.",
+  "competencias": ["desenhar-assistente", "escrever-soul", "definir-limites"],
+  "aprende": [
+    { "t": "Escrever o desenho do assistente numa tela" },
+    { "t": "O que vai no SOUL, no AGENTS, no USER e no MEMORY" },
+    { "t": "Diferença entre um SOUL eficaz e um fraco" },
+    { "t": "Transformar uma vontade vaga num pedido concreto" }
+  ],
+  "hero_alt": "Quatro folhas de papel lado a lado sobre a mesa e uma mão escrevendo numa delas.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Do desenho aos quatro arquivos",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {
+          "icone": "caneta",
+          "titulo": "meu-jarvis.md",
+          "sub": "O seu desenho",
+          "itens": [{ "icone": "lista", "t": "Nome, jeito, deve, nunca, lembrar" }],
+          "detalhe": "Uma tela de texto: nome e jeito de falar, três coisas que ele deve fazer toda semana, três que nunca deve fazer e o que precisa lembrar de você. É a fonte dos quatro arquivos.",
+          "forte": true
+        },
+        {
+          "icone": "usuario",
+          "titulo": "SOUL.md",
+          "sub": "A alma",
+          "itens": [{ "icone": "chat", "t": "Personalidade, tom, valores" }],
+          "detalhe": "Quem ele é: nome, personalidade, tom de voz e valores. Escreva como se estivesse contratando um assistente humano: o que você diria na entrevista?"
+        },
+        {
+          "icone": "lista",
+          "titulo": "AGENTS.md",
+          "sub": "As regras",
+          "itens": [{ "icone": "check", "t": "Sempre" }, { "icone": "x", "t": "Nunca" }],
+          "detalhe": "O contrato de trabalho: consultar a memória antes de responder, perguntar quando estiver em dúvida, recusar comando perigoso. Regra escrita é mais confiável do que esperar que o modelo adivinhe."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "USER.md",
+          "sub": "Você",
+          "itens": [{ "icone": "usuario", "t": "Rotina, preferências, idioma" }],
+          "detalhe": "O seu perfil: profissão, rotina, como gosta das respostas e em que língua. É um arquivo vivo: mudou de projeto, atualize."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "MEMORY.md",
+          "sub": "Fatos iniciais",
+          "itens": [{ "icone": "arquivo", "t": "O que ele sabe no dia 1" }],
+          "detalhe": "Os fatos que ele deve saber desde a primeira conversa. O que você contar depois vai para o banco de memória (aula 5)."
+        }
+      ],
+      "legenda": "A cada mensagem, o agente junta SOUL, AGENTS e USER no começo da conversa. Editar um arquivo de texto muda o assistente, sem mexer em código."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Como escrever cada parte",
+      "sub": "Clique em cada aba.",
+      "passos": [
+        {
+          "titulo": "O desenho",
+          "sub": "meu-jarvis.md",
+          "texto": [
+            "Responda cinco perguntas: nome, jeito de falar, três coisas que ele deve fazer toda semana, três que nunca deve fazer e o que precisa lembrar de você.",
+            "Seja concreto. \"Cuide do meu e-mail\" é vago; \"toda segunda, liste as três prioridades da semana a partir do que eu contei\" é um pedido."
+          ],
+          "exemplo": { "rot": "Pronto quando", "texto": "O arquivo cabe numa tela e outra pessoa entenderia quem é o seu assistente." }
+        },
+        {
+          "titulo": "A alma",
+          "sub": "SOUL.md",
+          "texto": [
+            "Um SOUL eficaz tem valores claros, tom específico com exemplo, limites explícitos e estilo de resposta definido.",
+            "Um SOUL fraco diz \"seja útil e amigável\", se contradiz (formal e casual ao mesmo tempo) ou é longo demais e dilui o foco."
+          ],
+          "exemplo": { "rot": "Do exemplo do repositório", "texto": "Direto e conciso. Honesto: se não sabe, diz. Quero um parceiro que discorde, não alguém que só concorda." }
+        },
+        {
+          "titulo": "As regras",
+          "sub": "AGENTS.md",
+          "texto": [
+            "Separe em SEMPRE e NUNCA. As regras do exemplo: consultar a memória antes de responder, salvar o que aprender sobre você, perguntar quando estiver em dúvida.",
+            "Para ferramentas: preferir comandos seguros, só de leitura, e recusar os destrutivos."
+          ],
+          "exemplo": { "rot": "Regra do NUNCA", "texto": "Nunca apagar arquivo sem a minha confirmação. Nunca colocar senha ou chave numa resposta." }
+        },
+        {
+          "titulo": "Você e os fatos",
+          "sub": "USER.md e MEMORY.md",
+          "texto": [
+            "No USER vai o que ele precisa saber de você sem perguntar toda vez: o que você faz, como gosta das respostas, em que língua.",
+            "No MEMORY, poucos fatos que valem desde o primeiro dia. Fique curto: o que vier depois, ele aprende conversando."
+          ],
+          "exemplo": { "rot": "USER do exemplo", "texto": "Prefere conselho prático a teoria. Valoriza tempo: seja conciso. Fala português (pt-BR)." }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Modelos para copiar",
+      "sub": "Preencha primeiro o meu-jarvis.md; os outros saem dele.",
+      "blocos": [
+        {
+          "rot": "meu-jarvis.md",
+          "icone": "arquivo",
+          "conteudo": "# Meu Jarvis\n\n## Nome e jeito de falar\nNome:\nComo fala (formal, direto, bem-humorado):\n\n## Deve fazer toda semana\n1.\n2.\n3.\n\n## Nunca deve fazer\n1.\n2.\n3.\n\n## O que precisa lembrar de mim\n- Profissão:\n- Rotina:\n- Preferências:"
+        },
+        {
+          "rot": "workspace/SOUL.md",
+          "icone": "usuario",
+          "conteudo": "# Soul\n\nVocê é <NOME>, assistente pessoal de <SEU NOME>.\n\n## Personalidade\n- <tom, com um exemplo de como fala>\n- Honesto: se não sabe, diz.\n\n## Valores\n- Privacidade primeiro: nunca compartilhar meus dados.\n- <um valor inegociável seu>"
+        },
+        {
+          "rot": "workspace/AGENTS.md",
+          "icone": "lista",
+          "conteudo": "# Regras\n\n## SEMPRE\n- Consultar a memória antes de responder.\n- Salvar na memória o que aprender sobre mim.\n- Perguntar quando estiver em dúvida, em vez de adivinhar.\n\n## NUNCA\n- <as três do seu meu-jarvis.md>\n- Rodar comando destrutivo; preferir comandos só de leitura."
+        },
+        {
+          "rot": "workspace/USER.md e MEMORY.md",
+          "icone": "memoria",
+          "conteudo": "# USER.md\n## Sobre <SEU NOME>\n- Profissão:\n- Rotina:\n- Como gosto das respostas:\n- Idioma: português (pt-BR)\n\n# MEMORY.md\n## Fatos\n- <fato que ele deve saber desde o dia 1>\n- <outro fato>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "SOUL do exemplo-jarvis",
+            "html": "<p><b>Personalidade:</b> direto e conciso, sem enrolação; proativo, sugere quando é relevante; honesto, se não sabe, diz; lembra o contexto das conversas anteriores.</p><p><b>Valores:</b> privacidade primeiro, nunca compartilhar os dados do dono; ter opinião, porque o dono quer um parceiro de discussão, não alguém que só concorda.</p>"
+          },
+          {
+            "rot": "Eficaz × fraco",
+            "html": "<ul><li><b>Eficaz:</b> valores claros e testáveis, tom com exemplo, limites explícitos, estilo de resposta definido.</li><li><b>Fraco:</b> \"seja útil e amigável\", só comportamentos e nenhum valor, contradições, longo demais.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: o desenho do seu Jarvis",
+      "sub": "Exercício E1 da sequência 2, aprofundado.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Desenhe o seu Jarvis",
+          "min": "15 min",
+          "texto": "Escreva o meu-jarvis.md com o modelo: nome, jeito, três deve, três nunca e o que lembrar de você.",
+          "pronto": "o arquivo cabe numa tela e outra pessoa entenderia quem é o seu assistente."
+        },
+        {
+          "id": "e1b",
+          "titulo": "E1b · Os quatro arquivos",
+          "min": "25 min",
+          "texto": "A partir do desenho, escreva SOUL.md, AGENTS.md, USER.md e MEMORY.md numa pasta workspace/.",
+          "pronto": "cada \"nunca\" do desenho virou uma linha no NUNCA do AGENTS.md e o SOUL não tem a frase \"seja útil e amigável\"."
+        }
+      ],
+      "fonte": "Exercício original: <a href=\"https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md\" target=\"_blank\" rel=\"noopener\">jornada-agentes/exercicios/02-jarvis.md</a>."
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {
+          "p": "Qual destes trechos de SOUL.md é o mais fraco?",
+          "opcoes": [
+            "Direto e conciso; se não sabe, diz.",
+            "Seja útil e amigável.",
+            "Privacidade primeiro: nunca compartilhar meus dados.",
+            "Quero um parceiro que discorde quando eu estiver errado."
+          ],
+          "certa": 1,
+          "explica": "\"Seja útil e amigável\" é vago demais: não dá para testar e todo modelo já tenta isso. Os outros dizem um tom, um valor ou um limite concreto.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "\"Nunca apagar arquivo sem confirmação\" vai em qual arquivo?",
+          "opcoes": ["SOUL.md", "AGENTS.md", "USER.md", "MEMORY.md"],
+          "certa": 1,
+          "explica": "AGENTS.md é o contrato de trabalho: o que fazer sempre e o que nunca fazer. O SOUL diz quem ele é; o USER, quem é você.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Você quer o assistente mais formal. O que fazer?",
+          "opcoes": [
+            "Pedir a um programador para mudar o loop.",
+            "Trocar de modelo.",
+            "Editar o tom no SOUL.md.",
+            "Reinstalar tudo."
+          ],
+          "certa": 2,
+          "explica": "A personalidade é texto. O agente relê os arquivos a cada mensagem: editou o SOUL, mudou o jeito de falar.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        { "t": "Curso INTELECTO: identidade e personalidade", "href": "https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-1.html", "icone": "lista" },
+        { "t": "Os quatro arquivos do exemplo-jarvis", "href": "https://github.com/inematds/intelecto/tree/main/exemplo-jarvis/workspace", "icone": "pasta" }
+      ]
+    }
+  ]
+}

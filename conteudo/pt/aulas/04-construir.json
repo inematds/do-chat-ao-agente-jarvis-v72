@@ -1,0 +1,235 @@
+{
+  "slug": "construir",
+  "num": 4,
+  "menu": "Construir",
+  "titulo": "Construir sem programar: você escolhe, o agente constrói, o teste confirma",
+  "titulo_curto": "Construir com testes",
+  "minutos": 20,
+  "lead": "Você não escreve código. Escolhe os ingredientes numa página, como numa mercearia, exporta uma lista e pede ao Claude Code ou ao Codex para construir, seguindo o plano de obra do INTELECTO. Depois prova com os testes e com uma conversa no terminal, antes de ligar no Telegram.",
+  "objetivo": "gerar o briefing na mercearia, pedir ao agente de programação a construção com testes e provar o núcleo com os testes e uma conversa.",
+  "competencias": ["gerar-briefing", "pedir-construcao-com-testes", "verificar-por-teste"],
+  "aprende": [
+    { "t": "A mercearia e o briefing meu-assistente.md" },
+    { "t": "Por que a lista sozinha não basta: o plano de obra" },
+    { "t": "O pedido de construção em uma frase" },
+    { "t": "Provar com os testes e com a conversa no terminal" }
+  ],
+  "hero_alt": "Notebook com terminal escuro mostrando uma lista de testes com marcas verdes e mãos sobre o teclado.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "O caminho em cinco passos",
+      "sub": "Clique em cada bloco. O trabalho pesado é do agente.",
+      "nos": [
+        {
+          "icone": "lista",
+          "titulo": "Mercearia",
+          "sub": "Escolher ingredientes",
+          "itens": [{ "icone": "check", "t": "Mais de 140 funcionalidades" }],
+          "detalhe": "Uma página do INTELECTO com funcionalidades tiradas de projetos abertos como OpenClaw, NanoBot e Hermes, em corredores. Cada cartão explica em uma frase o que faz. Você clica e ele vai para o carrinho."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Briefing",
+          "sub": "meu-assistente.md",
+          "itens": [{ "icone": "arquivo", "t": "+ plano doc/intelecto.md" }],
+          "detalhe": "O botão de exportar baixa o meu-assistente.md: cada ingrediente, quem já implementa e onde está o código de referência. Ele é a lista de compras; a receita é o plano doc/intelecto.md, com os contratos de cada peça.",
+          "forte": true
+        },
+        {
+          "icone": "terminal",
+          "titulo": "Agente constrói",
+          "sub": "Claude Code ou Codex",
+          "itens": [{ "icone": "chat", "t": "Um pedido em uma frase" }],
+          "detalhe": "Na pasta do repositório, com o briefing junto, você abre o agente e pede para construir com testes. Ele lê, planeja, escreve peça por peça e pede aprovação para executar. Você confere o que pediu e o resultado."
+        },
+        {
+          "icone": "check",
+          "titulo": "Testes",
+          "sub": "Prova, não promessa",
+          "itens": [{ "icone": "check", "t": "9 testes no exemplo" }, { "icone": "chat", "t": "Conversa no terminal" }],
+          "detalhe": "No exemplo-jarvis, um comando roda os nove testes: memória salva, busca e esquece; o loop pede uma ferramenta e responde; a lista de bloqueio barra o comando perigoso. Depois, uma conversa no terminal com um modelo de teste, sem internet e sem chave."
+        },
+        {
+          "icone": "enviar",
+          "titulo": "No ar",
+          "sub": "Telegram + modelo real",
+          "itens": [{ "icone": "cadeado", "t": "Token e chave no cofre" }],
+          "detalhe": "Com os testes verdes, você troca o modelo de teste por um real (aula 6) e liga o canal do Telegram com o token da aula 3. O plano manda o agente construir um assistente de configuração que pergunta token, modelo, nome e personalidade."
+        }
+      ],
+      "legenda": "Comece pequeno: poucos ingredientes, testes passando, depois cresça. Dá para voltar à mercearia e acrescentar."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Cada passo, com o que conferir",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {
+          "titulo": "Escolher pouco",
+          "sub": "Mercearia",
+          "texto": [
+            "Para um primeiro Jarvis, o vídeo de instalação escolheu oito: arquivo de personalidade, bot do Telegram, WhatsApp, memória com busca em SQLite, cofre de segredos cifrado, lista de comandos proibidos, agendamento e skills.",
+            "Você pode começar com menos: personalidade, Telegram, memória e cofre."
+          ],
+          "exemplo": { "rot": "Pronto quando", "texto": "O carrinho tem de 4 a 8 itens e você sabe dizer para que serve cada um." }
+        },
+        {
+          "titulo": "Exportar e juntar",
+          "sub": "Briefing + plano",
+          "texto": [
+            "Exporte como briefing para o Claude Code e baixe o <code>meu-assistente.md</code>. Clone o repositório do INTELECTO e ponha o briefing dentro da pasta.",
+            "Descoberta dos testes: a lista sozinha não basta. O que faz a construção dar certo é o ponteiro para o <code>doc/intelecto.md</code>."
+          ],
+          "exemplo": { "rot": "Na pasta", "texto": "intelecto/ com doc/intelecto.md, reference-repos/ e o seu meu-assistente.md." }
+        },
+        {
+          "titulo": "Pedir com testes",
+          "sub": "Planeje antes",
+          "texto": [
+            "Primeiro peça o plano: o agente lê tudo e devolve arquivos, ordem e perguntas (Docker ou instalação direta? OpenRouter ou Ollama? qual modelo?). Responda em português.",
+            "Com o plano aprovado, peça a construção com testes. Aprove cada comando que ele quiser rodar só quando entender o que é."
+          ],
+          "exemplo": { "rot": "Se ele errar", "texto": "Descreva o problema em português e peça para corrigir. Esse ciclo é normal e esperado." }
+        },
+        {
+          "titulo": "Provar",
+          "sub": "Testes + conversa",
+          "texto": [
+            "Rode os testes. Depois converse no terminal: \"lembre que meu nome é ...\", e em seguida \"qual meu nome?\".",
+            "A última linha do exemplo mostra o nome gravado no banco: prova de que não é texto fixo, a memória e o loop funcionam juntos."
+          ],
+          "exemplo": { "rot": "Pronto quando", "texto": "Todos os testes passam e o nome aparece na linha DB." }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Os comandos e o pedido",
+      "sub": "Rode no terminal, na pasta de projetos.",
+      "blocos": [
+        {
+          "rot": "Terminal · baixar o INTELECTO",
+          "icone": "terminal",
+          "conteudo": "git clone https://github.com/inematds/intelecto.git\ncd intelecto\n# copie para cá o meu-assistente.md que a mercearia baixou"
+        },
+        {
+          "rot": "Pedido 1 · o plano primeiro",
+          "icone": "chat",
+          "conteudo": "Leia o meu-assistente.md e o plano em doc/intelecto.md. Antes de escrever código, me devolva o plano: arquivos, ordem e as decisões que dependem de mim. Use a minha identidade (SOUL, AGENTS, USER e MEMORY que estão em workspace/)."
+        },
+        {
+          "rot": "Pedido 2 · construir com testes",
+          "icone": "chat",
+          "conteudo": "Plano aprovado. Construa o meu assistente em Python, com testes, seguindo os contratos do doc/intelecto.md. O bot do Telegram responde só ao meu usuário. Segredos nunca no código. Ao terminar, rode os testes e me mostre o resultado."
+        },
+        {
+          "rot": "Terminal · provar o exemplo do repositório",
+          "icone": "check",
+          "conteudo": "cd exemplo-jarvis\npython3 -m unittest discover -s . -p 'test_*.py' -v\npython3 smoke.py"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Saída do smoke.py",
+            "html": "<pre>USER : lembre que meu nome é Nei\nJARVIS: Seu nome é Nei.\nUSER : qual meu nome?\nJARVIS: Seu nome é Nei.\nDB   : ['Meu nome é Nei']</pre><p>A linha <b>DB</b> prova que o nome foi gravado no SQLite, não veio de texto fixo.</p>"
+          },
+          {
+            "rot": "O que os 9 testes cobrem",
+            "html": "<ul><li>Memória: salvar → buscar → esquecer.</li><li>Um round completo do loop: o modelo de teste pede uma ferramenta, o loop executa e responde.</li><li>Lista de bloqueio barra o comando perigoso e libera o seguro.</li><li>Configuração vai e volta sem perder nada.</li><li>O contexto contém o SOUL e o USER.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: construir e provar",
+      "sub": "Exercício E3 da sequência 2, no caminho que o repositório realmente usa.",
+      "exercicios": [
+        {
+          "id": "e3a",
+          "titulo": "E3a · Rode o exemplo",
+          "min": "10 min",
+          "texto": "Clone o INTELECTO, entre em exemplo-jarvis e rode os testes e o smoke.py.",
+          "pronto": "os 9 testes passam e o smoke mostra a linha DB com o nome."
+        },
+        {
+          "id": "e3b",
+          "titulo": "E3b · O seu briefing",
+          "min": "15 min",
+          "texto": "Na mercearia, marque de 4 a 8 ingredientes e exporte o meu-assistente.md para a pasta do INTELECTO.",
+          "pronto": "o arquivo está na pasta e cada ingrediente tem o motivo anotado no seu meu-jarvis.md."
+        },
+        {
+          "id": "e3c",
+          "titulo": "E3c · O seu Jarvis construído",
+          "min": "1 h",
+          "texto": "Copie a sua pasta workspace/ da aula 2 para o projeto, faça os pedidos 1 e 2 e acompanhe o agente.",
+          "pronto": "os testes passam e, na conversa no terminal, ele responde com o nome e o jeito que você definiu."
+        }
+      ],
+      "fonte": "No exercício original o passo é <code>./start.sh</code>. No repositório de hoje o caminho é este: briefing + plano + agente constrói. O assistente de configuração é uma das peças que o plano manda construir."
+    },
+    {
+      "tipo": "video",
+      "titulo": "A instalação em vídeo",
+      "sub": "Da mercearia ao assistente respondendo, com o caminho inteiro na tela.",
+      "chave": "intelecto-instalacao"
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {
+          "p": "Por que entregar ao agente o meu-assistente.md junto com o doc/intelecto.md?",
+          "opcoes": [
+            "Porque o agente não lê arquivos .md sozinhos.",
+            "Porque o briefing é a lista de compras e o plano é a receita, com os contratos que fazem cada peça encaixar.",
+            "Porque o doc/intelecto.md tem a senha do Telegram.",
+            "Não precisa: o briefing basta."
+          ],
+          "certa": 1,
+          "explica": "A validação do exemplo descobriu isso: o briefing sozinho é um roteador, não uma receita. Os contratos do plano tornam cada peça implementável.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "O agente terminou e disse \"pronto\". Qual a prova de que funciona?",
+          "opcoes": [
+            "A palavra \"pronto\".",
+            "O número de arquivos criados.",
+            "Os testes passando e a conversa no terminal guardando e lembrando um fato no banco.",
+            "O tamanho do código."
+          ],
+          "certa": 2,
+          "explica": "Você não precisa entender cada linha; precisa do teste. A linha DB do smoke mostra que o fato foi gravado de verdade.",
+          "ref": "codigo"
+        },
+        {
+          "p": "Qual é o jeito certo de começar?",
+          "opcoes": [
+            "Marcar todas as 140 funcionalidades de uma vez.",
+            "Poucos ingredientes, testes passando, depois crescer.",
+            "Começar pelo servidor na nuvem.",
+            "Escrever o código à mão primeiro."
+          ],
+          "certa": 1,
+          "explica": "Comece pequeno. A mercearia aceita voltar e acrescentar; o que não dá é depurar 40 peças ao mesmo tempo.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        { "t": "A mercearia: comparação de frameworks", "href": "https://inematds.github.io/intelecto/doc/framework-comparison-pt.html", "icone": "lista" },
+        { "t": "Como construir o seu assistente", "href": "https://inematds.github.io/intelecto/doc/como-construir.html", "icone": "arquivo" },
+        { "t": "exemplo-jarvis no repositório", "href": "https://github.com/inematds/intelecto/tree/main/exemplo-jarvis", "icone": "git" }
+      ]
+    }
+  ]
+}

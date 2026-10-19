@@ -1,0 +1,250 @@
+{
+  "slug": "pecas",
+  "num": 1,
+  "menu": "7 peças",
+  "titulo": "As sete peças de um Jarvis",
+  "titulo_curto": "As sete peças",
+  "minutos": 15,
+  "lead": "Todo agente, do mais simples ao mais caro, tem as mesmas sete peças: uma porta, um coração, uma identidade, um cérebro, uma memória, mãos e um cofre. Quem conhece as peças escolhe melhor, gasta menos e não fica preso a um produto. O INTELECTO é o nosso exemplo: pequeno de propósito, para dar para ler.",
+  "objetivo": "explicar o caminho de uma mensagem e dizer, para cada uma das sete peças, o que ela faz e onde fica no INTELECTO.",
+  "competencias": ["explicar-pecas-agente", "seguir-caminho-mensagem", "distinguir-chatbot-agente"],
+  "aprende": [
+    { "t": "O caminho de uma mensagem, do Telegram ao modelo e de volta" },
+    { "t": "O que cada uma das sete peças faz" },
+    { "t": "Por que o loop com freio separa um agente de um chatbot" },
+    { "t": "Como os contratos deixam trocar uma peça sem mexer no resto" }
+  ],
+  "hero_alt": "Sete blocos de madeira sobre a mesa, cada um com um objeto: celular, engrenagem, cartão, chip, gaveta, chave e cadeado.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Sete peças, um caminho",
+      "sub": "Role a página: cada etapa acende uma peça.",
+      "nos": [
+        {
+          "icone": "enviar",
+          "titulo": "Canal",
+          "sub": "A porta",
+          "itens": [{ "icone": "chat", "t": "Telegram" }],
+          "detalhe": "É por onde você conversa. No INTELECTO é o Telegram: um token e pronto, sem endereço público na internet. O agente pergunta ao Telegram se chegou mensagem nova, divide respostas acima de 4 mil caracteres e mostra o \"digitando\" enquanto pensa."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Loop",
+          "sub": "O coração",
+          "itens": [{ "icone": "portao", "t": "Máximo de 5 rodadas" }],
+          "detalhe": "Recebe a mensagem, pensa, usa uma ferramenta se precisar, olha o resultado e pensa de novo, até responder com texto. Tem freio: no máximo cinco rodadas de ferramenta por mensagem. Passou disso, ele é obrigado a responder.",
+          "forte": true
+        },
+        {
+          "icone": "usuario",
+          "titulo": "Identidade",
+          "sub": "Quatro arquivos de texto",
+          "itens": [{ "icone": "arquivo", "t": "SOUL, AGENTS, USER, MEMORY" }],
+          "detalhe": "Quatro arquivos simples na pasta workspace: a alma, as regras, o seu perfil e os fatos iniciais. A cada mensagem o agente lê os quatro. Mudou o texto, mudou o assistente, sem programar."
+        },
+        {
+          "icone": "chip",
+          "titulo": "Cérebro",
+          "sub": "Nuvem ou local",
+          "itens": [{ "icone": "nuvem", "t": "OpenRouter" }, { "icone": "chip", "t": "Ollama" }],
+          "detalhe": "O modelo de IA. Na nuvem, o OpenRouter: uma chave dá acesso a mais de cem modelos. No seu computador, o Ollama: sem custo por mensagem e sem mandar nada para fora."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "Memória",
+          "sub": "Banco no seu computador",
+          "itens": [{ "icone": "lupa", "t": "Busca por palavras" }],
+          "detalhe": "Guarda o que importa num banco SQLite na sua máquina, com busca por palavras, sem custo de API. A cada mensagem busca o que é relevante e põe no contexto."
+        },
+        {
+          "icone": "terminal",
+          "titulo": "Ferramentas",
+          "sub": "As mãos",
+          "itens": [{ "icone": "arquivo", "t": "Ler e escrever arquivo" }, { "icone": "terminal", "t": "Rodar comando" }],
+          "detalhe": "Sem ferramentas ele só conversa; com elas ele faz. No núcleo: ler e escrever arquivo, listar pasta, rodar comando, salvar e buscar na memória. Cada ferramenta se descreve sozinha, e o modelo lê essa descrição para decidir usá-la."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Cofre",
+          "sub": "Os limites",
+          "itens": [{ "icone": "escudo", "t": "Lista de bloqueio e log" }],
+          "detalhe": "Chaves de API cifradas e presas à máquina, lista de comandos proibidos, tempo-limite de 60 segundos por comando e um log de auditoria com tudo o que ele executou."
+        }
+      ],
+      "volta": "A resposta volta pelo canal até o seu celular",
+      "legenda": "As mesmas sete peças aparecem no INTELECTO, no OpenClaw, no Hermes ou num Jarvis feito por você.",
+      "rolagem": true,
+      "rolagem_fim": {
+        "titulo": "O caminho inteiro",
+        "curto": "Tudo",
+        "texto": "Você escreve no Telegram. O loop junta identidade e memória, manda ao modelo, executa a ferramenta que ele pedir, dentro dos limites do cofre, e a resposta volta pelo mesmo canal."
+      }
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Três ideias que seguram as peças",
+      "sub": "Clique em cada aba.",
+      "passos": [
+        {
+          "titulo": "Um dono só",
+          "sub": "O que ele não é",
+          "texto": [
+            "O INTELECTO é um assistente pessoal para um dono. Não é multiusuário, não depende de nuvem, não precisa de Docker, não tem painel web e não é caixa-preta.",
+            "O plano prevê umas três mil linhas e sete dependências: dá para ler."
+          ],
+          "exemplo": { "rot": "Teste da caixa-preta", "texto": "Consigo explicar o que acontece entre a minha mensagem e a resposta? Se não, é caixa-preta." }
+        },
+        {
+          "titulo": "Loop com freio",
+          "sub": "Agente, não chatbot",
+          "texto": [
+            "Um chatbot responde e esquece. Um agente pensa, age com uma ferramenta, olha o resultado e pensa de novo.",
+            "Sem teto, um agente pode ficar girando e gastando sem terminar. Por isso o freio de cinco rodadas."
+          ],
+          "exemplo": { "rot": "Regra do loop", "texto": "No máximo 5 rodadas de ferramenta por mensagem; depois disso, responder com texto." }
+        },
+        {
+          "titulo": "Contratos",
+          "sub": "Trocar sem reescrever",
+          "texto": [
+            "Cada peça é definida por um contrato: o canal tem começar, enviar e parar; o provedor recebe a conversa e as ferramentas e devolve a resposta.",
+            "Quer WhatsApp no lugar do Telegram, ou Ollama no lugar do OpenRouter? É outro arquivo com o mesmo contrato."
+          ],
+          "exemplo": { "rot": "Na prática", "texto": "Nova ferramenta = arquivo novo no mesmo modelo. O registro encontra sozinho, sem mexer no núcleo." }
+        },
+        {
+          "titulo": "Comece pequeno",
+          "sub": "O núcleo basta",
+          "texto": [
+            "O guia de funcionalidades organiza tudo em oito corredores: identidade, segurança, canais, memória, automação, integrações, skills e arquitetura.",
+            "Você não precisa de tudo. Agendamento e busca na web, por exemplo, estão no plano da próxima fase."
+          ],
+          "exemplo": { "rot": "Montagem mínima", "texto": "Loop + um cérebro + um canal + um SOUL básico. Memória entra logo em seguida." }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Onde cada peça mora",
+      "sub": "A árvore do núcleo que o agente constrói no exemplo do repositório.",
+      "blocos": [
+        {
+          "rot": "exemplo-jarvis · pastas",
+          "icone": "pasta",
+          "conteudo": "jarvis/\n  channels/    # a porta: terminal e Telegram\n  agent/       # o coração: loop.py e context.py\n  providers/   # o cérebro: contrato + modelo de teste\n  memory/      # a memória: SQLite com busca\n  tools/       # as mãos: arquivos, comando, memória\n  security/    # o cofre: segredos e lista de bloqueio\nworkspace/\n  SOUL.md  AGENTS.md  USER.md  MEMORY.md   # a identidade"
+        },
+        {
+          "rot": "Minha tabela das 7 peças",
+          "icone": "lista",
+          "conteudo": "| Peça        | O que faz (com as minhas palavras) | Onde fica |\n|-------------|------------------------------------|-----------|\n| Canal       |                                    |           |\n| Loop        |                                    |           |\n| Identidade  |                                    |           |\n| Cérebro     |                                    |           |\n| Memória     |                                    |           |\n| Ferramentas |                                    |           |\n| Cofre       |                                    |           |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "O caminho de uma mensagem",
+            "html": "<ol><li>Você escreve no <b>Telegram</b>.</li><li>O <b>canal</b> recebe e entrega ao <b>loop</b>.</li><li>O loop monta o contexto: <b>SOUL + AGENTS + USER</b> e as <b>memórias</b> relevantes.</li><li>O <b>modelo</b> responde ou pede uma <b>ferramenta</b>; o loop executa e devolve (até 5 rodadas).</li><li>A resposta volta pelo <b>canal</b>.</li></ol>"
+          },
+          {
+            "rot": "Chatbot × Jarvis",
+            "html": "<p><b>Chatbot:</b> responde, esquece quando a conversa acaba, não tem identidade, não age, não conhece você.</p><p><b>Jarvis:</b> lembra de conversas passadas, tem nome e valores escritos, usa ferramentas e conhece o seu contexto.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: mapeie as peças",
+      "sub": "Antes de construir, entenda o que vai construir.",
+      "exercicios": [
+        {
+          "id": "p1",
+          "titulo": "P1 · As 7 peças com as suas palavras",
+          "min": "15 min",
+          "texto": "Copie a tabela acima e preencha cada linha com uma frase sua e a pasta onde a peça fica.",
+          "pronto": "as sete linhas estão preenchidas e nenhuma frase foi copiada do texto da aula."
+        },
+        {
+          "id": "p2",
+          "titulo": "P2 · O caminho em voz alta",
+          "min": "5 min",
+          "texto": "Explique para alguém (ou grave um áudio) o caminho de uma mensagem do Telegram até a resposta.",
+          "pronto": "você citou canal, loop, identidade, memória, modelo e ferramenta na ordem certa, sem olhar."
+        }
+      ]
+    },
+    {
+      "tipo": "video",
+      "titulo": "As sete peças em vídeo",
+      "sub": "O Nei abre o INTELECTO peça por peça.",
+      "chave": "intelecto-estrutura"
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {
+          "p": "O que faz um agente deixar de ser só um chatbot?",
+          "opcoes": [
+            "Usar um modelo mais caro.",
+            "O loop: pensar, usar uma ferramenta, olhar o resultado e pensar de novo até responder.",
+            "Ter uma interface web bonita.",
+            "Responder mais rápido."
+          ],
+          "certa": 1,
+          "explica": "É o loop que transforma conversa em ação. O modelo pode ser o mesmo; o que muda é poder usar ferramentas e olhar o resultado antes de responder.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "Para que serve o limite de cinco rodadas de ferramenta?",
+          "opcoes": [
+            "Para economizar memória do celular.",
+            "É uma exigência do Telegram.",
+            "É o freio: sem ele, o agente pode ficar girando, gastando, sem nunca terminar.",
+            "Para o modelo pensar menos."
+          ],
+          "certa": 2,
+          "explica": "O teto obriga o agente a responder depois de cinco rodadas. Um loop curto, legível e com teto é o que separa um agente útil de um que gasta sem parar.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Você quer trocar o Telegram pelo WhatsApp. O que muda?",
+          "opcoes": [
+            "Tem que reescrever o agente inteiro.",
+            "Um arquivo novo de canal que cumpre o mesmo contrato (começar, enviar, parar); o resto fica igual.",
+            "Tem que trocar também de modelo.",
+            "Não dá: o INTELECTO só fala Telegram."
+          ],
+          "certa": 1,
+          "explica": "Cada peça é um contrato. Um canal novo implementa as mesmas três funções e o loop nem percebe a troca.",
+          "ref": "passos"
+        },
+        {
+          "p": "Onde mora a personalidade do assistente?",
+          "opcoes": [
+            "No código do loop.",
+            "Nas configurações do Telegram.",
+            "Em quatro arquivos de texto na pasta workspace.",
+            "No modelo escolhido."
+          ],
+          "certa": 2,
+          "explica": "SOUL, AGENTS, USER e MEMORY são texto simples. O agente lê os quatro a cada mensagem: mudou o texto, mudou o assistente.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        { "t": "INTELECTO: página do projeto", "href": "https://inematds.github.io/intelecto/", "icone": "cerebro" },
+        { "t": "Repositório do INTELECTO", "href": "https://github.com/inematds/intelecto", "icone": "git" },
+        { "t": "Área JARVIS no Eventos", "href": "https://eventos.inema.pro/jarvis/", "icone": "camadas" }
+      ]
+    }
+  ]
+}

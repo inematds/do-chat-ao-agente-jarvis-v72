@@ -1,0 +1,235 @@
+{
+  "slug": "rotina",
+  "num": 8,
+  "menu": "Rotina",
+  "titulo": "Uma rotina de verdade e o Jarvis no ar",
+  "titulo_curto": "Rotina e no ar",
+  "minutos": 15,
+  "lead": "Assistente que você não usa não serve. Nesta aula você transforma uma tarefa da semana em pedido fixo, usa cinco dias seguidos e anota o que melhorar. Depois vê os degraus para deixá-lo ligado: no seu computador, com reinício automático, e num servidor alugado, 24 horas no ar.",
+  "objetivo": "usar um pedido fixo por cinco dias seguidos e escolher onde o assistente vai ficar ligado, do notebook a um servidor 24 horas.",
+  "competencias": ["criar-rotina", "melhorar-por-uso", "escolher-onde-rodar"],
+  "aprende": [
+    { "t": "Transformar uma tarefa em pedido fixo" },
+    { "t": "O ciclo semanal de melhoria" },
+    { "t": "Notebook, reinício automático ou servidor" },
+    { "t": "A lista de tarefas que leva ao degrau 3" }
+  ],
+  "hero_alt": "Manhã com luz neutra: xícara, agenda aberta e um celular com uma lista curta de três itens.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Onde o seu Jarvis mora",
+      "sub": "Quatro degraus, do teste ao 24 horas. Clique em cada um.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "terminal",
+          "titulo": "Terminal",
+          "sub": "Para provar",
+          "itens": [{ "icone": "check", "t": "Testes e conversa" }],
+          "detalhe": "Onde você termina a aula 4: testes verdes e uma conversa no terminal com o modelo de teste. Sem internet e sem chave."
+        },
+        {
+          "icone": "enviar",
+          "titulo": "Telegram no seu computador",
+          "sub": "Para usar",
+          "itens": [{ "icone": "chat", "t": "Fala pelo celular" }],
+          "detalhe": "Com o token e um modelo real, você conversa pelo celular. Limite: quando você fecha o notebook, o assistente dorme junto."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Reinício automático",
+          "sub": "launchd no Mac",
+          "itens": [{ "icone": "check", "t": "Volta sozinho" }],
+          "detalhe": "No Mac, o plano usa o launchd: o assistente sobe ao ligar o computador e reinicia sozinho se cair. Os registros ficam numa pasta de logs para diagnóstico."
+        },
+        {
+          "icone": "nuvem",
+          "titulo": "Servidor (VPS)",
+          "sub": "24 horas no ar",
+          "itens": [{ "icone": "camadas", "t": "Docker" }],
+          "detalhe": "Um servidor alugado fica ligado dia e noite. O caminho é o mesmo: entrar pelo terminal, clonar e pedir ao agente para construir. A diferença é o empacotamento: para servidor, a página de construção indica o Docker.",
+          "forte": true
+        }
+      ],
+      "legenda": "Um de cada vez: Telegram, depois reinício automático, depois servidor. Cada degrau só quando o anterior estiver estável."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "A rotina e a melhoria",
+      "sub": "Clique em cada etapa.",
+      "passos": [
+        {
+          "titulo": "Escolher a tarefa",
+          "sub": "Do meu-jarvis.md",
+          "texto": [
+            "Pegue uma das três coisas que ele deve fazer toda semana, do desenho da aula 2.",
+            "Escolha uma que você faria de qualquer jeito: assim a semana de uso acontece."
+          ],
+          "exemplo": { "rot": "Exemplo", "texto": "Começar o dia com as três prioridades." }
+        },
+        {
+          "titulo": "Virar pedido fixo",
+          "sub": "Uma palavra dispara",
+          "texto": [
+            "Escreva o pedido no AGENTS.md: quando você mandar uma palavra curta, ele faz a tarefa do mesmo jeito.",
+            "Agendamento sozinho (mandar sem você pedir) está no plano da próxima fase; por enquanto quem dispara é você."
+          ],
+          "exemplo": { "rot": "Pedido fixo", "texto": "Toda manhã, quando eu mandar \"dia\", liste as minhas três prioridades a partir do que eu te contei ontem." }
+        },
+        {
+          "titulo": "Usar 5 dias",
+          "sub": "E anotar",
+          "texto": [
+            "Use cinco dias seguidos. Cada dia, uma linha: o que funcionou e o que faltou.",
+            "Errou o tom? SOUL. Esqueceu algo? Memória. Fez o que não devia? AGENTS."
+          ],
+          "exemplo": { "rot": "Anotação", "texto": "Dia 3: listou 5 prioridades em vez de 3. Ajustar o AGENTS." }
+        },
+        {
+          "titulo": "Ciclo semanal",
+          "sub": "Melhorar sem quebrar",
+          "texto": [
+            "Uma vez por semana, olhe as anotações e o log e mude uma coisa só. Rode os testes de novo.",
+            "Não existe assistente pronto: existe o que melhora com uso real."
+          ],
+          "exemplo": { "rot": "Regra", "texto": "Uma mudança por semana, testes verdes antes e depois." }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Modelos da rotina",
+      "sub": "Copie para o seu AGENTS.md e para o seu meu-jarvis.md.",
+      "blocos": [
+        {
+          "rot": "workspace/AGENTS.md · pedido fixo",
+          "icone": "lista",
+          "conteudo": "## Pedidos fixos\n- Quando eu mandar \"dia\": liste as minhas três prioridades a partir do que eu te contei ontem. No máximo três, em tópicos curtos.\n- Quando eu mandar \"fim\": pergunte o que eu terminei hoje e guarde na memória."
+        },
+        {
+          "rot": "rotina-5-dias.md",
+          "icone": "calendario",
+          "conteudo": "# Rotina: \"dia\"\n\n| Dia | Funcionou | Faltou / errou | Arquivo a mudar |\n|-----|-----------|----------------|-----------------|\n| 1   |           |                |                 |\n| 2   |           |                |                 |\n| 3   |           |                |                 |\n| 4   |           |                |                 |\n| 5   |           |                |                 |\n\nMudança da semana:"
+        },
+        {
+          "rot": "meu-jarvis.md · desafio extra",
+          "icone": "fila",
+          "conteudo": "## Tarefas que eu gostaria de mandar e ir dormir\n1.\n2.\n3.\n4.\n5.\n(Esta lista é a entrada do degrau 3: filas.)"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Uma manhã",
+            "html": "<p><b>Você:</b> dia</p><p><b>Jarvis:</b></p><ol><li>Fechar o relatório de vendas (é segunda).</li><li>Responder o cliente sobre o prazo.</li><li>Preparar a pauta da reunião de quinta.</li></ol><p>As três vêm do que você contou ontem e da memória.</p>"
+          },
+          {
+            "rot": "Primeiros 30 dias",
+            "html": "<ul><li><b>Semana 1:</b> o núcleo rodando no seu canal principal.</li><li><b>Semana 2:</b> memória guardando de verdade e uma ou duas ferramentas.</li><li><b>Semana 3:</b> ligado direto (reinício automático ou servidor).</li><li><b>Semana 4:</b> primeira rodada de melhoria a partir do log e das anotações.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: uma semana de uso",
+      "sub": "Exercício E6 e o desafio extra da sequência 2.",
+      "exercicios": [
+        {
+          "id": "e6",
+          "titulo": "E6 · Uma rotina de verdade",
+          "min": "20 min",
+          "texto": "Transforme uma das tarefas do E1 em pedido fixo no AGENTS.md e use por uma semana, anotando na tabela.",
+          "pronto": "você usou 5 dias seguidos e anotou o que melhorar.",
+          "dias": 5
+        },
+        {
+          "id": "e6b",
+          "titulo": "E6b · Uma mudança",
+          "min": "15 min",
+          "texto": "Escolha uma linha da tabela, mude um arquivo só e rode os testes.",
+          "pronto": "os testes passam e, no dia seguinte, o problema anotado não se repete."
+        },
+        {
+          "id": "x1",
+          "titulo": "Desafio · A lista para dormir",
+          "min": "10 min",
+          "texto": "No meu-jarvis.md, escreva as tarefas que você gostaria de mandar e ir dormir.",
+          "pronto": "a lista tem pelo menos cinco tarefas concretas. Ela é a entrada do degrau 3."
+        }
+      ]
+    },
+    {
+      "tipo": "video",
+      "titulo": "O degrau 2 em vídeo",
+      "sub": "O resumo da sequência: o INTELECTO no Telegram, com memória e personalidade.",
+      "chave": "seq2-jarvis"
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {
+          "p": "Qual é um bom pedido fixo?",
+          "opcoes": [
+            "\"Me ajude com tudo.\"",
+            "\"Quando eu mandar 'dia', liste as minhas três prioridades a partir do que eu te contei ontem.\"",
+            "\"Seja proativo.\"",
+            "\"Faça o que achar melhor toda manhã.\""
+          ],
+          "certa": 1,
+          "explica": "Tem gatilho (a palavra), tarefa, limite (três) e fonte (o que você contou). Dá para conferir se ele fez certo.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "Você fecha o notebook e o assistente para de responder. O que resolve?",
+          "opcoes": [
+            "Trocar de modelo.",
+            "Um servidor alugado (VPS) que fica ligado 24 horas, com o mesmo caminho de construção.",
+            "Mudar o SOUL.md.",
+            "Apagar a memória."
+          ],
+          "certa": 1,
+          "explica": "No notebook ele dorme junto. Num servidor, fica ligado dia e noite; o empacotamento indicado para servidor é o Docker.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "No dia 3 ele listou cinco prioridades em vez de três. Onde ajustar?",
+          "opcoes": [
+            "No SOUL.md, mudando a personalidade.",
+            "No AGENTS.md, na regra do pedido fixo (no máximo três).",
+            "Trocando o Telegram.",
+            "Reinstalando tudo."
+          ],
+          "certa": 1,
+          "explica": "É regra de trabalho, então mora no AGENTS.md. Uma mudança, testes de novo, e confere no dia seguinte.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "O degrau 2 em quatro frases",
+      "itens": [
+        { "t": "Sete peças", "texto": "Canal, loop com freio, identidade, cérebro, memória, ferramentas e cofre. Entendeu as peças, escolhe melhor e troca sem medo." },
+        { "t": "É seu nos arquivos", "texto": "SOUL, AGENTS, USER e MEMORY são texto. Mudou o texto, mudou o assistente." },
+        { "t": "Você decide, o agente constrói", "texto": "Briefing + plano + pedido com testes. O teste confirma, não a promessa." },
+        { "t": "Uso real", "texto": "Um dono só, limites no cofre, um pedido fixo por uma semana e uma melhoria por vez." }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Próximos passos",
+      "links": [
+        { "t": "Voltar à visão geral da formação Do chat ao agente", "href": "https://inematds.github.io/do-chat-ao-agente-v72/", "icone": "camadas" },
+        { "t": "Degrau 3: dez tarefas e vá dormir (filas)", "href": "https://inematds.github.io/do-chat-ao-agente-v72/aulas/filas/index.html", "icone": "fila" },
+        { "t": "Curso INTELECTO: deploy, monitoramento e evolução", "href": "https://inematds.github.io/intelecto-curso/curso/trilha6/modulo-6-2.html", "icone": "nuvem" },
+        { "t": "Área JARVIS no Eventos", "href": "https://eventos.inema.pro/jarvis/", "icone": "cerebro" }
+      ]
+    }
+  ]
+}

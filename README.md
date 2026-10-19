@@ -24,3 +24,9 @@ HTML estático, sem build e sem backend. O progresso fica só no navegador de qu
 Vídeos já publicados: [as 7 peças](https://inematds.github.io/intelecto-estrutura/videos/), [instale o seu Jarvis](https://inematds.github.io/intelecto-instalacao/videos/) e a série [jornada-agentes](https://github.com/inematds/jornada-agentes) (release `video-v2.0.0`). Exercícios originais em `jornada-agentes/exercicios/02-jarvis.md`.
 
 Conteúdo aberto e gratuito · [INEMA.CLUB](https://inema.club)
+
+## Mais no INEMA.CLUB
+
+- [Ficha completa deste curso](https://www.inema.club/cursos/325-do-chat-ao-agente-degrau-2-o-seu-jarvis-com-memoria-no-telegram-intelecto/)
+- [Guia: como aprender inteligência artificial](https://www.inema.club/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.inema.club/cursos/)

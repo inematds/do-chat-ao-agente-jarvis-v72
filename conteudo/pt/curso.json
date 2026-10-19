@@ -15,7 +15,7 @@
     "link": "Abrir a lista da sequência 2",
     "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md"
   },
-  "rodape": "INEMA.CLUB · conteúdo aberto e gratuito · formato INEMA Learning v7.2 · <a href=\"https://inematds.github.io/do-chat-ao-agente-v72/\">Do chat ao agente: visão geral</a> · <a href=\"https://eventos.inema.pro/jarvis/\">eventos.inema.pro/jarvis</a> · <a href=\"https://inematds.github.io/intelecto/\">INTELECTO</a> · <a href=\"https://inema.club/\">inema.club</a>",
+  "rodape": "INEMA.CLUB · conteúdo aberto e gratuito · formato INEMA Learning v7.2 · <a href=\"https://inematds.github.io/do-chat-ao-agente-v72/\">Do chat ao agente: visão geral</a> · <a href=\"https://eventos.inema.pro/jarvis/\">eventos.inema.pro/jarvis</a> · <a href=\"https://inematds.github.io/intelecto/\">INTELECTO</a> · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://www.inema.club/cursos/325-do-chat-ao-agente-degrau-2-o-seu-jarvis-com-memoria-no-telegram-intelecto/\">Ficha completa deste curso no INEMA.CLUB</a> · <a href=\"https://www.inema.club/aprender-inteligencia-artificial/\">Guia: como aprender inteligência artificial</a>",
   "videos": {
     "intelecto-estrutura": {
       "titulo": "INTELECTO: as 7 peças de um agente de IA",
@@ -61,10 +61,22 @@
     },
     "capa_alt": "Mesa escura com celular aberto numa conversa, notebook com terminal e caderno: o assistente pessoal construído por você.",
     "numeros": [
-      { "v": "8", "t": "aulas" },
-      { "v": "7", "t": "peças de um agente" },
-      { "v": "18", "t": "exercícios práticos" },
-      { "v": "3", "t": "vídeos" }
+      {
+        "v": "8",
+        "t": "aulas"
+      },
+      {
+        "v": "7",
+        "t": "peças de um agente"
+      },
+      {
+        "v": "18",
+        "t": "exercícios práticos"
+      },
+      {
+        "v": "3",
+        "t": "vídeos"
+      }
     ],
     "aulas_titulo": "As aulas",
     "aulas_sub": "Este é o aprofundamento do degrau 2. A visão geral dos quatro degraus está no curso Do chat ao agente.",

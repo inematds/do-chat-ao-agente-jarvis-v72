@@ -1,0 +1,278 @@
+{
+  "slug": "cerebro",
+  "num": 6,
+  "menu": "Cerebro",
+  "titulo": "El cerebro: en la nube o local, decidido con tus números",
+  "titulo_curto": "En la nube o local",
+  "minutos": 15,
+  "lead": "El modelo de IA es la pieza más fácil de cambiar. En la nube, OpenRouter da acceso a más de cien modelos con una clave. En tu computadora, Ollama funciona sin costo por mensaje y sin enviar nada afuera. La elección no depende de gustos: se decide con una tabla de tiempo, calidad y costo.",
+  "objetivo": "comparar un modelo en la nube y uno local con la misma pregunta y decidir, con tus números, cuál usar y para qué.",
+  "competencias": [
+    "elegir-modelo-nube-local",
+    "medir-tiempo-calidad-costo",
+    "proteger-clave-api"
+  ],
+  "aprende": [
+    {
+      "t": "Qué hacen OpenRouter y Ollama"
+    },
+    {
+      "t": "Por qué cambiar de cerebro no cambia lo demás"
+    },
+    {
+      "t": "Armar la tabla de tiempo × calidad × costo"
+    },
+    {
+      "t": "Dónde se guarda la clave de la nube"
+    }
+  ],
+  "hero_alt": "Una mini computadora de escritorio junto a una notebook, con los cables organizados sobre el escritorio oscuro.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Un contrato, dos cerebros",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "relogio",
+          "titulo": "Bucle",
+          "sub": "Pide una respuesta",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "Conversación + herramientas"
+            }
+          ],
+          "detalhe": "El loop no sabe qué modelo está del otro lado. Le entrega la conversación y la lista de herramientas, y espera la respuesta."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Proveedor",
+          "sub": "El contrato",
+          "itens": [
+            {
+              "icone": "seta",
+              "t": "chat(mensagens, ferramentas)"
+            }
+          ],
+          "detalhe": "El proveedor es un contrato: recibe la conversación y las herramientas, y devuelve la respuesta. En las pruebas, un proveedor simulado responde sin internet ni costo. Cambiar de cerebro es cambiar de proveedor en la configuración.",
+          "forte": true
+        },
+        {
+          "icone": "nuvem",
+          "titulo": "OpenRouter",
+          "sub": "Nube",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Más de 100 modelos, una clave"
+            },
+            {
+              "icone": "grafico",
+              "t": "Costo por uso"
+            }
+          ],
+          "detalhe": "Una clave da acceso a Claude, GPT, Gemini, DeepSeek, Llama y otros. Hay reintentos automáticos cuando el servicio falla y se registran los tokens usados para que controles el costo."
+        },
+        {
+          "icone": "chip",
+          "titulo": "Ollama",
+          "sub": "En tu computadora",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Sin costo por mensaje"
+            },
+            {
+              "icone": "cadeado",
+              "t": "Nada sale de la máquina"
+            }
+          ],
+          "detalhe": "El modelo funciona de forma local. Necesitas un equipo que pueda soportarlo (memoria y, de preferencia, tarjeta gráfica). En el plan de INTELECTO también es la alternativa automática si OpenRouter falla."
+        }
+      ],
+      "legenda": "Nube para potencia, local para privacidad. Puedes usar ambos."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Cómo comparar de forma justa",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Una pregunta real",
+          "sub": "De tu trabajo",
+          "texto": [
+            "Elige una pregunta que de verdad le harías al asistente, de preferencia relacionada con una de las tareas de tu meu-jarvis.md.",
+            "Usa exactamente el mismo texto en ambos modelos."
+          ],
+          "exemplo": {
+            "rot": "Ejemplo",
+            "texto": "Organiza en tres prioridades: cerrar el informe de ventas, responder a dos clientes y preparar la reunión del jueves."
+          }
+        },
+        {
+          "titulo": "Medir el tiempo",
+          "sub": "Desde el envío hasta la respuesta",
+          "texto": [
+            "Cronometra desde el envío hasta la respuesta completa. Hazlo dos veces: la primera llamada al modelo local suele tardar más porque necesita cargarse.",
+            "Anota el tiempo de la segunda."
+          ],
+          "exemplo": {
+            "rot": "Anota",
+            "texto": "Tiempo en segundos, nube y local."
+          }
+        },
+        {
+          "titulo": "Poner una nota",
+          "sub": "Calidad del 1 al 5",
+          "texto": [
+            "Lee ambas respuestas sin saber cuál es cuál. Si puedes, pídele a alguien que cambie el orden. Ponles una nota del 1 al 5: ¿acertó, siguió tu estilo y fue útil?",
+            "Basta con una nota breve por respuesta."
+          ],
+          "exemplo": {
+            "rot": "Criterio",
+            "texto": "¿Usaría esta respuesta sin reescribirla? Sí = 4 o 5."
+          }
+        },
+        {
+          "titulo": "Ver el costo",
+          "sub": "Y decidir",
+          "texto": [
+            "En la nube, consulta en el panel de OpenRouter cuánto costó la pregunta. En local, el costo por mensaje es cero; el costo está en mantener el equipo encendido.",
+            "Escribe la decisión en una línea: qué modelo usarás y para qué."
+          ],
+          "exemplo": {
+            "rot": "Decisión",
+            "texto": "Rutina diaria en local; texto para clientes en la nube."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Configuración y tabla",
+      "sub": "La clave de la nube sigue la misma regla que el token: solo en .env o en la bóveda.",
+      "blocos": [
+        {
+          "rot": ".env · clave de la nube",
+          "icone": "cadeado",
+          "conteudo": "OPENROUTER_API_KEY=<pega aquí la clave creada en openrouter.ai/keys>"
+        },
+        {
+          "rot": "config.json · los dos proveedores (del README)",
+          "icone": "arquivo",
+          "conteudo": "\"providers\": {\n  \"default\": \"openrouter\",\n  \"openrouter\": { \"model\": \"anthropic/claude-sonnet-4-20250514\" },\n  \"ollama\": { \"model\": \"llama3.2\", \"base_url\": \"http://localhost:11434\" }\n}"
+        },
+        {
+          "rot": "Pedido al agente · cambiar el cerebro",
+          "icone": "chat",
+          "conteudo": "Cambia el proveedor predeterminado a ollama (modelo llama3.2), mantén openrouter como alternativa y vuelve a ejecutar las pruebas. No cambies nada fuera de la configuración."
+        },
+        {
+          "rot": "minha-comparacao.md",
+          "icone": "lista",
+          "conteudo": "Pregunta: \n\n| Modelo | Tiempo (s) | Nota 1-5 | Costo |\n|--------|-----------|----------|-------|\n| Nube: |           |          |       |\n| Local: |           |          | 0     |\n\nDecisión: uso ____ para ____ y ____ para ____."
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Cuándo gana la nube",
+            "html": "<ul><li>Pregunta difícil, texto largo, razonamiento en varias etapas.</li><li>Equipo sin memoria o tarjeta gráfica para un buen modelo local.</li><li>Aceptas pagar por uso y enviar el texto fuera de tu equipo.</li></ul>"
+          },
+          {
+            "rot": "Cuándo gana el modelo local",
+            "html": "<ul><li>Datos sensibles que no pueden salir de tu equipo.</li><li>Muchos mensajes simples al día, cuyo costo por uso se acumularía.</li><li>Funcionar sin internet o servir de alternativa cuando se cae la nube.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: nube o local",
+      "sub": "Ejercicio E5 de la secuencia 2.",
+      "exercicios": [
+        {
+          "id": "e5",
+          "titulo": "E5 · Nube o local",
+          "min": "20 min",
+          "texto": "Haz la misma pregunta a un modelo en la nube (OpenRouter) y a uno local (Ollama), si tu computadora lo soporta. Completa la tabla minha-comparacao.md.",
+          "pronto": "sabes decir qué modelo usar para cada tarea, con tus propios números."
+        },
+        {
+          "id": "e5b",
+          "titulo": "E5b · La clave guardada",
+          "min": "5 min",
+          "texto": "Comprueba que la clave de OpenRouter esté solo en .env (o en la bóveda) y que .env no aparezca en git status.",
+          "pronto": "la búsqueda de la clave fuera de .env no encuentra nada."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Cuándo tiene sentido usar un modelo local (Ollama)?",
+          "opcoes": [
+            "Siempre, porque es más inteligente.",
+            "Cuando la computadora puede ejecutarlo y tus números de tiempo, calidad y costo muestran que vale la pena, o cuando el dato no puede salir de ahí.",
+            "Nunca, Telegram no lo acepta.",
+            "Solo de madrugada."
+          ],
+          "certa": 1,
+          "explica": "La elección se basa en mediciones: la misma pregunta en ambos, una tabla y una decisión. La privacidad es otro motivo de peso: con el modelo local, nada sale de la máquina.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "Cambiaste OpenRouter por Ollama. ¿Qué debe cambiar en el canal y la memoria?",
+          "opcoes": [
+            "Todo: el canal y la memoria dependen del modelo.",
+            "Nada: el proveedor es una interfaz, y el resto del agente no sabe qué modelo está respondiendo.",
+            "Solo la memoria.",
+            "Solo el canal."
+          ],
+          "certa": 1,
+          "explica": "El loop llama al proveedor mediante la interfaz. Cambiar de cerebro es una configuración; las pruebas se ejecutan igual.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿Por qué hacer la pregunta dos veces al modelo local antes de anotar el tiempo?",
+          "opcoes": [
+            "Porque la primera respuesta siempre es incorrecta.",
+            "Porque la primera llamada suele ser más lenta mientras se carga el modelo.",
+            "Para gastar menos créditos.",
+            "No hace falta."
+          ],
+          "certa": 1,
+          "explica": "Una comparación justa mide el uso normal. La primera llamada incluye cargar el modelo en la memoria.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Curso INTELECTO: proveedores de IA",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha4/modulo-4-1.html",
+          "icone": "chip"
+        },
+        {
+          "t": "OpenRouter",
+          "href": "https://openrouter.ai/",
+          "icone": "nuvem"
+        },
+        {
+          "t": "Ollama",
+          "href": "https://ollama.com/",
+          "icone": "chip"
+        }
+      ]
+    }
+  ]
+}

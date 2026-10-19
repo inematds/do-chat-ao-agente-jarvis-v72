@@ -1,0 +1,277 @@
+{
+  "slug": "memoria",
+  "num": 5,
+  "menu": "Memory",
+  "titulo": "Memory: how it remembers you tomorrow",
+  "titulo_curto": "Memory",
+  "minutos": 15,
+  "lead": "Memory is the difference between an AI that forgets everything when it restarts and one that has known you for months. In INTELECTO, it’s a database on your computer, with keyword search and no API cost. Understanding how it searches changes how you tell it things.",
+  "objetivo": "explain where the assistant saves what you tell it and how it searches, and prove that it remembers on another day, in a new conversation.",
+  "competencias": [
+    "test-memory",
+    "understand-keyword-search",
+    "organize-facts"
+  ],
+  "aprende": [
+    {
+      "t": "Two layers: MEMORY.md and the memory.db database"
+    },
+    {
+      "t": "How keyword search chooses what to remember"
+    },
+    {
+      "t": "Categories and deduplication"
+    },
+    {
+      "t": "The two-day test"
+    }
+  ],
+  "hero_alt": "An open card file on a table beside a phone with a conversation on screen.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From what you tell it to what it remembers",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "chat",
+          "titulo": "You tell it",
+          "sub": "Day 1",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "\"every Monday I wrap up the sales report\""
+            }
+          ],
+          "detalhe": "You speak normally. AGENTS.md tells the assistant to save what it learns about you."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "save_memory",
+          "sub": "Tool",
+          "itens": [
+            {
+              "icone": "lista",
+              "t": "Category: fact, preference…"
+            }
+          ],
+          "detalhe": "The model uses the save tool. Each memory has a category: a fact about you, a preference, a conversation summary, or a solution that worked. If it’s more than 80% like an old one, it updates that memory instead of duplicating it."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "memory.db",
+          "sub": "SQLite on your computer",
+          "itens": [
+            {
+              "icone": "lupa",
+              "t": "Keyword search (FTS5)"
+            }
+          ],
+          "detalhe": "A database file on your machine, at ~/.intelecto/memory.db in the plan. It survives restarts. Search is by keyword, ranked by relevance, with no extra model or cost.",
+          "forte": true
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Search",
+          "sub": "With each message",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "The 5 most relevant are included"
+            }
+          ],
+          "detalhe": "Before sending your message to the model, the loop searches the database for words from your question and adds the most relevant memories to the context, along with recent facts."
+        },
+        {
+          "icone": "chat",
+          "titulo": "It answers",
+          "sub": "Day 2, new conversation",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "\"You wrap up the sales report.\""
+            }
+          ],
+          "detalhe": "The conversation history stays in the program’s memory and disappears when it restarts. The next day, only what was saved in the database comes back. That’s why the test uses a new conversation."
+        }
+      ],
+      "legenda": "Layer 1, MEMORY.md: a few fixed facts, always in context. Layer 2, memory.db: grows without a limit, and only what’s relevant to the question is included."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "What changes in how you use it",
+      "sub": "Click each tab.",
+      "passos": [
+        {
+          "titulo": "Keyword search",
+          "sub": "Not by meaning",
+          "texto": [
+            "Search looks for the words in your question among your memories. It doesn’t use “embeddings” (meaning-based search), by design: it’s simple, local, and free.",
+            "So: tell it facts using the words you’d use to ask about them later."
+          ],
+          "exemplo": {
+            "rot": "Best",
+            "texto": "“Every Monday I finish the sales report.” Later: “What do I do every Monday?”"
+          }
+        },
+        {
+          "titulo": "Ask it to save",
+          "sub": "Be direct",
+          "texto": [
+            "The assistant decides what to save when AGENTS.md tells it to. To avoid relying on that, say: “save this: ...”.",
+            "The save_memory, search_memory, and forget_memory tools are available in the conversation."
+          ],
+          "exemplo": {
+            "rot": "Request",
+            "texto": "Save this: my report deadline is Monday at 10 a.m."
+          }
+        },
+        {
+          "titulo": "Forget",
+          "sub": "It’s yours, too",
+          "texto": [
+            "Did a fact change? Tell it the new one; if it’s almost the same as the old one, it updates it. If a fact is wrong or you don’t want it saved, ask it to forget.",
+            "Everything stays in a file of your own, not on a third-party server."
+          ],
+          "exemplo": {
+            "rot": "Request",
+            "texto": "Look up what you know about the sales report and forget the old time."
+          }
+        },
+        {
+          "titulo": "Didn’t it remember?",
+          "sub": "Troubleshoot",
+          "texto": [
+            "First, ask if it saved the information: “What do you know about Monday?” If it didn’t, reinforce the rule in AGENTS.md: save what you learn about me.",
+            "If it saved the information but didn’t find it, your question used different words. Try again using the same words."
+          ],
+          "exemplo": {
+            "rot": "E4 rule",
+            "texto": "If it doesn’t remember, check how memory is saved and adjust it."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The two-day test",
+      "sub": "Send it in Telegram or the terminal. See how it works with and without memory.",
+      "blocos": [
+        {
+          "rot": "Day 1 · share three facts",
+          "icone": "chat",
+          "conteudo": "Save this: every Monday I finish the sales report.\nSave this: I prefer short bullet-point answers.\nSave this: my main client is called <NOME DO CLIENTE>."
+        },
+        {
+          "rot": "Day 2 · new conversation, don’t repeat yourself",
+          "icone": "chat",
+          "conteudo": "What do I do every Monday?\nHow do I prefer my answers?\nWho is my main client?"
+        },
+        {
+          "rot": "Database search, as the loop does it",
+          "icone": "memoria",
+          "conteudo": "SELECT content, category FROM memories_fts\nWHERE memories_fts MATCH 'segunda OR relatório OR vendas'\nORDER BY bm25(memories_fts)\nLIMIT 5;"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "With memory",
+            "html": "<p><b>You (day 2):</b> What do I do every Monday?</p><p><b>Jarvis:</b> You finish the sales report. Want me to make a list of what’s left?</p><p>The word <b>segunda</b> found the memory saved on day 1.</p>"
+          },
+          {
+            "rot": "Without memory",
+            "html": "<p><b>You (day 2):</b> What do I do every Monday?</p><p><b>Jarvis:</b> I don’t have that information. Can you tell me?</p><p>The fact stayed only in the day 1 conversation history, which disappears when you restart. It never made it into the database: the rule to save it is missing from AGENTS.md, or you didn’t ask it to “save this”.</p>"
+          },
+          {
+            "rot": "Different word",
+            "html": "<p><b>You (day 2):</b> What’s my weekly task?</p><p><b>Jarvis:</b> I couldn’t find anything about that. Can you tell me?</p><p>The fact is in the database, but none of the words in your question appear there (<b>weekly</b> isn’t <b>segunda</b>). Ask again using the words you used: “what do I do every Monday?”</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: the memory test",
+      "sub": "Exercise E4 in sequence 2.",
+      "exercicios": [
+        {
+          "id": "e4",
+          "titulo": "E4 · Memory test",
+          "min": "2 days",
+          "dias": 2,
+          "texto": "Day 1: share three facts about yourself using “save this”. On day 2, in a new conversation (after restarting the assistant), ask about them.",
+          "pronto": "it remembers all three without you repeating them."
+        },
+        {
+          "id": "e4b",
+          "titulo": "E4b · What it knows about you",
+          "min": "10 min",
+          "texto": "Ask what it knows about you. Correct one fact and ask it to forget another.",
+          "pronto": "the next answer shows the corrected fact and leaves out the forgotten one."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "Why is the memory test done in a new conversation the next day?",
+          "opcoes": [
+            "Because Telegram deletes the messages.",
+            "Because the conversation history disappears when you restart; only what was saved in the database comes back.",
+            "So the model can rest.",
+            "Because search only works in the morning."
+          ],
+          "certa": 1,
+          "explica": "In the same conversation, it can answer from the history. In a new conversation, only the memory.db database proves that memory really worked.",
+          "cert": true,
+          "ref": "diagrama"
+        },
+        {
+          "p": "You said \"I finish the report every Monday\" and asked \"what's my weekly task?\" It didn't find it. Why?",
+          "opcoes": [
+            "The database deleted the fact.",
+            "Search works by matching words: the question didn't use any words from the fact.",
+            "You need a more expensive model.",
+            "Memory only stores one thing per day."
+          ],
+          "certa": 1,
+          "explica": "Search looks for words in the question. \"Monday\" or \"report\" would find it; \"weekly task\" doesn't appear in the fact.",
+          "ref": "passos"
+        },
+        {
+          "p": "What's the difference between MEMORY.md and memory.db?",
+          "opcoes": [
+            "None: they're the same file.",
+            "MEMORY.md holds a few fixed facts that are always in context; memory.db grows and only brings in what's relevant.",
+            "MEMORY.md is in the cloud and memory.db is on your phone.",
+            "memory.db only stores passwords."
+          ],
+          "certa": 1,
+          "explica": "There are two layers: a short, fixed one that you write, and one that grows as you chat and is searched for relevant information.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Go further",
+      "links": [
+        {
+          "t": "INTELECTO course: memory and knowledge",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-3.html",
+          "icone": "memoria"
+        },
+        {
+          "t": "SQLite FTS5 (documentation)",
+          "href": "https://www.sqlite.org/fts5.html",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

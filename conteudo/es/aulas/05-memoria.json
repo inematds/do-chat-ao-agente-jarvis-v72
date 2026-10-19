@@ -1,0 +1,277 @@
+{
+  "slug": "memoria",
+  "num": 5,
+  "menu": "Memoria",
+  "titulo": "La memoria: cómo te recuerda mañana",
+  "titulo_curto": "Memoria",
+  "minutos": 15,
+  "lead": "La memoria es la diferencia entre una IA que lo olvida todo al reiniciarse y otra que te conoce desde hace meses. En INTELECTO es una base de datos en tu computadora, con búsqueda por palabras y sin costo de API. Entender cómo busca cambia la forma en que le cuentas las cosas.",
+  "objetivo": "explicar dónde guarda el asistente lo que le cuentas y cómo lo busca, y demostrar que lo recuerda otro día, en una conversación nueva.",
+  "competencias": [
+    "probar-memoria",
+    "entender-busqueda-por-palabras",
+    "organizar-datos"
+  ],
+  "aprende": [
+    {
+      "t": "Dos capas: MEMORY.md y la base de datos memory.db"
+    },
+    {
+      "t": "Cómo la búsqueda por palabras elige los recuerdos"
+    },
+    {
+      "t": "Categorías y deduplicación"
+    },
+    {
+      "t": "La prueba de dos días"
+    }
+  ],
+  "hero_alt": "Fichero de tarjetas abierto sobre la mesa, junto a un celular con una conversación.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "De lo que cuentas a lo que recuerda",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "chat",
+          "titulo": "Tú cuentas",
+          "sub": "Día 1",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "\"todos los lunes cierro el informe de ventas\""
+            }
+          ],
+          "detalhe": "Hablas con naturalidad. AGENTS.md indica al asistente que guarde lo que aprenda sobre ti."
+        },
+        {
+          "icone": "caneta",
+          "titulo": "save_memory",
+          "sub": "Herramienta",
+          "itens": [
+            {
+              "icone": "lista",
+              "t": "Categoría: dato, preferencia…"
+            }
+          ],
+          "detalhe": "El modelo usa la herramienta para guardar. Cada recuerdo tiene una categoría: dato sobre ti, preferencia, resumen de una conversación o solución que funcionó. Si es más de un 80% igual a uno anterior, lo actualiza en vez de duplicarlo."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "memory.db",
+          "sub": "SQLite en tu computadora",
+          "itens": [
+            {
+              "icone": "lupa",
+              "t": "Búsqueda por palabras (FTS5)"
+            }
+          ],
+          "detalhe": "Un archivo de base de datos en tu máquina, en ~/.intelecto/memory.db en el plan. Sobrevive a los reinicios. La búsqueda es por palabras, ordenadas por relevancia, sin un modelo adicional y sin costo.",
+          "forte": true
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Búsqueda",
+          "sub": "Con cada mensaje",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Se incluyen las 5 más relevantes"
+            }
+          ],
+          "detalhe": "Antes de enviar el mensaje al modelo, el ciclo busca en la base de datos las palabras de tu pregunta y agrega al contexto los recuerdos más relevantes, junto con los datos recientes."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Él responde",
+          "sub": "Día 2, conversación nueva",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "\"Cierras el informe de ventas.\""
+            }
+          ],
+          "detalhe": "El historial de la conversación queda en la memoria del programa y desaparece al reiniciarlo. Lo que vuelve al día siguiente es lo que se guardó en la base de datos. Por eso la prueba se hace en una conversación nueva."
+        }
+      ],
+      "legenda": "Capa 1, MEMORY.md: pocos datos fijos, siempre en el contexto. Capa 2, memory.db: crece sin límite y solo incluye lo relevante para la pregunta."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Qué cambia en tu forma de usarlo",
+      "sub": "Haz clic en cada pestaña.",
+      "passos": [
+        {
+          "titulo": "Búsqueda por palabras",
+          "sub": "No por el significado",
+          "texto": [
+            "La búsqueda busca las palabras de tu pregunta en los recuerdos. No usa «embeddings» (búsqueda por significado), a propósito: es simple, local y sin costo.",
+            "Consecuencia: cuenta los hechos con las palabras que usarías para preguntar después."
+          ],
+          "exemplo": {
+            "rot": "Mejor",
+            "texto": "«Todos los lunes cierro el informe de ventas». Después: «¿Qué hago todos los lunes?»"
+          }
+        },
+        {
+          "titulo": "Pide que lo guarde",
+          "sub": "Sin rodeos",
+          "texto": [
+            "El asistente decide guardar la información cuando AGENTS.md se lo indica. Para no depender de eso, di: «guarda esto: ...».",
+            "Las herramientas save_memory, search_memory y forget_memory están disponibles en la conversación."
+          ],
+          "exemplo": {
+            "rot": "Pedido",
+            "texto": "Guarda esto: mi plazo para el informe es el lunes a las 10 h."
+          }
+        },
+        {
+          "titulo": "Olvidar",
+          "sub": "También es tuyo",
+          "texto": [
+            "¿Cambió un hecho? Di el nuevo; si es casi igual al anterior, lo actualizará. Si un hecho es incorrecto o no quieres que lo guarde, pídele que lo olvide.",
+            "Todo queda en un archivo tuyo, no en un servidor de terceros."
+          ],
+          "exemplo": {
+            "rot": "Pedido",
+            "texto": "Busca lo que sabes sobre el informe de ventas y olvida el horario anterior."
+          }
+        },
+        {
+          "titulo": "¿No lo recordó?",
+          "sub": "Diagnóstico",
+          "texto": [
+            "Primero, pregunta si lo guardó: «¿Qué sabes sobre el lunes?». Si no lo guardó, refuerza la instrucción en AGENTS.md: guardar lo que aprenda sobre mí.",
+            "Si lo guardó, pero no lo encontró, la pregunta usó palabras diferentes. Repítela con las mismas palabras."
+          ],
+          "exemplo": {
+            "rot": "Regla del E4",
+            "texto": "Si no lo recuerda, revisa cómo se guarda la memoria y ajústalo."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "La prueba de dos días",
+      "sub": "Envíalo por Telegram o en la terminal. Mira al lado cómo queda con memoria y sin memoria.",
+      "blocos": [
+        {
+          "rot": "Día 1 · cuenta tres hechos",
+          "icone": "chat",
+          "conteudo": "Guarda esto: todos los lunes cierro el informe de ventas.\nGuarda esto: prefiero respuestas en viñetas cortas.\nGuarda esto: mi cliente principal se llama <NOME DO CLIENTE>."
+        },
+        {
+          "rot": "Día 2 · conversación nueva, sin repetir",
+          "icone": "chat",
+          "conteudo": "¿Qué hago todos los lunes?\n¿Cómo prefiero las respuestas?\n¿Quién es mi cliente principal?"
+        },
+        {
+          "rot": "Búsqueda en la base de datos, como hace el bucle",
+          "icone": "memoria",
+          "conteudo": "SELECT content, category FROM memories_fts\nWHERE memories_fts MATCH 'segunda OR relatório OR vendas'\nORDER BY bm25(memories_fts)\nLIMIT 5;"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Con memoria",
+            "html": "<p><b>Tú (día 2):</b> ¿Qué hago todos los lunes?</p><p><b>Jarvis:</b> Cierras el informe de ventas. ¿Quieres que prepare la lista de lo que falta?</p><p>La palabra <b>lunes</b> encontró el recuerdo guardado el día 1.</p>"
+          },
+          {
+            "rot": "Sin memoria",
+            "html": "<p><b>Tú (día 2):</b> ¿Qué hago todos los lunes?</p><p><b>Jarvis:</b> No tengo esa información. ¿Me la puedes contar?</p><p>El hecho quedó solo en el historial de la conversación del día 1, que desaparece al reiniciar. No llegó a la base de datos: falta la regla para guardar en AGENTS.md o el pedido «guarda esto».</p>"
+          },
+          {
+            "rot": "Palabra diferente",
+            "html": "<p><b>Tú (día 2):</b> ¿Cuál es mi tarea semanal?</p><p><b>Jarvis:</b> No encontré nada sobre eso. ¿Me lo puedes contar?</p><p>El hecho está en la base de datos, pero ninguna palabra de la pregunta aparece ahí (<b>semanal</b> no es <b>lunes</b>). Vuelve a preguntar con las palabras que usaste: «¿Qué hago todos los lunes?».</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: la prueba de memoria",
+      "sub": "Ejercicio E4 de la secuencia 2.",
+      "exercicios": [
+        {
+          "id": "e4",
+          "titulo": "E4 · Prueba de memoria",
+          "min": "2 días",
+          "dias": 2,
+          "texto": "Día 1: cuenta tres hechos sobre ti con «guarda esto». El día 2, en una conversación nueva (después de reiniciar el asistente), pregúntale sobre ellos.",
+          "pronto": "recuerda los tres sin que tengas que repetirlos."
+        },
+        {
+          "id": "e4b",
+          "titulo": "E4b · Lo que sabe de ti",
+          "min": "10 min",
+          "texto": "Pregúntale qué sabe sobre ti. Corrige un hecho y pídele que olvide otro.",
+          "pronto": "la respuesta siguiente muestra el hecho corregido y no muestra el que olvidó."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Por qué la prueba de memoria se hace en una conversación nueva, al día siguiente?",
+          "opcoes": [
+            "Porque Telegram borra los mensajes.",
+            "Porque el historial de la conversación desaparece al reiniciar; solo vuelve lo que se guardó en la base de datos.",
+            "Para que el modelo descanse.",
+            "Porque la búsqueda solo funciona por la mañana."
+          ],
+          "certa": 1,
+          "explica": "En la misma conversación, puede responder usando el historial. En una conversación nueva, solo la base de datos memory.db demuestra que hubo memoria de verdad.",
+          "cert": true,
+          "ref": "diagrama"
+        },
+        {
+          "p": "Contaste \"cierro el informe todos los lunes\" y preguntaste \"¿cuál es mi tarea semanal?\". No la encontró. ¿Por qué?",
+          "opcoes": [
+            "La base de datos borró el dato.",
+            "La búsqueda se basa en palabras: la pregunta no usó ninguna palabra del dato.",
+            "Necesita un modelo más caro.",
+            "La memoria solo guarda una cosa por día."
+          ],
+          "certa": 1,
+          "explica": "La búsqueda busca las palabras de la pregunta. \"Lunes\" o \"informe\" darían resultados; \"tarea semanal\" no aparece en el dato.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Cuál es la diferencia entre MEMORY.md y memory.db?",
+          "opcoes": [
+            "Ninguna: son el mismo archivo.",
+            "MEMORY.md contiene algunos datos fijos que siempre están en el contexto; memory.db crece y solo incluye lo que sea relevante.",
+            "MEMORY.md está en la nube y memory.db en el celular.",
+            "memory.db solo guarda contraseñas."
+          ],
+          "certa": 1,
+          "explica": "Son dos capas: la fija y breve, que tú escribes, y la que crece al conversar y se busca por relevancia.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Curso INTELECTO: memoria y conocimiento",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-3.html",
+          "icone": "memoria"
+        },
+        {
+          "t": "SQLite FTS5 (documentación)",
+          "href": "https://www.sqlite.org/fts5.html",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

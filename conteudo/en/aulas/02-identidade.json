@@ -1,0 +1,282 @@
+{
+  "slug": "identidade",
+  "num": 2,
+  "menu": "Identity",
+  "titulo": "Design your Jarvis before you install it",
+  "titulo_curto": "Design and identity",
+  "minutos": 20,
+  "lead": "The assistant becomes yours through text files, not code. Before installing anything, you write who it is, what it should and should never do, and what it needs to remember about you. This design answers the installation questions and becomes the four identity files.",
+  "objetivo": "write meu-jarvis.md and turn it into the four identity files: SOUL, AGENTS, USER, and MEMORY.",
+  "competencias": [
+    "design-assistant",
+    "write-soul",
+    "set-boundaries"
+  ],
+  "aprende": [
+    {
+      "t": "Write the assistant’s design on one screen"
+    },
+    {
+      "t": "What goes in SOUL, AGENTS, USER, and MEMORY"
+    },
+    {
+      "t": "The difference between an effective SOUL and a weak one"
+    },
+    {
+      "t": "Turn a vague idea into a concrete request"
+    }
+  ],
+  "hero_alt": "Four sheets of paper side by side on a table, and a hand writing on one of them.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From the design to the four files",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "caneta",
+          "titulo": "meu-jarvis.md",
+          "sub": "Your design",
+          "itens": [
+            {
+              "icone": "lista",
+              "t": "Name, style, must-do, never-do, remember"
+            }
+          ],
+          "detalhe": "A text screen: a name and speaking style, three things it should do every week, three it should never do, and what it needs to remember about you. This is the source for the four files.",
+          "forte": true
+        },
+        {
+          "icone": "cerebro",
+          "titulo": "SOUL.md",
+          "sub": "The soul",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "Personality, tone, values"
+            }
+          ],
+          "detalhe": "Who it is: name, personality, tone of voice, and values. Write as if you were hiring a human assistant: what would you say in the interview?"
+        },
+        {
+          "icone": "lista",
+          "titulo": "AGENTS.md",
+          "sub": "The rules",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Always"
+            },
+            {
+              "icone": "x",
+              "t": "Never"
+            }
+          ],
+          "detalhe": "The work agreement: check memory before answering, ask when unsure, refuse dangerous commands. A written rule is more reliable than expecting the model to guess."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "USER.md",
+          "sub": "You",
+          "itens": [
+            {
+              "icone": "usuario",
+              "t": "Routine, preferences, language"
+            }
+          ],
+          "detalhe": "Your profile: profession, routine, how you like answers, and what language you use. It’s a living file: if your project changes, update it."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "MEMORY.md",
+          "sub": "Initial facts",
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "What it knows on day 1"
+            }
+          ],
+          "detalhe": "The facts it should know from the first conversation. What you share later goes into the memory bank (lesson 5)."
+        }
+      ],
+      "legenda": "With each message, the agent adds SOUL, AGENTS, and USER to the start of the conversation. Editing a text file changes the assistant without touching code."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "How to write each part",
+      "sub": "Click each tab.",
+      "passos": [
+        {
+          "titulo": "The design",
+          "sub": "meu-jarvis.md",
+          "texto": [
+            "Answer five questions: name, speaking style, three things it should do every week, three it should never do, and what it needs to remember about you.",
+            "Be specific. “Take care of my email” is vague; “every Monday, list the week’s three priorities based on what I’ve told you” is a request."
+          ],
+          "exemplo": {
+            "rot": "Done when",
+            "texto": "The file fits on one screen, and someone else could understand who your assistant is."
+          }
+        },
+        {
+          "titulo": "The soul",
+          "sub": "SOUL.md",
+          "texto": [
+            "An effective SOUL has clear values, a specific tone with an example, explicit limits, and a defined response style.",
+            "A weak SOUL says “be helpful and friendly,” contradicts itself (formal and casual at the same time), or is too long and loses focus."
+          ],
+          "exemplo": {
+            "rot": "From the repository example",
+            "texto": "Direct and concise. Honest: if you don’t know, say so. I want a partner who disagrees, not someone who just agrees."
+          }
+        },
+        {
+          "titulo": "The rules",
+          "sub": "AGENTS.md",
+          "texto": [
+            "Separate into ALWAYS and NEVER. The example’s rules: check memory before answering, save what you learn about me, ask when unsure.",
+            "For tools: prefer safe, read-only commands, and refuse destructive ones."
+          ],
+          "exemplo": {
+            "rot": "The NEVER rule",
+            "texto": "Never delete a file without my confirmation. Never put a password or key in a response."
+          }
+        },
+        {
+          "titulo": "You and the facts",
+          "sub": "USER.md and MEMORY.md",
+          "texto": [
+            "USER contains what it needs to know about you without asking every time: what you do, how you like answers, and what language you use.",
+            "MEMORY contains a few facts that matter from day one. Keep it short: it learns what comes later by talking with you."
+          ],
+          "exemplo": {
+            "rot": "Example USER",
+            "texto": "Prefers practical advice to theory. Values time: be concise. Speaks Portuguese (pt-BR)."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Templates to copy",
+      "sub": "Fill in meu-jarvis.md first; the others come from it.",
+      "blocos": [
+        {
+          "rot": "meu-jarvis.md",
+          "icone": "arquivo",
+          "conteudo": "# My Jarvis\n\n## Name and speaking style\nName:\nHow it speaks (formal, direct, humorous):\n\n## Must do every week\n1.\n2.\n3.\n\n## Must never do\n1.\n2.\n3.\n\n## What it needs to remember about me\n- Profession:\n- Routine:\n- Preferences:"
+        },
+        {
+          "rot": "workspace/SOUL.md",
+          "icone": "usuario",
+          "conteudo": "# Soul\n\nYou are <NAME>, the personal assistant to <YOUR NAME>.\n\n## Personality\n- <tone, with an example of how you speak>\n- Honest: if you don’t know, say so.\n\n## Values\n- Privacy first: never share my data.\n- <one of your non-negotiable values>"
+        },
+        {
+          "rot": "workspace/AGENTS.md",
+          "icone": "lista",
+          "conteudo": "# Rules\n\n## ALWAYS\n- Check memory before responding.\n- Save what you learn about me to memory.\n- Ask when you're unsure instead of guessing.\n\n## NEVER\n- <the three from your meu-jarvis.md>\n- Run destructive commands; prefer read-only commands."
+        },
+        {
+          "rot": "workspace/USER.md and MEMORY.md",
+          "icone": "memoria",
+          "conteudo": "# USER.md\n## About <YOUR NAME>\n- Profession:\n- Routine:\n- How I like responses:\n- Language: Portuguese (pt-BR)\n\n# MEMORY.md\n## Facts\n- <fact they should know from day 1>\n- <another fact>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "SOUL from example-jarvis",
+            "html": "<p><b>Personality:</b> direct and concise, no rambling; proactive, makes suggestions when relevant; honest, says when it doesn't know; remembers the context of previous conversations.</p><p><b>Values:</b> privacy first, never share the owner's data; has opinions, because the owner wants a discussion partner, not someone who just agrees.</p>"
+          },
+          {
+            "rot": "Effective × weak",
+            "html": "<ul><li><b>Effective:</b> clear, testable values, tone with an example, explicit limits, defined response style.</li><li><b>Weak:</b> \"be helpful and friendly,\" behaviors only and no values, contradictions, too long.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: designing your Jarvis",
+      "sub": "Exercise E1 from sequence 2, expanded.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Design your Jarvis",
+          "min": "15 min",
+          "texto": "Write meu-jarvis.md using the template: name, personality, three musts, three must-nots, and what to remember about you.",
+          "pronto": "the file fits on one screen and someone else would understand who your assistant is."
+        },
+        {
+          "id": "e1b",
+          "titulo": "E1b · The four files",
+          "min": "25 min",
+          "texto": "Based on your design, write SOUL.md, AGENTS.md, USER.md, and MEMORY.md in a workspace/ folder.",
+          "pronto": "each \"must not\" from the design became a line under NEVER in AGENTS.md, and SOUL doesn't include the phrase \"be helpful and friendly\"."
+        }
+      ],
+      "fonte": "Original exercise: <a href=\"https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md\" target=\"_blank\" rel=\"noopener\">jornada-agentes/exercicios/02-jarvis.md</a>."
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "Which of these SOUL.md excerpts is the weakest?",
+          "opcoes": [
+            "Direct and concise; says when it doesn't know.",
+            "Be helpful and friendly.",
+            "Privacy first: never share my data.",
+            "I want a partner who disagrees when I'm wrong."
+          ],
+          "certa": 1,
+          "explica": "\"Be helpful and friendly\" is too vague: you can't test it, and every model already tries to do that. The others give a concrete tone, value, or limit.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "\"Never delete a file without confirmation\" belongs in which file?",
+          "opcoes": [
+            "SOUL.md",
+            "AGENTS.md",
+            "USER.md",
+            "MEMORY.md"
+          ],
+          "certa": 1,
+          "explica": "AGENTS.md is the work contract: what to always do and what never to do. SOUL says who it is; USER says who you are.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "You want a more formal assistant. What should you do?",
+          "opcoes": [
+            "Ask a programmer to change the loop.",
+            "Switch models.",
+            "Edit the tone in SOUL.md.",
+            "Reinstall everything."
+          ],
+          "certa": 2,
+          "explica": "Personality is text. The agent rereads the files with each message: edit SOUL, and its way of speaking changes.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Go further",
+      "links": [
+        {
+          "t": "INTELECTO course: identity and personality",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-1.html",
+          "icone": "lista"
+        },
+        {
+          "t": "The four files from example-jarvis",
+          "href": "https://github.com/inematds/intelecto/tree/main/exemplo-jarvis/workspace",
+          "icone": "pasta"
+        }
+      ]
+    }
+  ]
+}

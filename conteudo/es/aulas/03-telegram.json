@@ -1,0 +1,261 @@
+{
+  "slug": "telegram",
+  "num": 3,
+  "menu": "Telegram",
+  "titulo": "La puerta: el bot de Telegram, con un solo dueño",
+  "titulo_curto": "El bot de Telegram",
+  "minutos": 15,
+  "lead": "Telegram es la puerta más sencilla: creas el bot en dos minutos y recibes un token. Ese token es la llave de la puerta. Quien tiene el token controla el bot, y cualquiera puede enviarle mensajes. Por eso la clase consiste mitad en crearlo y mitad en protegerlo.",
+  "objetivo": "crear el bot en @BotFather, guardar el token solo en .env y definir que el asistente te responda únicamente a ti.",
+  "competencias": [
+    "configurar-bot-telegram",
+    "guardar-secreto",
+    "restringir-dueño"
+  ],
+  "aprende": [
+    {
+      "t": "Crear el bot con /newbot en @BotFather"
+    },
+    {
+      "t": "Por qué el token se guarda solo en .env y fuera de Git"
+    },
+    {
+      "t": "Cómo se comunica el canal con Telegram (long-polling)"
+    },
+    {
+      "t": "Por qué el bot debe aceptar solo a su dueño"
+    }
+  ],
+  "hero_alt": "Manos sosteniendo un celular con una aplicación de mensajería abierta en una conversación.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Del @BotFather a tu bot",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "robo",
+          "titulo": "@BotFather",
+          "sub": "En Telegram",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "/newbot"
+            }
+          ],
+          "detalhe": "El bot oficial de Telegram que crea bots. Envías /newbot, eliges el nombre y el @usuario (que termina en bot) y recibes el token."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Token",
+          "sub": "La llave de la puerta",
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "Solo en .env"
+            }
+          ],
+          "detalhe": "Una secuencia de números y letras. Quien tiene el token controla el bot. Solo va en .env (o en la bóveda cifrada que prevé el plan), nunca en el código, una captura de pantalla o un commit.",
+          "forte": true
+        },
+        {
+          "icone": "enviar",
+          "titulo": "Canal",
+          "sub": "channels/telegram.py",
+          "itens": [
+            {
+              "icone": "relogio",
+              "t": "Long-polling"
+            }
+          ],
+          "detalhe": "El canal consulta a Telegram para saber si llegó un mensaje nuevo. No necesita una dirección pública. Divide las respuestas de más de 4096 caracteres y, a propósito, se niega a activarse sin token."
+        },
+        {
+          "icone": "usuario",
+          "titulo": "Tú",
+          "sub": "El único dueño",
+          "itens": [
+            {
+              "icone": "escudo",
+              "t": "Lista de quién puede hablar"
+            }
+          ],
+          "detalhe": "Cualquiera que encuentre el @ de tu bot puede enviarle un mensaje. Sin una lista de quién puede hablar, cualquiera conversa con tu Jarvis y usa sus herramientas."
+        }
+      ],
+      "volta": "Las respuestas vuelven al mismo chat",
+      "legenda": "INTELECTO fue diseñado para un usuario. Un Jarvis con acceso a tu máquina es poderoso y, precisamente por eso, merece cuidado."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Crear y proteger, paso a paso",
+      "sub": "Haz clic en cada etapa.",
+      "passos": [
+        {
+          "titulo": "Crear el bot",
+          "sub": "2 minutos",
+          "texto": [
+            "En Telegram, busca <b>@BotFather</b> (el oficial, con el sello de verificación) y envía <code>/newbot</code>.",
+            "Elige el nombre que aparece en la conversación y el @usuario, que debe terminar en <code>bot</code>. Te responde con el token."
+          ],
+          "exemplo": {
+            "rot": "Nombre",
+            "texto": "Usa el nombre de tu meu-jarvis.md. El @usuario puede ser el nombre + _bot."
+          }
+        },
+        {
+          "titulo": "Guardar el token",
+          "sub": ".env",
+          "texto": [
+            "Pega el token en una línea de <code>.env</code> en la carpeta del proyecto, como aprendiste en el nivel 1.",
+            "Comprueba que <code>.env</code> esté en <code>.gitignore</code>. Los robots encuentran en poco tiempo las claves expuestas en GitHub."
+          ],
+          "exemplo": {
+            "rot": "Regla del nivel 1",
+            "texto": "El token no aparece en ningún archivo aparte de .env."
+          }
+        },
+        {
+          "titulo": "Un solo responsable",
+          "sub": "Lista de quién puede hablar",
+          "texto": [
+            "Cuando construyas el bot (clase 4), pídele al agente que responda solo a tu usuario de Telegram e ignore a los demás.",
+            "En la bóveda (clase 7) verás por qué esto importa aún más cuando el asistente ejecuta comandos."
+          ],
+          "exemplo": {
+            "rot": "Pedido al agente",
+            "texto": "El bot responde solo a mi usuario de Telegram; ignora y registra los mensajes de otras personas."
+          }
+        },
+        {
+          "titulo": "Si se filtra el token",
+          "sub": "Cambiar la llave",
+          "texto": [
+            "Un token en una captura de pantalla, en un grupo o en un commit es un token filtrado. No lo borres esperando que todo salga bien: genera uno nuevo en @BotFather y cámbialo en .env.",
+            "El token anterior deja de funcionar y quien lo obtuvo pierde el acceso."
+          ],
+          "exemplo": {
+            "rot": "En @BotFather",
+            "texto": "/mybots → elige el bot → API Token → generar uno nuevo."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El .env y la verificación",
+      "sub": "Reemplaza el texto entre < > por tu token. Nunca pegues el token aquí en el curso ni en un chat.",
+      "blocos": [
+        {
+          "rot": ".env (en la carpeta del proyecto)",
+          "icone": "cadeado",
+          "conteudo": "TELEGRAM_BOT_TOKEN=<pega aquí el token de @BotFather>"
+        },
+        {
+          "rot": "Terminal · comprobar que .env no se suba",
+          "icone": "terminal",
+          "conteudo": "grep -n \".env\" .gitignore\ngit status --short"
+        },
+        {
+          "rot": "Terminal · buscar el token fuera de .env",
+          "icone": "lupa",
+          "conteudo": "grep -rn \"<los 6 primeros caracteres del token>\" . --exclude=.env"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Todo bien",
+            "html": "<p><code>grep</code> muestra la línea <code>.env</code> en .gitignore.</p><p><code>git status</code> no muestra .env.</p><p>La búsqueda del inicio del token no encuentra nada fuera de .env.</p>"
+          },
+          {
+            "rot": "Algo está mal",
+            "html": "<p>Si <code>git status</code> muestra <code>?? .env</code>, falta la línea en .gitignore: agrégala antes de cualquier commit.</p><p>Si la búsqueda encuentra el token en otro archivo, bórralo de ahí y genera un token nuevo en @BotFather.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: el bot en Telegram",
+      "sub": "Ejercicio E2 de la secuencia 2.",
+      "exercicios": [
+        {
+          "id": "e2",
+          "titulo": "E2 · El bot en Telegram",
+          "min": "10 min",
+          "texto": "Crea el bot en @BotFather con /newbot y guarda el token en el .env de la carpeta del proyecto.",
+          "pronto": "tienes el token y no aparece en ningún archivo aparte de .env (la búsqueda del tercer bloque no encuentra nada)."
+        },
+        {
+          "id": "e2b",
+          "titulo": "E2b · Anota el pedido del único propietario",
+          "min": "5 min",
+          "texto": "En tu meu-jarvis.md, agrega la regla: solo me responde a mí en Telegram.",
+          "pronto": "la regla está escrita y se incluirá en el pedido de construcción de la clase 4."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Dónde puede aparecer el token del bot?",
+          "opcoes": [
+            "En el código, para tenerlo a mano.",
+            "Solo en .env (o en la bóveda cifrada), fuera de Git.",
+            "En el README, para recordarlo.",
+            "En el grupo del equipo, para que todos hagan pruebas."
+          ],
+          "certa": 1,
+          "explica": "Quien tiene el token controla el bot. Solo debe estar en .env, que está en .gitignore; si aparece en cualquier otro lugar, considéralo filtrado y cámbialo.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "¿Por qué el bot necesita una lista de quién puede hablarle?",
+          "opcoes": [
+            "Porque Telegram cobra por usuario.",
+            "Porque cualquiera puede enviarle un mensaje a un bot y usaría tu asistente.",
+            "Para que el bot responda más rápido.",
+            "No hace falta: los bots son privados."
+          ],
+          "certa": 1,
+          "explica": "El bot de Telegram es público para quien encuentre el @. Sin la lista, una persona desconocida conversa con tu Jarvis y sus herramientas.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Tu token apareció en una captura de pantalla que publicaste. ¿Qué debes hacer?",
+          "opcoes": [
+            "Borrar la publicación y seguir adelante.",
+            "Generar un token nuevo en @BotFather y cambiarlo en .env.",
+            "Cambiar el nombre del bot.",
+            "Crear otro .env."
+          ],
+          "certa": 1,
+          "explica": "Borrar la publicación no deshace la filtración. Generar un token nuevo invalida el anterior; quien lo copió pierde el acceso.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Curso INTELECTO: canales de comunicación",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-2.html",
+          "icone": "enviar"
+        },
+        {
+          "t": "Bots de Telegram (documentación oficial)",
+          "href": "https://core.telegram.org/bots",
+          "icone": "chat"
+        }
+      ]
+    }
+  ]
+}

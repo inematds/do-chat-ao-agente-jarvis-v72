@@ -1,0 +1,278 @@
+{
+  "slug": "cerebro",
+  "num": 6,
+  "menu": "Brain",
+  "titulo": "The brain: cloud or local, decided with your numbers",
+  "titulo_curto": "Cloud or local",
+  "minutos": 15,
+  "lead": "The AI model is the easiest part to swap. In the cloud, OpenRouter gives you access to more than a hundred models with one key. On your computer, Ollama runs at no cost per message and sends nothing outside your machine. The choice isn't a matter of taste: it's a table with speed, quality, and cost.",
+  "objetivo": "compare one cloud model and one local model using the same question, then decide what to use each for based on your numbers.",
+  "competencias": [
+    "choose-cloud-local-model",
+    "measure-speed-quality-cost",
+    "protect-api-key"
+  ],
+  "aprende": [
+    {
+      "t": "What OpenRouter and Ollama do"
+    },
+    {
+      "t": "Why changing the brain doesn't change the rest"
+    },
+    {
+      "t": "Build the speed × quality × cost table"
+    },
+    {
+      "t": "Where the cloud key is stored"
+    }
+  ],
+  "hero_alt": "A small desktop computer beside a laptop, with cables neatly arranged on a dark desk.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "One contract, two brains",
+      "sub": "Click each block.",
+      "nos": [
+        {
+          "icone": "relogio",
+          "titulo": "Loop",
+          "sub": "Ask for an answer",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "Conversation + tools"
+            }
+          ],
+          "detalhe": "The loop doesn't know which model is on the other end. It sends the conversation and the list of tools, then waits for a reply."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Provider",
+          "sub": "The contract",
+          "itens": [
+            {
+              "icone": "seta",
+              "t": "chat(messages, tools)"
+            }
+          ],
+          "detalhe": "A provider is a contract: it receives the conversation and the tools, then returns a reply. In tests, a mock provider responds without internet or cost. To change brains, switch providers in the configuration.",
+          "forte": true
+        },
+        {
+          "icone": "nuvem",
+          "titulo": "OpenRouter",
+          "sub": "Cloud",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "More than 100 models, one key"
+            },
+            {
+              "icone": "grafico",
+              "t": "Pay per use"
+            }
+          ],
+          "detalhe": "One key gives you access to Claude, GPT, Gemini, DeepSeek, Llama, and others. It automatically retries when the service fails and tracks the tokens used, so you can control the cost."
+        },
+        {
+          "icone": "chip",
+          "titulo": "Ollama",
+          "sub": "On your computer",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "No cost per message"
+            },
+            {
+              "icone": "cadeado",
+              "t": "Nothing leaves the machine"
+            }
+          ],
+          "detalhe": "The model runs locally. You need a computer that can handle it (memory and, preferably, a graphics card). In the INTELECTO plan, it’s also the automatic backup if OpenRouter fails."
+        }
+      ],
+      "legenda": "Cloud for power, local for privacy. You can use both."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "How to compare fairly",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "A real question",
+          "sub": "From your work",
+          "texto": [
+            "Choose a question you would actually ask the assistant, preferably one related to a task in your meu-jarvis.md.",
+            "Use exactly the same text with both models."
+          ],
+          "exemplo": {
+            "rot": "Example",
+            "texto": "Organize these into three priorities: finish the sales report, reply to two clients, and prepare for Thursday’s meeting."
+          }
+        },
+        {
+          "titulo": "Measure the time",
+          "sub": "From sending to reply",
+          "texto": [
+            "Time it from sending until the full response arrives. Run it twice: the first call to the local model is usually slower because it needs to load.",
+            "Write down the second time."
+          ],
+          "exemplo": {
+            "rot": "Write down",
+            "texto": "Time in seconds, cloud and local."
+          }
+        },
+        {
+          "titulo": "Give it a rating",
+          "sub": "Quality from 1 to 5",
+          "texto": [
+            "Read both responses without knowing which is which, if you can ask someone to switch their order. Rate each from 1 to 5: Was it accurate? Did it follow your style? Was it useful?",
+            "A short note for each response is enough."
+          ],
+          "exemplo": {
+            "rot": "Criterion",
+            "texto": "Would I use this response without rewriting it? Yes = 4 or 5."
+          }
+        },
+        {
+          "titulo": "Check the cost",
+          "sub": "And decide",
+          "texto": [
+            "For the cloud model, check the OpenRouter dashboard to see how much the question cost. Locally, each message costs nothing; the cost is keeping the computer on.",
+            "Write your decision in one line: which model for what."
+          ],
+          "exemplo": {
+            "rot": "Decision",
+            "texto": "Daily routine locally; client messages in the cloud."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Configuration and table",
+      "sub": "The cloud key follows the same rule as the token: only in .env or the vault.",
+      "blocos": [
+        {
+          "rot": ".env · cloud key",
+          "icone": "cadeado",
+          "conteudo": "OPENROUTER_API_KEY=<paste the key you created at openrouter.ai/keys>"
+        },
+        {
+          "rot": "config.json · both providers (from the README)",
+          "icone": "arquivo",
+          "conteudo": "\"providers\": {\n  \"default\": \"openrouter\",\n  \"openrouter\": { \"model\": \"anthropic/claude-sonnet-4-20250514\" },\n  \"ollama\": { \"model\": \"llama3.2\", \"base_url\": \"http://localhost:11434\" }\n}"
+        },
+        {
+          "rot": "Request to the agent · switch the brain",
+          "icone": "chat",
+          "conteudo": "Switch the default provider to ollama (model llama3.2), keep openrouter as an alternative, and run the tests again. Don’t change anything outside the configuration."
+        },
+        {
+          "rot": "minha-comparacao.md",
+          "icone": "lista",
+          "conteudo": "Question: \n\n| Model | Time (s) | Rating 1-5 | Cost |\n|--------|----------|------------|------|\n| Cloud: |          |            |      |\n| Local: |          |            | 0    |\n\nDecision: I’ll use ____ for ____ and ____ for ____."
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "When cloud wins",
+            "html": "<ul><li>Difficult questions, long text, and multi-step reasoning.</li><li>A computer without enough memory or a graphics card for a good local model.</li><li>You’re willing to pay for usage and send the text outside your machine.</li></ul>"
+          },
+          {
+            "rot": "When local wins",
+            "html": "<ul><li>Sensitive data that can’t leave the machine.</li><li>Many simple messages per day, where usage costs would add up.</li><li>Working without internet, or as a backup when the cloud goes down.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: cloud or local",
+      "sub": "Exercise E5 in sequence 2.",
+      "exercicios": [
+        {
+          "id": "e5",
+          "titulo": "E5 · Cloud or local",
+          "min": "20 min",
+          "texto": "Run the same question through a cloud model (OpenRouter) and a local one (Ollama), if your computer can handle it. Fill in the minha-comparacao.md table.",
+          "pronto": "you can say which model to use for what, using your own numbers."
+        },
+        {
+          "id": "e5b",
+          "titulo": "E5b · The saved key",
+          "min": "5 min",
+          "texto": "Check that the OpenRouter key is only in .env (or in the vault) and that .env does not appear in git status.",
+          "pronto": "A search for the key outside .env finds nothing."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "When does a local model (Ollama) make sense?",
+          "opcoes": [
+            "Always, because it is smarter.",
+            "When your computer can handle it and your numbers for speed, quality, and cost show it is worth it, or when the data cannot leave your machine.",
+            "Never, Telegram does not support it.",
+            "Only in the middle of the night."
+          ],
+          "certa": 1,
+          "explica": "The choice is based on measurement: same question in both, table, decision. Privacy is the other strong reason: with a local model, nothing leaves your machine.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "You switched from OpenRouter to Ollama. What needs to change in the channel and memory?",
+          "opcoes": [
+            "Everything: the channel and memory depend on the model.",
+            "Nothing: the provider is a contract, and the rest of the agent does not know which model is responding.",
+            "Only the memory.",
+            "Only the channel."
+          ],
+          "certa": 1,
+          "explica": "The loop calls the provider through the contract. Switching brains is a configuration change; the tests run the same way.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Why run the question twice on the local model before recording the time?",
+          "opcoes": [
+            "Because the first answer is always wrong.",
+            "Because the first call is usually slower while the model loads.",
+            "To spend fewer credits.",
+            "No need."
+          ],
+          "certa": 1,
+          "explica": "A fair comparison measures normal use. The first call includes loading the model into memory.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Go further",
+      "links": [
+        {
+          "t": "INTELECTO Course: AI providers",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha4/modulo-4-1.html",
+          "icone": "chip"
+        },
+        {
+          "t": "OpenRouter",
+          "href": "https://openrouter.ai/",
+          "icone": "nuvem"
+        },
+        {
+          "t": "Ollama",
+          "href": "https://ollama.com/",
+          "icone": "chip"
+        }
+      ]
+    }
+  ]
+}

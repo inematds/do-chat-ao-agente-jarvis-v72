@@ -1,0 +1,307 @@
+{
+  "slug": "rotina",
+  "num": 8,
+  "menu": "Routine",
+  "titulo": "A real routine and Jarvis up and running",
+  "titulo_curto": "Routine and up and running",
+  "minutos": 15,
+  "lead": "An assistant you don’t use is no use. In this lesson, you turn a weekly task into a standing request, use it five days in a row, and note what to improve. Then you see the steps to keep it running: on your computer, with automatic restarts, and on a rented server, up 24/7.",
+  "objetivo": "use a standing request for five days in a row and choose where the assistant will run, from your laptop to a 24/7 server.",
+  "competencias": [
+    "create-routine",
+    "improve-through-use",
+    "choose-where-to-run"
+  ],
+  "aprende": [
+    {
+      "t": "Turn a task into a standing request"
+    },
+    {
+      "t": "The weekly improvement cycle"
+    },
+    {
+      "t": "Laptop, automatic restart, or server"
+    },
+    {
+      "t": "The task list that gets you to step 3"
+    }
+  ],
+  "hero_alt": "Morning in soft light: a mug, an open planner, and a phone with a short list of three items.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Where your Jarvis lives",
+      "sub": "Four steps, from testing to 24/7. Click each one.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "terminal",
+          "titulo": "Terminal",
+          "sub": "To verify",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Tests and conversation"
+            }
+          ],
+          "detalhe": "Where you finish lesson 4: green tests and a conversation in the terminal with the test model. No internet or key needed."
+        },
+        {
+          "icone": "enviar",
+          "titulo": "Telegram on your computer",
+          "sub": "To use",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "Talk from your phone"
+            }
+          ],
+          "detalhe": "With the token and a real model, you can chat from your phone. Limit: when you close your laptop, the assistant goes to sleep too."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Automatic restart",
+          "sub": "launchd on Mac",
+          "itens": [
+            {
+              "icone": "check",
+              "t": "Starts back up on its own"
+            }
+          ],
+          "detalhe": "On Mac, the plan uses launchd: the assistant starts when you turn on your computer and restarts on its own if it stops. The logs stay in a folder for troubleshooting."
+        },
+        {
+          "icone": "nuvem",
+          "titulo": "Server (VPS)",
+          "sub": "Up 24/7",
+          "itens": [
+            {
+              "icone": "camadas",
+              "t": "Docker"
+            }
+          ],
+          "detalhe": "A rented server stays on day and night. The steps are the same: connect through the terminal, clone, and ask the agent to build it. The difference is packaging: for a server, the build page recommends Docker.",
+          "forte": true
+        }
+      ],
+      "legenda": "One at a time: Telegram, then automatic restart, then server. Move to each step only when the previous one is stable."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The routine and improvement",
+      "sub": "Click each step.",
+      "passos": [
+        {
+          "titulo": "Choose the task",
+          "sub": "From meu-jarvis.md",
+          "texto": [
+            "Choose one of the three things it should do every week, from the plan in lesson 2.",
+            "Pick one thing you’d do anyway. That’s how you build a week of use."
+          ],
+          "exemplo": {
+            "rot": "Example",
+            "texto": "Start the day with your top three priorities."
+          }
+        },
+        {
+          "titulo": "Make it a standing request",
+          "sub": "One word triggers it",
+          "texto": [
+            "Write the request in AGENTS.md: when you send a short word, it does the task the same way each time.",
+            "Scheduling it to run on its own (without you asking) is planned for the next phase. For now, you trigger it."
+          ],
+          "exemplo": {
+            "rot": "Standing request",
+            "texto": "Every morning, when I send \"day,\" list my top three priorities based on what I told you yesterday."
+          }
+        },
+        {
+          "titulo": "Use it for 5 days",
+          "sub": "And take notes",
+          "texto": [
+            "Use it for five days in a row. Write one line each day: what worked and what was missing.",
+            "Got the tone wrong? SOUL. Forgot something? Memory. Did something it shouldn’t? AGENTS."
+          ],
+          "exemplo": {
+            "rot": "Note",
+            "texto": "Day 3: listed 5 priorities instead of 3. Update AGENTS."
+          }
+        },
+        {
+          "titulo": "Weekly cycle",
+          "sub": "Improve without breaking things",
+          "texto": [
+            "Once a week, review your notes and the log, then change just one thing. Run the tests again.",
+            "There’s no ready-made assistant. There’s one that gets better with real use."
+          ],
+          "exemplo": {
+            "rot": "Rule",
+            "texto": "One change a week, with tests passing before and after."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Routine templates",
+      "sub": "Copy these into your AGENTS.md and meu-jarvis.md.",
+      "blocos": [
+        {
+          "rot": "workspace/AGENTS.md · standing request",
+          "icone": "lista",
+          "conteudo": "## Standing requests\n- When I send \"day\": list my top three priorities based on what I told you yesterday. No more than three, in short bullet points.\n- When I send \"end\": ask what I finished today and save it to memory."
+        },
+        {
+          "rot": "rotina-5-dias.md",
+          "icone": "calendario",
+          "conteudo": "# Routine: \"day\"\n\n| Day | Worked | Missing / wrong | File to change |\n|-----|--------|-----------------|----------------|\n| 1   |        |                 |                |\n| 2   |        |                 |                |\n| 3   |        |                 |                |\n| 4   |        |                 |                |\n| 5   |        |                 |                |\n\nChange for the week:"
+        },
+        {
+          "rot": "meu-jarvis.md · extra challenge",
+          "icone": "fila",
+          "conteudo": "## Tasks I’d like to send and then go to bed\n1.\n2.\n3.\n4.\n5.\n(This list is the starting point for step 3: queues.)"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "One morning",
+            "html": "<p><b>You:</b> day</p><p><b>Jarvis:</b></p><ol><li>Finish the sales report (it’s Monday).</li><li>Reply to the client about the timeline.</li><li>Prepare the agenda for Thursday’s meeting.</li></ol><p>The three come from what you told it yesterday and from memory.</p>"
+          },
+          {
+            "rot": "First 30 days",
+            "html": "<ul><li><b>Week 1:</b> the core running on your main channel.</li><li><b>Week 2:</b> memory really saving things and one or two tools.</li><li><b>Week 3:</b> always on (automatic restart or a server).</li><li><b>Week 4:</b> your first round of improvements based on the log and notes.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: a week of use",
+      "sub": "Exercise E6 and the extra challenge from sequence 2.",
+      "exercicios": [
+        {
+          "id": "e6",
+          "titulo": "E6 · A real routine",
+          "min": "20 min",
+          "texto": "Turn one of the tasks from E1 into a standing request in AGENTS.md. Use it for a week and take notes in the table.",
+          "pronto": "you used it 5 days in a row and noted what to improve.",
+          "dias": 5
+        },
+        {
+          "id": "e6b",
+          "titulo": "E6b · One change",
+          "min": "15 min",
+          "texto": "Choose one row in the table, change just one file, and run the tests.",
+          "pronto": "the tests pass and, the next day, the noted problem doesn’t happen again."
+        },
+        {
+          "id": "x1",
+          "titulo": "Challenge · The list for bedtime",
+          "min": "10 min",
+          "texto": "In meu-jarvis.md, write down the tasks you’d like to send and then go to bed.",
+          "pronto": "the list has at least five specific tasks. It’s the starting point for step 3."
+        }
+      ]
+    },
+    {
+      "tipo": "video",
+      "titulo": "Step 2 in video",
+      "sub": "A recap of the sequence: INTELECTO on Telegram, with memory and personality.",
+      "chave": "seq2-jarvis"
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation appears after your answer.",
+      "perguntas": [
+        {
+          "p": "What makes a good standing request?",
+          "opcoes": [
+            "\"Help me with everything.\"",
+            "\"When I send 'day,' list my three priorities based on what I told you yesterday.\"",
+            "\"Be proactive.\"",
+            "\"Do what you think is best every morning.\""
+          ],
+          "certa": 1,
+          "explica": "There’s a trigger (the word), a task, a limit (three), and a source (what you told it). You can check whether it did the job right.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "You close your laptop, and the assistant stops responding. What fixes that?",
+          "opcoes": [
+            "Switch models.",
+            "A rented server (VPS) that stays on 24 hours a day, using the same build process.",
+            "Change SOUL.md.",
+            "Delete the memory."
+          ],
+          "certa": 1,
+          "explica": "On your laptop, it sleeps when you do. On a server, it stays on day and night; Docker is the recommended way to package it for a server.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "On day 3, it listed five priorities instead of three. Where should you adjust that?",
+          "opcoes": [
+            "In SOUL.md, by changing the personality.",
+            "In AGENTS.md, in the fixed request rule (no more than three).",
+            "By switching Telegram.",
+            "By reinstalling everything."
+          ],
+          "certa": 1,
+          "explica": "It’s a work rule, so it belongs in AGENTS.md. Make one change, test again, and check the next day.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Step 2 in four sentences",
+      "itens": [
+        {
+          "t": "Seven pieces",
+          "texto": "Channel, loop with a brake, identity, brain, memory, tools, and vault. Once you understand the pieces, you can choose better and make changes without fear."
+        },
+        {
+          "t": "It’s yours in the files",
+          "texto": "SOUL, AGENTS, USER, and MEMORY are text. Change the text, and you change the assistant."
+        },
+        {
+          "t": "You decide, the agent builds",
+          "texto": "Brief + plan + request with tests. The test confirms it works; the promise doesn’t."
+        },
+        {
+          "t": "Real use",
+          "texto": "One owner, limits in the vault, one fixed request for a week, and one improvement at a time."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Next steps",
+      "links": [
+        {
+          "t": "Return to the From chat to agent training overview",
+          "href": "https://inematds.github.io/do-chat-ao-agente-v72/",
+          "icone": "camadas"
+        },
+        {
+          "t": "Step 3: ten tasks and go to sleep (queues)",
+          "href": "https://inematds.github.io/do-chat-ao-agente-v72/aulas/filas/index.html",
+          "icone": "fila"
+        },
+        {
+          "t": "INTELECTO course: deployment, monitoring, and evolution",
+          "href": "https://inematds.github.io/intelecto-curso/curso/trilha6/modulo-6-2.html",
+          "icone": "nuvem"
+        },
+        {
+          "t": "JARVIS area in Eventos",
+          "href": "https://eventos.inema.pro/jarvis/",
+          "icone": "cerebro"
+        }
+      ]
+    }
+  ]
+}

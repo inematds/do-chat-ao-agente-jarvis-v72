@@ -4,6 +4,8 @@ Curso completo do degrau 2 da formação [Do chat ao agente](https://inematds.gi
 
 **Abrir o curso:** https://inematds.github.io/do-chat-ao-agente-jarvis-v72/
 
+**Other languages / Otros idiomas:** [English](https://inematds.github.io/do-chat-ao-agente-jarvis-v72/en/) · [Español](https://inematds.github.io/do-chat-ao-agente-jarvis-v72/es/)
+
 ## Como funciona
 
 | Arquivo | O que é |
@@ -13,6 +15,7 @@ Curso completo do degrau 2 da formação [Do chat ao agente](https://inematds.gi
 | `gerar.py` | monta `index.html` e `aulas/<slug>/index.html` |
 | `validar.py` | portão de qualidade (`--links` confere os links externos) |
 | `assets/` | CSS, JS, imagens e legendas |
+| `conteudo/en/`, `conteudo/es/` · `en/`, `es/` | versões em inglês e espanhol (geradas por `traduzir.py` da skill, cache em `i18n/`) |
 
 ```bash
 python3 gerar.py && python3 validar.py --links

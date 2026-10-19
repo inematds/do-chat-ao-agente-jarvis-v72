@@ -1,0 +1,199 @@
+{
+  "id": "do-chat-ao-agente-jarvis-v72",
+  "lang": "en",
+  "url": "https://inematds.github.io/do-chat-ao-agente-jarvis-v72/en/",
+  "nome": "Your Jarvis",
+  "sub": "Step 2 · From chat to agent",
+  "volta": {
+    "t": "Course overview",
+    "href": "https://inematds.github.io/do-chat-ao-agente-v72/"
+  },
+  "lado_card": {
+    "rot": "Practice for this step",
+    "t": "18 exercises with \"done when\"",
+    "texto": "The 6 in sequence 2, plus deeper dives in each lesson, from the design to a week-long routine. Move on only when it’s true.",
+    "link": "Open the sequence 2 list",
+    "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md"
+  },
+  "rodape": "INEMA.CLUB · open and free content · INEMA Learning v7.2 format · <a href=\"https://inematds.github.io/do-chat-ao-agente-v72/\">From chat to agent: overview</a> · <a href=\"https://eventos.inema.pro/jarvis/\">eventos.inema.pro/jarvis</a> · <a href=\"https://inematds.github.io/intelecto/\">INTELECTO</a> · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://www.inema.club/cursos/325-do-chat-ao-agente-degrau-2-o-seu-jarvis-com-memoria-no-telegram-intelecto/\">Full course details on INEMA.CLUB</a> · <a href=\"https://www.inema.club/aprender-inteligencia-artificial/\">Guide: how to learn artificial intelligence</a>",
+  "videos": {
+    "intelecto-estrutura": {
+      "titulo": "INTELECTO: the 7 parts of an AI agent",
+      "duracao": "7 min 46 sec",
+      "mp4": "https://github.com/inematds/intelecto-estrutura/releases/download/video-v2.0.0/intelecto-estrutura-completo-16x9.mp4",
+      "vtt": "assets/vtt/intelecto-estrutura.vtt",
+      "poster": "assets/img/intelecto-estrutura.jpg",
+      "pagina": "https://inematds.github.io/intelecto-estrutura/videos/"
+    },
+    "intelecto-instalacao": {
+      "titulo": "INTELECTO: install your Jarvis",
+      "duracao": "5 min 55 sec",
+      "mp4": "https://github.com/inematds/intelecto-instalacao/releases/download/video-v2.0.0/intelecto-instalacao-completo-16x9.mp4",
+      "vtt": "assets/vtt/intelecto-instalacao.vtt",
+      "poster": "assets/img/intelecto-instalacao.jpg",
+      "pagina": "https://inematds.github.io/intelecto-instalacao/videos/"
+    },
+    "seq2-jarvis": {
+      "titulo": "Create your Jarvis",
+      "duracao": "1 min 33 sec",
+      "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-seq2-jarvis-16x9.mp4",
+      "vtt": "assets/vtt/seq2-jarvis.vtt",
+      "poster": "assets/img/seq2-jarvis.jpg",
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/"
+    },
+    "jornada-ia": {
+      "titulo": "From chat to agent: the overview",
+      "duracao": "2 min 27 sec",
+      "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-jornada-ia-16x9.mp4",
+      "vtt": "assets/vtt/jornada-ia.vtt",
+      "poster": "assets/img/jornada-ia.jpg",
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/"
+    }
+  },
+  "inicio": {
+    "kicker": "Course · step 2 of the From chat to agent course · 8 lessons",
+    "titulo": "Your Jarvis: an assistant with the memory and personality you define",
+    "lead": "You learn the seven parts of an AI assistant, write who it is in four text files, ask a coding agent to build the core with tests, and connect it to Telegram. No programming skills needed: you decide, the agent builds, and the tests confirm it works.",
+    "cta": "Start with lesson 1",
+    "cta2": {
+      "t": "See the course overview",
+      "href": "https://inematds.github.io/do-chat-ao-agente-v72/"
+    },
+    "capa_alt": "Dark desk with a phone open to a conversation, a laptop with a terminal, and a notebook: the personal assistant you built.",
+    "numeros": [
+      {
+        "v": "8",
+        "t": "lessons"
+      },
+      {
+        "v": "7",
+        "t": "parts of an agent"
+      },
+      {
+        "v": "18",
+        "t": "hands-on exercises"
+      },
+      {
+        "v": "3",
+        "t": "videos"
+      }
+    ],
+    "aulas_titulo": "The lessons",
+    "aulas_sub": "This is the deep dive for step 2. The overview of all four steps is in the From chat to agent course.",
+    "blocos": [
+      {
+        "t": "Who this is for",
+        "itens": [
+          "Anyone who has completed step 1 (terminal, folders, and .env) and wants their own assistant, not a chat website.",
+          "Anyone who wants to understand what’s inside an agent before trusting it with their routine.",
+          "Anyone who doesn’t code but is willing to ask a coding agent and check its work with tests."
+        ]
+      },
+      {
+        "t": "What you’ll be able to do",
+        "itens": [
+          "Explain the seven parts of an agent and where each one lives in INTELECTO.",
+          "Write the SOUL, AGENTS, USER, and MEMORY files for your assistant.",
+          "Build the core with Claude Code or Codex and verify it with tests.",
+          "Connect it to Telegram with only one owner, choose its brain using your own numbers, and follow a routine for a week."
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "pular": "Skip to the content",
+    "aulas": "Lessons",
+    "concluido": "completed",
+    "aula": "Lesson",
+    "nesta_aula": "In this lesson, you’ll learn:",
+    "objetivo": "Goal:",
+    "proxima_aula": "Next lesson",
+    "aula_anterior": "Previous lesson",
+    "voltar_inicio": "Return to the course start",
+    "marcar_concluida": "Mark lesson as complete",
+    "dg_dica": "Click each block in the diagram to see what it does.",
+    "copiar": "Copy",
+    "copiado": "Copied",
+    "selo_simulacao": "Simulation: illustrative example",
+    "selo_real": "Repository example",
+    "pronto_quando": "Done when:",
+    "fiz": "I did this exercise",
+    "video_pagina": "Video page with script",
+    "pergunta": "Question",
+    "de": "of",
+    "cert_tag": "competency",
+    "correto": "Correct",
+    "errado": "Not this one",
+    "quiz_aguarda": "Choose an option. The explanation appears after your attempt.",
+    "proxima_pergunta": "Next question",
+    "quiz_ver": "View results",
+    "quiz_fim": "Test complete",
+    "quiz_total": "You got {a} out of {n} right. Get them all right to mark the lesson as complete.",
+    "aparencia": "Appearance",
+    "tamanho_texto": "Text size",
+    "tema": "Theme",
+    "tema_escuro": "Dark",
+    "tema_papel": "Light paper",
+    "role_dica": "Scroll down: each step below lights up its part of the diagram.",
+    "pre_requisito": "requires",
+    "ver_aula": "View lesson",
+    "mapa_dica": "Click an exercise to see what to do and the \"done when\" criteria.",
+    "etapas": "Steps",
+    "exercicios": "exercises",
+    "rever": "Review:",
+    "revisar_erradas": "Review the incorrect answers",
+    "refazer": "Retake the test",
+    "h_semana": "hours per week",
+    "data_inicio": "Start date",
+    "ritmo": "Available time",
+    "gerar_plano": "Generate my plan",
+    "baixar_md": "Download plan.md",
+    "baixar_ics": "Download to calendar (.ics)",
+    "ind_estudo": "Study (lessons)",
+    "ind_pratica": "Declared practice",
+    "ind_nota": "Practice = exercises you marked as done. Your skills are verified in the certification exam.",
+    "estudo": {
+      "titulo": "Your study",
+      "continuar": "Pick up where I left off",
+      "comecar": "Start with lesson 1",
+      "cta_continuar": "Continue lesson {n}",
+      "hoje": "today",
+      "ontem": "yesterday",
+      "ha_dias": "{n} days ago",
+      "desempenho": "Test performance",
+      "notas": "My notes",
+      "dados": "Copy my data",
+      "sem_testes": "No tests taken yet. The test is at the end of each lesson.",
+      "nao_fez": "test not taken yet",
+      "ultimo": "Latest",
+      "melhor": "Best",
+      "tentativas": "attempts",
+      "tentativa": "attempt",
+      "tudo_certo": "You got everything right on the latest test.",
+      "rever": "Review",
+      "resposta": "Correct answer:",
+      "ir_teste": "Retake the test",
+      "sem_notas": "No notes yet. In the lesson, select a passage and tap Mark or Add note.",
+      "so_marcado": "(marked only)",
+      "marcar": "Mark",
+      "anotar": "Add note",
+      "salvar": "Save",
+      "apagar": "Remove mark",
+      "fechar": "Close",
+      "nota_ph": "Write a note about this passage…",
+      "um_bloco": "Select text within a single paragraph.",
+      "nao_marca": "This passage can’t be marked.",
+      "dados_exp": "Your progress, notes, and test scores stay in this browser. Download a copy (.json) to keep or continue on another computer or browser; load the copy there. Loading adds to what’s already there and doesn’t delete anything.",
+      "exportar": "Download copy",
+      "importar": "Load copy",
+      "import_ok": "Copy loaded ({n} items). Refreshing the page…",
+      "import_erro": "File not recognized. Nothing was changed.",
+      "import_outro": "This copy is from another course. Nothing was changed.",
+      "export_ok": "Copy downloaded."
+    },
+    "comecar": "Start lesson",
+    "nesta_vai": "In this lesson, you will",
+    "trocar_tema": "Switch light/dark theme"
+  },
+  "icone": "cerebro"
+}

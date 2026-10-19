@@ -1,0 +1,329 @@
+{
+  "slug": "pecas",
+  "num": 1,
+  "menu": "7 piezas",
+  "titulo": "Las siete piezas de un Jarvis",
+  "titulo_curto": "Las siete piezas",
+  "minutos": 15,
+  "lead": "Todo agente, del más sencillo al más costoso, tiene las mismas siete piezas: una puerta, un corazón, una identidad, un cerebro, una memoria, manos y una bóveda. Quien conoce las piezas elige mejor, gasta menos y no queda atado a un producto. INTELECTO es nuestro ejemplo: pequeño a propósito, para que puedas leerlo.",
+  "objetivo": "explicar el recorrido de un mensaje y decir qué hace cada una de las siete piezas y dónde está en INTELECTO.",
+  "competencias": [
+    "explicar-pecas-agente",
+    "seguir-caminho-mensagem",
+    "distinguir-chatbot-agente"
+  ],
+  "aprende": [
+    {
+      "t": "El recorrido de un mensaje, de Telegram al modelo y de vuelta"
+    },
+    {
+      "t": "Qué hace cada una de las siete piezas"
+    },
+    {
+      "t": "Por qué el bucle con freno diferencia a un agente de un chatbot"
+    },
+    {
+      "t": "Cómo los contratos permiten cambiar una pieza sin tocar el resto"
+    }
+  ],
+  "hero_alt": "Siete piezas de madera sobre la mesa, cada una con un objeto: celular, engranaje, tarjeta, chip, cajón, llave y candado.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Siete piezas, un camino",
+      "sub": "Desplázate por la página: cada etapa ilumina una pieza.",
+      "nos": [
+        {
+          "icone": "enviar",
+          "titulo": "Canal",
+          "sub": "La puerta",
+          "itens": [
+            {
+              "icone": "chat",
+              "t": "Telegram"
+            }
+          ],
+          "detalhe": "Es por donde conversas. En INTELECTO es Telegram: un token y listo, sin una dirección pública en internet. El agente le pregunta a Telegram si llegó un mensaje nuevo, divide las respuestas de más de 4 mil caracteres y muestra el estado «escribiendo» mientras piensa."
+        },
+        {
+          "icone": "relogio",
+          "titulo": "Bucle",
+          "sub": "El corazón",
+          "itens": [
+            {
+              "icone": "portao",
+              "t": "Máximo de 5 rondas"
+            }
+          ],
+          "detalhe": "Recibe el mensaje, piensa, usa una herramienta si hace falta, revisa el resultado y vuelve a pensar, hasta responder con texto. Tiene un freno: como máximo cinco rondas de herramientas por mensaje. Si supera ese límite, tiene que responder.",
+          "forte": true
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Identidad",
+          "sub": "Cuatro archivos de texto",
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "SOUL, AGENTS, USER, MEMORY"
+            }
+          ],
+          "detalhe": "Cuatro archivos simples en la carpeta workspace: el alma, las reglas, tu perfil y los datos iniciales. En cada mensaje, el agente lee los cuatro. Si cambia el texto, cambia el asistente, sin programar."
+        },
+        {
+          "icone": "chip",
+          "titulo": "Cerebro",
+          "sub": "En la nube o local",
+          "itens": [
+            {
+              "icone": "nuvem",
+              "t": "OpenRouter"
+            },
+            {
+              "icone": "chip",
+              "t": "Ollama"
+            }
+          ],
+          "detalhe": "El modelo de IA. En la nube, OpenRouter: una clave da acceso a más de cien modelos. En tu computadora, Ollama: sin costo por mensaje y sin enviar nada fuera de ella."
+        },
+        {
+          "icone": "memoria",
+          "titulo": "Memoria",
+          "sub": "Base de datos en tu computadora",
+          "itens": [
+            {
+              "icone": "lupa",
+              "t": "Búsqueda por palabras"
+            }
+          ],
+          "detalhe": "Guarda lo importante en una base de datos SQLite en tu máquina, con búsqueda por palabras y sin costo de API. En cada mensaje busca lo relevante y lo añade al contexto."
+        },
+        {
+          "icone": "terminal",
+          "titulo": "Herramientas",
+          "sub": "Las manos",
+          "itens": [
+            {
+              "icone": "arquivo",
+              "t": "Leer y escribir archivos"
+            },
+            {
+              "icone": "terminal",
+              "t": "Ejecutar comandos"
+            }
+          ],
+          "detalhe": "Sin herramientas, solo conversa; con ellas, hace cosas. En el núcleo: leer y escribir archivos, listar carpetas, ejecutar comandos, guardar y buscar en la memoria. Cada herramienta se describe por sí sola, y el modelo lee esa descripción para decidir si la usa."
+        },
+        {
+          "icone": "cadeado",
+          "titulo": "Bóveda",
+          "sub": "Los límites",
+          "itens": [
+            {
+              "icone": "escudo",
+              "t": "Lista de bloqueo y registro"
+            }
+          ],
+          "detalhe": "Claves de API cifradas y vinculadas a la máquina, lista de comandos prohibidos, límite de 60 segundos por comando y un registro de auditoría con todo lo que ejecutó."
+        }
+      ],
+      "volta": "La respuesta vuelve por el canal hasta tu celular",
+      "legenda": "Las mismas siete piezas aparecen en INTELECTO, en OpenClaw, en Hermes o en un Jarvis hecho por ti.",
+      "rolagem": true,
+      "rolagem_fim": {
+        "titulo": "Todo el camino",
+        "curto": "Todo",
+        "texto": "Escribes en Telegram. El bucle reúne la identidad y la memoria, envía el mensaje al modelo, ejecuta la herramienta que este solicite dentro de los límites de la bóveda, y la respuesta vuelve por el mismo canal."
+      }
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Tres ideas que mantienen unidas las piezas",
+      "sub": "Haz clic en cada pestaña.",
+      "passos": [
+        {
+          "titulo": "Un solo responsable",
+          "sub": "Lo que no es",
+          "texto": [
+            "INTELECTO es un asistente personal para una sola persona. No admite varios usuarios, no depende de la nube, no necesita Docker, no tiene panel web y no es una caja negra.",
+            "El plan prevé unas tres mil líneas y siete dependencias: se puede leer."
+          ],
+          "exemplo": {
+            "rot": "Prueba de la caja negra",
+            "texto": "¿Puedo explicar qué pasa entre mi mensaje y la respuesta? Si no, es una caja negra."
+          }
+        },
+        {
+          "titulo": "Bucle con freno",
+          "sub": "Agente, no chatbot",
+          "texto": [
+            "Un chatbot responde y olvida. Un agente piensa, actúa con una herramienta, observa el resultado y vuelve a pensar.",
+            "Sin un límite, un agente puede quedarse dando vueltas y gastar recursos sin terminar. Por eso está el freno de cinco rondas."
+          ],
+          "exemplo": {
+            "rot": "Regla del bucle",
+            "texto": "Máximo 5 rondas de herramientas por mensaje; después, responder con texto."
+          }
+        },
+        {
+          "titulo": "Contratos",
+          "sub": "Cambiar sin reescribir",
+          "texto": [
+            "Cada pieza se define con un contrato: el canal tiene iniciar, enviar y detener; el proveedor recibe la conversación y las herramientas y devuelve la respuesta.",
+            "¿Quieres WhatsApp en lugar de Telegram, u Ollama en lugar de OpenRouter? Es otro archivo con el mismo contrato."
+          ],
+          "exemplo": {
+            "rot": "En la práctica",
+            "texto": "Nueva herramienta = archivo nuevo con el mismo modelo. El registro la encuentra automáticamente, sin tocar el núcleo."
+          }
+        },
+        {
+          "titulo": "Empieza en pequeño",
+          "sub": "El núcleo es suficiente",
+          "texto": [
+            "La guía de funciones organiza todo en ocho áreas: identidad, seguridad, canales, memoria, automatización, integraciones, skills y arquitectura.",
+            "No necesitas todo. La programación de tareas y la búsqueda web, por ejemplo, están en el plan para la próxima fase."
+          ],
+          "exemplo": {
+            "rot": "Montaje mínimo",
+            "texto": "Bucle + un cerebro + un canal + un SOUL básico. La memoria se agrega enseguida."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Dónde vive cada pieza",
+      "sub": "El árbol del núcleo que el agente construye en el ejemplo del repositorio.",
+      "blocos": [
+        {
+          "rot": "exemplo-jarvis · carpetas",
+          "icone": "pasta",
+          "conteudo": "jarvis/\n  channels/    # la puerta: terminal y Telegram\n  agent/       # el corazón: loop.py y context.py\n  providers/   # el cerebro: contrato + modelo de prueba\n  memory/      # la memoria: SQLite con búsqueda\n  tools/       # las manos: archivos, comando, memoria\n  security/    # la bóveda: secretos y lista de bloqueo\nworkspace/\n  SOUL.md  AGENTS.md  USER.md  MEMORY.md   # la identidad"
+        },
+        {
+          "rot": "Mi tabla de las 7 piezas",
+          "icone": "lista",
+          "conteudo": "| Pieza       | Qué hace (con mis palabras) | Dónde está |\n|-------------|-----------------------------|------------|\n| Canal       |                             |            |\n| Bucle       |                             |            |\n| Identidad   |                             |            |\n| Cerebro     |                             |            |\n| Memoria     |                             |            |\n| Herramientas|                             |            |\n| Bóveda |                             |            |"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "El recorrido de un mensaje",
+            "html": "<ol><li>Escribes en <b>Telegram</b>.</li><li>El <b>canal</b> recibe el mensaje y se lo entrega al <b>bucle</b>.</li><li>El bucle arma el contexto: <b>SOUL + AGENTS + USER</b> y las <b>memorias</b> relevantes.</li><li>El <b>modelo</b> responde o pide una <b>herramienta</b>; el bucle la ejecuta y devuelve el resultado (hasta 5 rondas).</li><li>La respuesta vuelve por el <b>canal</b>.</li></ol>"
+          },
+          {
+            "rot": "Chatbot × Jarvis",
+            "html": "<p><b>Chatbot:</b> responde, olvida cuando termina la conversación, no tiene identidad, no actúa, no te conoce.</p><p><b>Jarvis:</b> recuerda conversaciones pasadas, tiene nombre y valores por escrito, usa herramientas y conoce tu contexto.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: identifica las piezas",
+      "sub": "Antes de construir, entiende qué vas a construir.",
+      "exercicios": [
+        {
+          "id": "p1",
+          "titulo": "P1 · Las 7 piezas con tus palabras",
+          "min": "15 min",
+          "texto": "Copia la tabla de arriba y completa cada fila con una frase tuya y la carpeta donde está la pieza.",
+          "pronto": "Las siete filas están completas y ninguna frase está copiada del texto de la clase."
+        },
+        {
+          "id": "p2",
+          "titulo": "P2 · Explica el recorrido en voz alta",
+          "min": "5 min",
+          "texto": "Explícale a alguien (o graba un audio) el recorrido de un mensaje desde Telegram hasta la respuesta.",
+          "pronto": "Mencionaste canal, bucle, identidad, memoria, modelo y herramienta en el orden correcto, sin mirar."
+        }
+      ]
+    },
+    {
+      "tipo": "video",
+      "titulo": "Las siete piezas en video",
+      "sub": "Nei muestra INTELECTO pieza por pieza.",
+      "chave": "intelecto-estrutura"
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Pon a prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Qué hace que un agente deje de ser solo un chatbot?",
+          "opcoes": [
+            "Usar un modelo más caro.",
+            "El bucle: pensar, usar una herramienta, mirar el resultado y volver a pensar hasta responder.",
+            "Tener una interfaz web bonita.",
+            "Responder más rápido."
+          ],
+          "certa": 1,
+          "explica": "El bucle transforma la conversación en acción. El modelo puede ser el mismo; lo que cambia es que puede usar herramientas y mirar el resultado antes de responder.",
+          "cert": true,
+          "ref": "passos"
+        },
+        {
+          "p": "¿Para qué sirve el límite de cinco rondas con herramientas?",
+          "opcoes": [
+            "Para ahorrar memoria del celular.",
+            "Es un requisito de Telegram.",
+            "Es el freno: sin él, el agente puede quedarse dando vueltas y gastando sin terminar nunca.",
+            "Para que el modelo piense menos."
+          ],
+          "certa": 2,
+          "explica": "El límite obliga al agente a responder después de cinco rondas. Un bucle corto, legible y con un límite es lo que separa a un agente útil de uno que gasta sin parar.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Quieres cambiar Telegram por WhatsApp. ¿Qué cambia?",
+          "opcoes": [
+            "Hay que reescribir todo el agente.",
+            "Un archivo nuevo para el canal que cumple el mismo contrato (iniciar, enviar, detener); lo demás queda igual.",
+            "También hay que cambiar el modelo.",
+            "No se puede: INTELECTO solo se comunica por Telegram."
+          ],
+          "certa": 1,
+          "explica": "Cada pieza tiene un contrato. Un canal nuevo implementa las mismas tres funciones y el bucle ni nota el cambio.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Dónde está la personalidad del asistente?",
+          "opcoes": [
+            "En el código del bucle.",
+            "En la configuración de Telegram.",
+            "En cuatro archivos de texto en la carpeta workspace.",
+            "En el modelo elegido."
+          ],
+          "certa": 2,
+          "explica": "SOUL, AGENTS, USER y MEMORY son texto simple. El agente lee los cuatro en cada mensaje: si cambia el texto, cambia el asistente.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "INTELECTO: página del proyecto",
+          "href": "https://inematds.github.io/intelecto/",
+          "icone": "cerebro"
+        },
+        {
+          "t": "Repositorio de INTELECTO",
+          "href": "https://github.com/inematds/intelecto",
+          "icone": "git"
+        },
+        {
+          "t": "Área JARVIS en Eventos",
+          "href": "https://eventos.inema.pro/jarvis/",
+          "icone": "camadas"
+        }
+      ]
+    }
+  ]
+}

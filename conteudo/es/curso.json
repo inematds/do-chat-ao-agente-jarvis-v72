@@ -1,0 +1,199 @@
+{
+  "id": "do-chat-ao-agente-jarvis-v72",
+  "lang": "es",
+  "url": "https://inematds.github.io/do-chat-ao-agente-jarvis-v72/es/",
+  "nome": "Tu Jarvis",
+  "sub": "Nivel 2 · Del chat al agente",
+  "volta": {
+    "t": "Visión general de la formación",
+    "href": "https://inematds.github.io/do-chat-ao-agente-v72/"
+  },
+  "lado_card": {
+    "rot": "Práctica de este nivel",
+    "t": "18 ejercicios con \"listo cuando\"",
+    "texto": "Los 6 de la secuencia 2 y los ejercicios de profundización de cada clase, desde el diseño hasta la rutina de una semana. Pasa a la siguiente solo cuando esta esté lista.",
+    "link": "Abrir la lista de la secuencia 2",
+    "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md"
+  },
+  "rodape": "INEMA.CLUB · contenido abierto y gratuito · formato INEMA Learning v7.2 · <a href=\"https://inematds.github.io/do-chat-ao-agente-v72/\">Del chat al agente: visión general</a> · <a href=\"https://eventos.inema.pro/jarvis/\">eventos.inema.pro/jarvis</a> · <a href=\"https://inematds.github.io/intelecto/\">INTELECTO</a> · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://www.inema.club/cursos/325-do-chat-ao-agente-degrau-2-o-seu-jarvis-com-memoria-no-telegram-intelecto/\">Ficha completa de este curso en INEMA.CLUB</a> · <a href=\"https://www.inema.club/aprender-inteligencia-artificial/\">Guía: cómo aprender inteligencia artificial</a>",
+  "videos": {
+    "intelecto-estrutura": {
+      "titulo": "INTELECTO: las 7 piezas de un agente de IA",
+      "duracao": "7 min 46 s",
+      "mp4": "https://github.com/inematds/intelecto-estrutura/releases/download/video-v2.0.0/intelecto-estrutura-completo-16x9.mp4",
+      "vtt": "assets/vtt/intelecto-estrutura.vtt",
+      "poster": "assets/img/intelecto-estrutura.jpg",
+      "pagina": "https://inematds.github.io/intelecto-estrutura/videos/"
+    },
+    "intelecto-instalacao": {
+      "titulo": "INTELECTO: instala tu Jarvis",
+      "duracao": "5 min 55 s",
+      "mp4": "https://github.com/inematds/intelecto-instalacao/releases/download/video-v2.0.0/intelecto-instalacao-completo-16x9.mp4",
+      "vtt": "assets/vtt/intelecto-instalacao.vtt",
+      "poster": "assets/img/intelecto-instalacao.jpg",
+      "pagina": "https://inematds.github.io/intelecto-instalacao/videos/"
+    },
+    "seq2-jarvis": {
+      "titulo": "Crea tu Jarvis",
+      "duracao": "1 min 33 s",
+      "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-seq2-jarvis-16x9.mp4",
+      "vtt": "assets/vtt/seq2-jarvis.vtt",
+      "poster": "assets/img/seq2-jarvis.jpg",
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/"
+    },
+    "jornada-ia": {
+      "titulo": "Del chat al agente: visión general",
+      "duracao": "2 min 27 s",
+      "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-jornada-ia-16x9.mp4",
+      "vtt": "assets/vtt/jornada-ia.vtt",
+      "poster": "assets/img/jornada-ia.jpg",
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/"
+    }
+  },
+  "inicio": {
+    "kicker": "Curso · nivel 2 de la formación Del chat al agente · 8 clases",
+    "titulo": "Tu Jarvis: un asistente con la memoria y la personalidad que tú definas",
+    "lead": "Entenderás las siete piezas de un asistente de IA, escribirás quién es en cuatro archivos de texto, le pedirás a un agente de programación que construya el núcleo con pruebas y lo conectarás a Telegram. Sin saber programar: tú decides, el agente construye y la prueba lo confirma.",
+    "cta": "Empezar por la clase 1",
+    "cta2": {
+      "t": "Ver la visión general de la formación",
+      "href": "https://inematds.github.io/do-chat-ao-agente-v72/"
+    },
+    "capa_alt": "Escritorio oscuro con un celular abierto en una conversación, una laptop con la terminal y un cuaderno: el asistente personal que tú construiste.",
+    "numeros": [
+      {
+        "v": "8",
+        "t": "clases"
+      },
+      {
+        "v": "7",
+        "t": "piezas de un agente"
+      },
+      {
+        "v": "18",
+        "t": "ejercicios prácticos"
+      },
+      {
+        "v": "3",
+        "t": "videos"
+      }
+    ],
+    "aulas_titulo": "Las clases",
+    "aulas_sub": "Este es el contenido de profundización del nivel 2. La visión general de los cuatro niveles está en el curso Del chat al agente.",
+    "blocos": [
+      {
+        "t": "Para quién es",
+        "itens": [
+          "Para quien ya hizo el nivel 1 (terminal, carpetas y .env) y quiere un asistente propio, no un sitio de chat.",
+          "Para quien quiere entender qué hay dentro de un agente antes de confiarle su rutina.",
+          "Para quien no programa, pero está dispuesto a pedírselo a un agente de programación y comprobarlo con las pruebas."
+        ]
+      },
+      {
+        "t": "Lo que podrás hacer al terminar",
+        "itens": [
+          "Explicar las siete piezas de un agente y dónde se encuentra cada una en INTELECTO.",
+          "Escribir el SOUL, el AGENTS, el USER y el MEMORY de tu asistente.",
+          "Construir el núcleo con Claude Code o Codex y comprobarlo con las pruebas.",
+          "Conectarlo a Telegram con un solo dueño, elegir el cerebro según tus números y seguir una rutina durante una semana."
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "pular": "Saltar al contenido",
+    "aulas": "Clases",
+    "concluido": "completado",
+    "aula": "Clase",
+    "nesta_aula": "En esta clase, aprenderás:",
+    "objetivo": "Objetivo:",
+    "proxima_aula": "Siguiente clase",
+    "aula_anterior": "Clase anterior",
+    "voltar_inicio": "Volver al inicio del curso",
+    "marcar_concluida": "Marcar la clase como completada",
+    "dg_dica": "Haz clic en cada bloque del diagrama para ver qué hace.",
+    "copiar": "Copiar",
+    "copiado": "Copiado",
+    "selo_simulacao": "Simulación: ejemplo ilustrativo",
+    "selo_real": "Ejemplo del repositorio",
+    "pronto_quando": "Listo cuando:",
+    "fiz": "Hice este ejercicio",
+    "video_pagina": "Página del video con guion",
+    "pergunta": "Pregunta",
+    "de": "de",
+    "cert_tag": "competencia",
+    "correto": "Correcto",
+    "errado": "No es esa",
+    "quiz_aguarda": "Elige una opción. La explicación aparece después de tu intento.",
+    "proxima_pergunta": "Siguiente pregunta",
+    "quiz_ver": "Ver resultado",
+    "quiz_fim": "Prueba completada",
+    "quiz_total": "Acertaste {a} de {n}. Si aciertas todas, la clase se marca como completada.",
+    "aparencia": "Apariencia",
+    "tamanho_texto": "Tamaño del texto",
+    "tema": "Tema",
+    "tema_escuro": "Oscuro",
+    "tema_papel": "Papel claro",
+    "role_dica": "Desplázate por la página: cada etapa de abajo ilumina su parte del diagrama.",
+    "pre_requisito": "requiere",
+    "ver_aula": "Ver la clase",
+    "mapa_dica": "Haz clic en un ejercicio para ver qué hacer y el «listo cuando».",
+    "etapas": "Etapas",
+    "exercicios": "ejercicios",
+    "rever": "Repasar:",
+    "revisar_erradas": "Revisar las incorrectas",
+    "refazer": "Volver a hacer la prueba",
+    "h_semana": "h por semana",
+    "data_inicio": "Fecha de inicio",
+    "ritmo": "Tiempo disponible",
+    "gerar_plano": "Generar mi plan",
+    "baixar_md": "Descargar plan.md",
+    "baixar_ics": "Descargar al calendario (.ics)",
+    "ind_estudo": "Estudio (clases)",
+    "ind_pratica": "Práctica declarada",
+    "ind_nota": "Práctica = ejercicios que marcaste como hechos. La comprobación se realiza en el examen de certificación.",
+    "estudo": {
+      "titulo": "Tu estudio",
+      "continuar": "Continuar desde donde lo dejé",
+      "comecar": "Empezar por la clase 1",
+      "cta_continuar": "Continuar la clase {n}",
+      "hoje": "hoy",
+      "ontem": "ayer",
+      "ha_dias": "hace {n} días",
+      "desempenho": "Desempeño en las pruebas",
+      "notas": "Mis anotaciones",
+      "dados": "Copiar mis datos",
+      "sem_testes": "Aún no hiciste ninguna prueba. La prueba está al final de cada clase.",
+      "nao_fez": "prueba aún no hecha",
+      "ultimo": "Último",
+      "melhor": "Mejor",
+      "tentativas": "intentos",
+      "tentativa": "intento",
+      "tudo_certo": "Respondiste todo correctamente en la última prueba.",
+      "rever": "Para repasar",
+      "resposta": "Respuesta correcta:",
+      "ir_teste": "Volver a hacer la prueba",
+      "sem_notas": "Aún no tienes anotaciones. En la clase, selecciona un fragmento del texto y toca Marcar o Anotar.",
+      "so_marcado": "(solo marcado)",
+      "marcar": "Marcar",
+      "anotar": "Anotar",
+      "salvar": "Guardar",
+      "apagar": "Borrar marca",
+      "fechar": "Cerrar",
+      "nota_ph": "Escribe tu anotación sobre este fragmento…",
+      "um_bloco": "Marca solo dentro de un párrafo.",
+      "nao_marca": "Este fragmento no se puede marcar.",
+      "dados_exp": "Tu progreso, tus anotaciones y las calificaciones de las pruebas se guardan solo en este navegador. Descarga una copia (.json) para guardarla o continuar en otra computadora o navegador; allí, carga la copia. Al cargarla, se suma a lo que ya existe y no se borra nada.",
+      "exportar": "Descargar copia",
+      "importar": "Cargar copia",
+      "import_ok": "Copia cargada ({n} elementos). Actualizando la página…",
+      "import_erro": "Archivo no reconocido. No se hizo ningún cambio.",
+      "import_outro": "Esta copia es de otro curso. No se hizo ningún cambio.",
+      "export_ok": "Copia descargada."
+    },
+    "comecar": "Empezar la clase",
+    "nesta_vai": "En esta clase vas a",
+    "trocar_tema": "Cambiar tema claro/oscuro"
+  },
+  "icone": "cerebro"
+}

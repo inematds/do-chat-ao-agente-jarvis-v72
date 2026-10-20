@@ -13,7 +13,7 @@
     "t": "18 exercícios com \"pronto quando\"",
     "texto": "Os 6 da sequência 2 e os aprofundamentos de cada aula, do desenho à rotina de uma semana. Só passe para o próximo quando ele for verdade.",
     "link": "Abrir a lista da sequência 2",
-    "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md"
+    "href": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md", "href_en": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/en/02-jarvis.md", "href_es": "https://github.com/inematds/jornada-agentes/blob/main/exercicios/es/02-jarvis.md"
   },
   "rodape": "INEMA.CLUB · conteúdo aberto e gratuito · formato INEMA Learning v7.2 · <a href=\"https://inematds.github.io/do-chat-ao-agente-v72/\">Do chat ao agente: visão geral</a> · <a href=\"https://eventos.inema.pro/jarvis/\">eventos.inema.pro/jarvis</a> · <a href=\"https://inematds.github.io/intelecto/\">INTELECTO</a> · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://www.inema.club/cursos/325-do-chat-ao-agente-degrau-2-o-seu-jarvis-com-memoria-no-telegram-intelecto/\">Ficha completa deste curso no INEMA.CLUB</a> · <a href=\"https://www.inema.club/aprender-inteligencia-artificial/\">Guia: como aprender inteligência artificial</a>",
   "videos": {
@@ -23,7 +23,7 @@
       "mp4": "https://github.com/inematds/intelecto-estrutura/releases/download/video-v2.0.0/intelecto-estrutura-completo-16x9.mp4",
       "vtt": "assets/vtt/intelecto-estrutura.vtt",
       "poster": "assets/img/intelecto-estrutura.jpg",
-      "pagina": "https://inematds.github.io/intelecto-estrutura/videos/"
+      "pagina": "https://inematds.github.io/intelecto-estrutura/videos/", "idiomas": {"en": {"mp4": "https://github.com/inematds/intelecto-estrutura/releases/download/video-v2.0.0/intelecto-estrutura-completo-16x9-en.mp4", "vtt": "assets/vtt/intelecto-estrutura-en.vtt", "duracao": "5 min 55 s", "pagina": "https://inematds.github.io/intelecto-estrutura/videos/en/"}, "es": {"mp4": "https://github.com/inematds/intelecto-estrutura/releases/download/video-v2.0.0/intelecto-estrutura-completo-16x9-es.mp4", "vtt": "assets/vtt/intelecto-estrutura-es.vtt", "duracao": "6 min 38 s", "pagina": "https://inematds.github.io/intelecto-estrutura/videos/es/"}}
     },
     "intelecto-instalacao": {
       "titulo": "INTELECTO: instale o seu Jarvis",
@@ -31,7 +31,7 @@
       "mp4": "https://github.com/inematds/intelecto-instalacao/releases/download/video-v2.0.0/intelecto-instalacao-completo-16x9.mp4",
       "vtt": "assets/vtt/intelecto-instalacao.vtt",
       "poster": "assets/img/intelecto-instalacao.jpg",
-      "pagina": "https://inematds.github.io/intelecto-instalacao/videos/"
+      "pagina": "https://inematds.github.io/intelecto-instalacao/videos/", "idiomas": {"en": {"vtt": "assets/vtt/intelecto-instalacao-en.vtt"}, "es": {"vtt": "assets/vtt/intelecto-instalacao-es.vtt"}}
     },
     "seq2-jarvis": {
       "titulo": "Crie o seu Jarvis",
@@ -39,7 +39,7 @@
       "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-seq2-jarvis-16x9.mp4",
       "vtt": "assets/vtt/seq2-jarvis.vtt",
       "poster": "assets/img/seq2-jarvis.jpg",
-      "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/"
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/", "idiomas": {"en": {"vtt": "assets/vtt/seq2-jarvis-en.vtt", "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/en/"}, "es": {"vtt": "assets/vtt/seq2-jarvis-es.vtt", "pagina": "https://inematds.github.io/jornada-agentes/serie/seq2-jarvis/es/"}}
     },
     "jornada-ia": {
       "titulo": "Do chat ao agente: a visão geral",
@@ -47,7 +47,7 @@
       "mp4": "https://github.com/inematds/jornada-agentes/releases/download/video-v2.0.0/jornada-jornada-ia-16x9.mp4",
       "vtt": "assets/vtt/jornada-ia.vtt",
       "poster": "assets/img/jornada-ia.jpg",
-      "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/"
+      "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/", "idiomas": {"en": {"vtt": "assets/vtt/jornada-ia-en.vtt", "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/en/"}, "es": {"vtt": "assets/vtt/jornada-ia-es.vtt", "pagina": "https://inematds.github.io/jornada-agentes/serie/jornada-ia/es/"}}
     }
   },
   "inicio": {

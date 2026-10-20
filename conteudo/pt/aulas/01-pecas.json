@@ -189,12 +189,12 @@
         {
           "p": "O que faz um agente deixar de ser só um chatbot?",
           "opcoes": [
-            "Usar um modelo mais caro.",
             "O loop: pensar, usar uma ferramenta, olhar o resultado e pensar de novo até responder.",
+            "Usar um modelo mais caro.",
             "Ter uma interface web bonita.",
             "Responder mais rápido."
           ],
-          "certa": 1,
+          "certa": 0,
           "explica": "É o loop que transforma conversa em ação. O modelo pode ser o mesmo; o que muda é poder usar ferramentas e olhar o resultado antes de responder.",
           "cert": true,
           "ref": "passos"
@@ -214,24 +214,24 @@
         {
           "p": "Você quer trocar o Telegram pelo WhatsApp. O que muda?",
           "opcoes": [
-            "Tem que reescrever o agente inteiro.",
             "Um arquivo novo de canal que cumpre o mesmo contrato (começar, enviar, parar); o resto fica igual.",
-            "Tem que trocar também de modelo.",
-            "Não dá: o INTELECTO só fala Telegram."
+            "Tem que reescrever o agente inteiro.",
+            "Não dá: o INTELECTO só fala Telegram.",
+            "Tem que trocar também de modelo."
           ],
-          "certa": 1,
+          "certa": 0,
           "explica": "Cada peça é um contrato. Um canal novo implementa as mesmas três funções e o loop nem percebe a troca.",
           "ref": "passos"
         },
         {
           "p": "Onde mora a personalidade do assistente?",
           "opcoes": [
-            "No código do loop.",
             "Nas configurações do Telegram.",
-            "Em quatro arquivos de texto na pasta workspace.",
-            "No modelo escolhido."
+            "No modelo escolhido.",
+            "No código do loop.",
+            "Em quatro arquivos de texto na pasta workspace."
           ],
-          "certa": 2,
+          "certa": 3,
           "explica": "SOUL, AGENTS, USER e MEMORY são texto simples. O agente lê os quatro a cada mensagem: mudou o texto, mudou o assistente.",
           "ref": "codigo"
         }

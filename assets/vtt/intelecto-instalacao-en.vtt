@@ -1,0 +1,889 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.990
+Your own AI assistant, your very own Jarvis, built by you, without writing a single line of code.
+
+2
+00:00:06.040 --> 00:00:09.910
+In the last video I showed you the 7 pieces of an agent. Today you build yours.
+
+3
+00:00:09.960 --> 00:00:11.970
+And no, you don't need to know how to code.
+
+4
+00:00:12.020 --> 00:00:15.470
+You pick the ingredients on a page, like in a grocery store.
+
+5
+00:00:15.520 --> 00:00:19.650
+And the coding agent builds it on your machine while you watch.
+
+6
+00:00:19.700 --> 00:00:22.470
+In this video I show you the whole path on screen.
+
+7
+00:00:22.520 --> 00:00:28.670
+The grocery store, the file, the terminal, the files that get created, the assistant answering…
+
+8
+00:00:28.720 --> 00:00:31.040
+and, in the end, how to keep it online 24 hours a day.
+
+9
+00:00:31.400 --> 00:00:33.120
+The path has five steps.
+
+10
+00:00:33.120 --> 00:00:34.480
+First, the grocery store:
+
+11
+00:00:34.480 --> 00:00:36.080
+you check off what you want your
+
+12
+00:00:36.080 --> 00:00:38.520
+assistant to do and export a list.
+
+13
+00:00:38.520 --> 00:00:39.920
+Second, the terminal:
+
+14
+00:00:39.920 --> 00:00:41.560
+you open Claude Code or
+
+15
+00:00:41.560 --> 00:00:43.900
+Codex in the folder and ask it to build.
+
+16
+00:00:43.900 --> 00:00:45.360
+Third, the files:
+
+17
+00:00:45.360 --> 00:00:46.840
+you see what was created and where
+
+18
+00:00:46.840 --> 00:00:47.900
+each piece lives.
+
+19
+00:00:47.900 --> 00:00:49.380
+Fourth, the conversation:
+
+20
+00:00:49.380 --> 00:00:50.620
+the assistant answers,
+
+21
+00:00:50.620 --> 00:00:51.820
+first in the terminal,
+
+22
+00:00:51.820 --> 00:00:53.900
+then on Telegram or WhatsApp.
+
+23
+00:00:53.900 --> 00:00:55.160
+Fifth, the server:
+
+24
+00:00:55.160 --> 00:00:57.520
+on a VPS, it stays on day and
+
+25
+00:00:57.520 --> 00:00:57.720
+night.
+
+26
+00:00:57.720 --> 00:00:59.000
+Each step is short.
+
+27
+00:00:59.000 --> 00:01:00.760
+The heavy lifting is done by the agent.
+
+28
+00:01:00.760 --> 00:01:02.440
+Step one: the grocery store.
+
+29
+00:01:02.440 --> 00:01:04.240
+It's an INTELECTO page with more
+
+30
+00:01:04.240 --> 00:01:05.720
+than one hundred and forty features,
+
+31
+00:01:05.720 --> 00:01:08.200
+taken from open projects like OpenClaw,
+
+32
+00:01:08.200 --> 00:01:09.720
+NanoBot and Hermes,
+
+33
+00:01:09.720 --> 00:01:11.480
+organized into aisles:
+
+34
+00:01:11.480 --> 00:01:13.620
+identity, security, communication,
+
+35
+00:01:13.620 --> 00:01:15.180
+memory, automation.
+
+36
+00:01:15.180 --> 00:01:16.960
+Each card explains in one sentence what
+
+37
+00:01:16.960 --> 00:01:17.720
+that feature does.
+
+38
+00:01:17.720 --> 00:01:19.620
+You click and it gets checked.
+
+39
+00:01:19.620 --> 00:01:20.900
+For a first Jarvis,
+
+40
+00:01:20.900 --> 00:01:21.720
+I picked eight:
+
+41
+00:01:21.720 --> 00:01:23.020
+the personality file,
+
+42
+00:01:23.020 --> 00:01:23.920
+the Telegram bot,
+
+43
+00:01:23.920 --> 00:01:25.810
+WhatsApp, memory with search in
+
+44
+00:01:25.810 --> 00:01:27.720
+SQLite, the encrypted secrets vault,
+
+45
+00:01:27.720 --> 00:01:28.880
+the list of forbidden commands,
+
+46
+00:01:28.880 --> 00:01:30.500
+scheduling and skills.
+
+47
+00:01:30.500 --> 00:01:31.300
+Start small.
+
+48
+00:01:31.300 --> 00:01:33.420
+You can come back and add more later.
+
+49
+00:01:33.420 --> 00:01:34.900
+The checked items go into the cart,
+
+50
+00:01:34.900 --> 00:01:35.880
+in the corner of the screen.
+
+51
+00:01:35.880 --> 00:01:37.240
+Down at the bottom there's a button:
+
+52
+00:01:37.240 --> 00:01:39.200
+export as a briefing for Claude Code.
+
+53
+00:01:39.200 --> 00:01:40.820
+One click, and it downloads a file,
+
+54
+00:01:40.820 --> 00:01:42.360
+my assistant dot md.
+
+55
+00:01:42.360 --> 00:01:44.060
+Inside it, each ingredient with what it
+
+56
+00:01:44.060 --> 00:01:46.220
+does, which projects already implement it, and where
+
+57
+00:01:46.220 --> 00:01:47.540
+the reference code is.
+
+58
+00:01:47.540 --> 00:01:48.860
+But there's one important detail,
+
+59
+00:01:48.860 --> 00:01:50.920
+which we found out by testing:
+
+60
+00:01:50.920 --> 00:01:52.420
+this list alone isn't enough.
+
+61
+00:01:52.420 --> 00:01:53.760
+It's a shopping list,
+
+62
+00:01:53.760 --> 00:01:54.840
+not a recipe.
+
+63
+00:01:54.840 --> 00:01:56.520
+The recipe is INTELECTO's construction
+
+64
+00:01:56.520 --> 00:01:58.320
+plan, intelecto dot md,
+
+65
+00:01:58.320 --> 00:02:00.020
+with the contracts for each piece.
+
+66
+00:02:00.020 --> 00:02:01.320
+The briefing points to it,
+
+67
+00:02:01.320 --> 00:02:02.680
+and that's what makes the build
+
+68
+00:02:02.680 --> 00:02:03.260
+work.
+
+69
+00:02:03.260 --> 00:02:04.540
+Step two: the terminal.
+
+70
+00:02:04.540 --> 00:02:06.380
+You clone the INTELECTO repository into
+
+71
+00:02:06.380 --> 00:02:08.075
+your projects folder and put
+
+72
+00:02:08.075 --> 00:02:09.620
+my assistant dot md alongside it.
+
+73
+00:02:09.620 --> 00:02:11.520
+Go into the folder and open Claude
+
+74
+00:02:11.520 --> 00:02:12.900
+Code or Codex.
+
+75
+00:02:12.900 --> 00:02:14.080
+Then comes the request,
+
+76
+00:02:14.080 --> 00:02:16.080
+in one sentence: read my assistant dot
+
+77
+00:02:16.080 --> 00:02:17.200
+md
+
+78
+00:02:17.200 --> 00:02:19.600
+and the plan in doc slash intelecto
+
+79
+00:02:19.600 --> 00:02:22.020
+dot md and build my assistant
+
+80
+00:02:22.020 --> 00:02:23.280
+in Python, with tests.
+
+81
+00:02:23.280 --> 00:02:24.780
+The agent reads both files,
+
+82
+00:02:24.780 --> 00:02:27.200
+looks at the reference code and starts
+
+83
+00:02:27.200 --> 00:02:28.540
+writing, piece by piece.
+
+84
+00:02:28.540 --> 00:02:30.260
+You follow along and approve what it
+
+85
+00:02:30.260 --> 00:02:31.240
+asks to run.
+
+86
+00:02:31.240 --> 00:02:32.780
+You don't need to understand every line.
+
+87
+00:02:32.780 --> 00:02:34.640
+You need to know what you asked for and check
+
+88
+00:02:34.640 --> 00:02:35.580
+the result.
+
+89
+00:02:35.580 --> 00:02:37.240
+Step three: the files.
+
+90
+00:02:37.240 --> 00:02:39.000
+In the example that's in the repository,
+
+91
+00:02:39.000 --> 00:02:39.860
+the jarvis example,
+
+92
+00:02:39.860 --> 00:02:41.600
+the agent built the core in under
+
+93
+00:02:41.600 --> 00:02:42.900
+a thousand lines of Python,
+
+94
+00:02:42.900 --> 00:02:44.220
+without installing anything.
+
+95
+00:02:44.220 --> 00:02:46.200
+Each piece from the last video became a
+
+96
+00:02:46.200 --> 00:02:46.800
+folder.
+
+97
+00:02:46.800 --> 00:02:47.900
+Channels is the door:
+
+98
+00:02:47.900 --> 00:02:49.300
+the terminal and Telegram.
+
+99
+00:02:49.300 --> 00:02:50.500
+Agent has the loop,
+
+100
+00:02:50.500 --> 00:02:51.640
+the heart.
+
+101
+00:02:51.640 --> 00:02:52.780
+Providers is the brain,
+
+102
+00:02:52.780 --> 00:02:53.800
+the language model.
+
+103
+00:02:53.800 --> 00:02:56.380
+Memory keeps the memory in a SQLite database
+
+104
+00:02:56.380 --> 00:02:57.160
+with search.
+
+105
+00:02:57.160 --> 00:02:58.320
+Tools are the hands:
+
+106
+00:02:58.320 --> 00:02:59.720
+files, commands and memory.
+
+107
+00:02:59.720 --> 00:03:01.060
+And security is the vault:
+
+108
+00:03:01.060 --> 00:03:02.940
+encrypted secrets and the list of forbidden
+
+109
+00:03:02.940 --> 00:03:05.040
+commands, like wiping the entire disk.
+
+110
+00:03:05.140 --> 00:03:06.060
+Next to the code,
+
+111
+00:03:06.060 --> 00:03:08.440
+a workspace folder with four text
+
+112
+00:03:08.440 --> 00:03:08.840
+files.
+
+113
+00:03:08.840 --> 00:03:10.660
+This is where the assistant becomes yours.
+
+114
+00:03:10.660 --> 00:03:12.160
+SOUL says who it is:
+
+115
+00:03:12.160 --> 00:03:13.160
+personality,
+
+116
+00:03:13.160 --> 00:03:14.920
+values and way of speaking.
+
+117
+00:03:14.920 --> 00:03:17.100
+AGENTS holds the working rules.
+
+118
+00:03:17.100 --> 00:03:18.800
+USER is about you:
+
+119
+00:03:18.800 --> 00:03:20.940
+name, routine, preferences.
+
+120
+00:03:20.940 --> 00:03:22.700
+And MEMORY keeps the facts it
+
+121
+00:03:22.700 --> 00:03:23.860
+should always remember.
+
+122
+00:03:23.860 --> 00:03:25.240
+Before each answer,
+
+123
+00:03:25.240 --> 00:03:26.940
+the loop puts these four files together at the
+
+124
+00:03:26.940 --> 00:03:28.040
+start of the conversation.
+
+125
+00:03:28.040 --> 00:03:29.580
+Want a more direct assistant,
+
+126
+00:03:29.580 --> 00:03:31.120
+more formal or more playful?
+
+127
+00:03:31.120 --> 00:03:32.900
+You edit a text file.
+
+128
+00:03:32.900 --> 00:03:34.140
+You don't touch the code.
+
+129
+00:03:34.140 --> 00:03:36.140
+Step four: prove it works.
+
+130
+00:03:36.140 --> 00:03:37.420
+First, the tests.
+
+131
+00:03:37.420 --> 00:03:39.380
+One command runs the example's nine tests:
+
+132
+00:03:39.380 --> 00:03:40.980
+memory saves,
+
+133
+00:03:40.980 --> 00:03:42.280
+searches and forgets;
+
+134
+00:03:42.280 --> 00:03:43.860
+the loop asks for a tool,
+
+135
+00:03:43.860 --> 00:03:45.520
+runs it and answers;
+
+136
+00:03:45.520 --> 00:03:47.500
+the forbidden list blocks the dangerous
+
+137
+00:03:47.500 --> 00:03:48.080
+command.
+
+138
+00:03:48.080 --> 00:03:48.920
+Nine pass.
+
+139
+00:03:48.920 --> 00:03:51.200
+Then, a real conversation in the terminal,
+
+140
+00:03:51.200 --> 00:03:52.580
+with a test model,
+
+141
+00:03:52.580 --> 00:03:54.340
+no internet and no key.
+
+142
+00:03:54.340 --> 00:03:56.070
+I say: remember that my name is
+
+143
+00:03:56.070 --> 00:03:56.200
+Nei.
+
+144
+00:03:56.200 --> 00:03:58.040
+It answers: your name is Nei.
+
+145
+00:03:58.040 --> 00:03:59.460
+And the last line proves it's not a
+
+146
+00:03:59.460 --> 00:04:01.280
+trick: the name was saved in the
+
+147
+00:04:01.280 --> 00:04:02.280
+SQLite database.
+
+148
+00:04:02.280 --> 00:04:04.340
+The memory and the loop are working
+
+149
+00:04:04.340 --> 00:04:05.140
+together.
+
+150
+00:04:05.140 --> 00:04:06.220
+To chat from your phone,
+
+151
+00:04:06.220 --> 00:04:07.300
+the Telegram channel is already in the
+
+152
+00:04:07.300 --> 00:04:08.900
+code, but it refuses to turn on
+
+153
+00:04:08.900 --> 00:04:09.520
+without a token,
+
+154
+00:04:09.520 --> 00:04:10.200
+on purpose.
+
+155
+00:04:10.200 --> 00:04:11.860
+You get the token in two minutes:
+
+156
+00:04:11.860 --> 00:04:13.780
+on Telegram, look for BotFather,
+
+157
+00:04:13.780 --> 00:04:16.080
+send slash newbot and follow the questions.
+
+158
+00:04:16.080 --> 00:04:17.740
+Then swap the test model for
+
+159
+00:04:17.740 --> 00:04:18.500
+a real model:
+
+160
+00:04:18.500 --> 00:04:19.960
+in the cloud, with a key,
+
+161
+00:04:19.960 --> 00:04:21.580
+or local, with Ollama.
+
+162
+00:04:21.580 --> 00:04:23.220
+The plan tells the agent to build a setup
+
+163
+00:04:23.220 --> 00:04:25.380
+assistant that asks for the token,
+
+164
+00:04:25.380 --> 00:04:27.820
+the model, the name and the personality,
+
+165
+00:04:27.820 --> 00:04:29.720
+and stores the keys in the encrypted vault.
+
+166
+00:04:29.720 --> 00:04:30.740
+And for WhatsApp,
+
+167
+00:04:30.740 --> 00:04:32.340
+INTELECTO has a test base
+
+168
+00:04:32.340 --> 00:04:33.700
+through the Evolution API,
+
+169
+00:04:33.700 --> 00:04:34.623
+running in Docker.
+
+170
+00:04:34.623 --> 00:04:35.640
+Step five: put it online.
+
+171
+00:04:35.640 --> 00:04:37.060
+On your computer,
+
+172
+00:04:37.060 --> 00:04:38.660
+the assistant sleeps when you close the
+
+173
+00:04:38.660 --> 00:04:39.200
+laptop.
+
+174
+00:04:39.200 --> 00:04:41.160
+On a VPS, a rented server,
+
+175
+00:04:41.160 --> 00:04:42.900
+it stays on twenty-four hours.
+
+176
+00:04:42.900 --> 00:04:44.020
+The path is the same:
+
+177
+00:04:44.020 --> 00:04:45.720
+you log into the server through the terminal,
+
+178
+00:04:45.720 --> 00:04:46.840
+clone the repository,
+
+179
+00:04:46.840 --> 00:04:48.580
+open Claude Code or Codex
+
+180
+00:04:48.580 --> 00:04:49.880
+and ask it to build.
+
+181
+00:04:49.880 --> 00:04:51.680
+The difference is the packaging:
+
+182
+00:04:51.680 --> 00:04:53.600
+for a server, INTELECTO's build page
+
+183
+00:04:53.600 --> 00:04:55.080
+recommends Docker,
+
+184
+00:04:55.080 --> 00:04:56.380
+which runs on any machine.
+
+185
+00:04:56.380 --> 00:04:58.380
+On a Mac, the plan uses launchd.
+
+186
+00:04:58.380 --> 00:05:00.040
+Done: you talk to your Jarvis
+
+187
+00:05:00.040 --> 00:05:01.500
+from your phone, from anywhere.
+
+188
+00:05:01.500 --> 00:05:02.420
+Before switching it on,
+
+189
+00:05:02.420 --> 00:05:03.510
+three precautions.
+
+190
+00:05:03.510 --> 00:05:04.780
+First, start small:
+
+191
+00:05:04.780 --> 00:05:06.720
+few ingredients, tests passing,
+
+192
+00:05:06.720 --> 00:05:07.980
+then grow.
+
+193
+00:05:07.980 --> 00:05:09.720
+Second, secrets stay in the vault,
+
+194
+00:05:09.720 --> 00:05:11.890
+never in a loose file or in the code.
+
+195
+00:05:11.890 --> 00:05:14.260
+Third, an assistant that runs commands needs
+
+196
+00:05:14.260 --> 00:05:16.360
+limits: the forbidden list,
+
+197
+00:05:16.360 --> 00:05:18.620
+approval for dangerous actions and a single
+
+198
+00:05:18.620 --> 00:05:19.740
+owner, which is you.
+
+199
+00:05:19.740 --> 00:05:22.120
+INTELECTO was designed for one user,
+
+200
+00:05:22.120 --> 00:05:23.620
+not to serve the public.
+
+201
+00:05:23.620 --> 00:05:25.180
+A Jarvis with access to your machine
+
+202
+00:05:25.180 --> 00:05:26.980
+is powerful, and for that very reason deserves
+
+203
+00:05:26.980 --> 00:05:27.500
+care.
+
+204
+00:05:27.500 --> 00:05:28.560
+To get started today:
+
+205
+00:05:28.560 --> 00:05:30.140
+open the INTELECTO grocery store,
+
+206
+00:05:30.140 --> 00:05:32.460
+check five or six ingredients and export
+
+207
+00:05:32.460 --> 00:05:32.860
+the briefing.
+
+208
+00:05:32.860 --> 00:05:34.020
+Clone the repository,
+
+209
+00:05:34.020 --> 00:05:35.920
+open Claude Code or Codex
+
+210
+00:05:35.920 --> 00:05:37.640
+in the folder and ask it to build with
+
+211
+00:05:37.640 --> 00:05:38.120
+tests.
+
+212
+00:05:38.120 --> 00:05:40.080
+Run the tests and chat with it
+
+213
+00:05:40.080 --> 00:05:40.680
+in the terminal.
+
+214
+00:05:40.680 --> 00:05:43.200
+Then Telegram, WhatsApp and server,
+
+215
+00:05:43.200 --> 00:05:44.100
+one at a time.
+
+216
+00:05:44.100 --> 00:05:45.060
+It's all open:
+
+217
+00:05:45.060 --> 00:05:47.080
+the repository, the step-by-step guide
+
+218
+00:05:47.080 --> 00:05:48.520
+and the INTELECTO course,
+
+219
+00:05:48.520 --> 00:05:49.900
+on INEMA dot club.
+
+220
+00:05:49.900 --> 00:05:52.040
+You choose, the agent builds,
+
+221
+00:05:52.040 --> 00:05:53.300
+and the test confirms.
+
+222
+00:05:53.300 --> 00:05:54.660
+See you in the next video.

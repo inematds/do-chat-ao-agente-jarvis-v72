@@ -186,12 +186,12 @@
         {
           "p": "Por que entregar ao agente o meu-assistente.md junto com o doc/intelecto.md?",
           "opcoes": [
+            "Não precisa: o briefing basta.",
             "Porque o agente não lê arquivos .md sozinhos.",
-            "Porque o briefing é a lista de compras e o plano é a receita, com os contratos que fazem cada peça encaixar.",
             "Porque o doc/intelecto.md tem a senha do Telegram.",
-            "Não precisa: o briefing basta."
+            "Porque o briefing é a lista de compras e o plano é a receita, com os contratos que fazem cada peça encaixar."
           ],
-          "certa": 1,
+          "certa": 3,
           "explica": "A validação do exemplo descobriu isso: o briefing sozinho é um roteador, não uma receita. Os contratos do plano tornam cada peça implementável.",
           "cert": true,
           "ref": "passos"
@@ -199,12 +199,12 @@
         {
           "p": "O agente terminou e disse \"pronto\". Qual a prova de que funciona?",
           "opcoes": [
-            "A palavra \"pronto\".",
-            "O número de arquivos criados.",
             "Os testes passando e a conversa no terminal guardando e lembrando um fato no banco.",
-            "O tamanho do código."
+            "O tamanho do código.",
+            "A palavra \"pronto\".",
+            "O número de arquivos criados."
           ],
-          "certa": 2,
+          "certa": 0,
           "explica": "Você não precisa entender cada linha; precisa do teste. A linha DB do smoke mostra que o fato foi gravado de verdade.",
           "ref": "codigo"
         },
@@ -212,11 +212,11 @@
           "p": "Qual é o jeito certo de começar?",
           "opcoes": [
             "Marcar todas as 140 funcionalidades de uma vez.",
+            "Escrever o código à mão primeiro.",
             "Poucos ingredientes, testes passando, depois crescer.",
-            "Começar pelo servidor na nuvem.",
-            "Escrever o código à mão primeiro."
+            "Começar pelo servidor na nuvem."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "Comece pequeno. A mercearia aceita voltar e acrescentar; o que não dá é depurar 40 peças ao mesmo tempo.",
           "ref": "diagrama"
         }

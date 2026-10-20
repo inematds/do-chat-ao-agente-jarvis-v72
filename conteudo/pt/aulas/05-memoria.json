@@ -186,23 +186,23 @@
           "p": "Você contou \"fecho o relatório toda segunda\" e perguntou \"qual minha tarefa semanal?\". Ele não achou. Por quê?",
           "opcoes": [
             "O banco apagou o fato.",
-            "A busca é por palavras: a pergunta não usou nenhuma palavra do fato.",
+            "A memória só guarda uma coisa por dia.",
             "Precisa de um modelo mais caro.",
-            "A memória só guarda uma coisa por dia."
+            "A busca é por palavras: a pergunta não usou nenhuma palavra do fato."
           ],
-          "certa": 1,
+          "certa": 3,
           "explica": "A busca procura as palavras da pergunta. \"Segunda\" ou \"relatório\" achariam; \"tarefa semanal\" não aparece no fato.",
           "ref": "passos"
         },
         {
           "p": "Qual a diferença entre MEMORY.md e memory.db?",
           "opcoes": [
+            "memory.db guarda só senhas.",
             "Nenhuma: são o mesmo arquivo.",
             "MEMORY.md tem poucos fatos fixos sempre no contexto; memory.db cresce e só entra o que for relevante.",
-            "MEMORY.md fica na nuvem e memory.db no celular.",
-            "memory.db guarda só senhas."
+            "MEMORY.md fica na nuvem e memory.db no celular."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "São duas camadas: a fixa e curta, que você escreve, e a que cresce conversando e é buscada por relevância.",
           "ref": "diagrama"
         }

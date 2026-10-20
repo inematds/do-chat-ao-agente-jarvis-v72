@@ -5,33 +5,33 @@
   "titulo": "Build without coding: you choose, the agent builds, the test confirms",
   "titulo_curto": "Build with tests",
   "minutos": 20,
-  "lead": "You don't write code. You choose the ingredients on a page, like at a grocery store, export a list, and ask Claude Code or Codex to build it by following the INTELECTO construction plan. Then you check it with tests and a conversation in the terminal, before connecting it to Telegram.",
-  "objetivo": "generate the brief at the grocery store, ask the coding agent to build it with tests, and check the core with tests and a conversation.",
+  "lead": "You don't write code. You pick the ingredients on a page, like in a grocery store, export a list, and ask Claude Code or Codex to build it, following the INTELECTO build plan. Then you prove it with the tests and a conversation in the terminal, before connecting it to Telegram.",
+  "objetivo": "generate the briefing at the grocery store, ask the coding agent to build it with tests, and prove the core with the tests and a conversation.",
   "competencias": [
-    "generate-brief",
-    "request-build-with-tests",
-    "verify-with-tests"
+    "gerar-briefing",
+    "pedir-construcao-com-testes",
+    "verificar-por-teste"
   ],
   "aprende": [
     {
-      "t": "The grocery store and the meu-assistente.md brief"
+      "t": "The grocery store and the meu-assistente.md briefing"
     },
     {
-      "t": "Why the list alone isn’t enough: the build plan"
+      "t": "Why the list alone isn't enough: the build plan"
     },
     {
-      "t": "The one-sentence build request"
+      "t": "The build request in one sentence"
     },
     {
-      "t": "Prove it with tests and a conversation in the terminal"
+      "t": "Prove it with the tests and the conversation in the terminal"
     }
   ],
-  "hero_alt": "Laptop with a dark terminal showing a test list with green checkmarks and hands on the keyboard.",
+  "hero_alt": "Laptop with a dark terminal showing a list of tests with green checkmarks and hands on the keyboard.",
   "secoes": [
     {
       "tipo": "diagrama",
-      "titulo": "The five-step path",
-      "sub": "Click each block. The agent does the heavy lifting.",
+      "titulo": "The path in five steps",
+      "sub": "Click each block. The heavy lifting is the agent's.",
       "nos": [
         {
           "icone": "lista",
@@ -43,11 +43,11 @@
               "t": "More than 140 features"
             }
           ],
-          "detalhe": "An INTELECTO page with features drawn from open projects like OpenClaw, NanoBot, and Hermes, arranged in aisles. Each card explains what it does in one sentence. Click it and it goes in your cart."
+          "detalhe": "An INTELECTO page with features taken from open projects like OpenClaw, NanoBot, and Hermes, laid out in aisles. Each card explains in one sentence what it does. You click and it goes into the cart."
         },
         {
           "icone": "arquivo",
-          "titulo": "Brief",
+          "titulo": "Briefing",
           "sub": "meu-assistente.md",
           "itens": [
             {
@@ -55,7 +55,7 @@
               "t": "+ plan doc/intelecto.md"
             }
           ],
-          "detalhe": "The export button downloads meu-assistente.md: each ingredient, who already implements it, and where the reference code lives. It’s the shopping list; the recipe is the doc/intelecto.md plan, with the contracts for each piece.",
+          "detalhe": "The export button downloads meu-assistente.md: each ingredient, who already implements it, and where the reference code is. It is the shopping list; the recipe is the plan doc/intelecto.md, with the contracts for each piece.",
           "forte": true
         },
         {
@@ -65,15 +65,15 @@
           "itens": [
             {
               "icone": "chat",
-              "t": "A one-sentence request"
+              "t": "One request in one sentence"
             }
           ],
-          "detalhe": "In the repository folder, with the brief alongside it, open the agent and ask it to build with tests. It reads, plans, writes one piece at a time, and asks for approval before running commands. You check what you asked for and the result."
+          "detalhe": "In the repository folder, with the briefing alongside, you open the agent and ask it to build with tests. It reads, plans, writes piece by piece, and asks for approval to run things. You check what you asked for and the result."
         },
         {
           "icone": "check",
           "titulo": "Tests",
-          "sub": "Proof, not promises",
+          "sub": "Proof, not promise",
           "itens": [
             {
               "icone": "check",
@@ -81,10 +81,10 @@
             },
             {
               "icone": "chat",
-              "t": "Conversation in the terminal"
+              "t": "Chat in the terminal"
             }
           ],
-          "detalhe": "In exemplo-jarvis, one command runs all nine tests: memory saves, searches, and forgets; the loop requests a tool and responds; the blocklist stops the dangerous command. Then, have a conversation in the terminal with a test model, without internet or a key."
+          "detalhe": "In the exemplo-jarvis, one command runs the nine tests: memory saves, searches, and forgets; the loop asks for a tool and replies; the blocklist stops the dangerous command. Then, a chat in the terminal with a test model, with no internet and no key."
         },
         {
           "icone": "enviar",
@@ -96,62 +96,62 @@
               "t": "Token and key in the vault"
             }
           ],
-          "detalhe": "With the tests passing, you switch from the test model to a real one (lesson 6) and connect the Telegram channel with the token from lesson 3. The plan tells the agent to build a setup assistant that asks for the token, model, name, and personality."
+          "detalhe": "With the tests green, you swap the test model for a real one (lesson 6) and connect the Telegram channel with the token from lesson 3. The plan tells the agent to build a setup assistant that asks for the token, model, name, and personality."
         }
       ],
-      "legenda": "Start small: a few ingredients, passing tests, then grow. You can go back to the grocery store and add more."
+      "legenda": "Start small: a few ingredients, tests passing, then grow. You can go back to the grocery store and add more."
     },
     {
       "tipo": "passos",
-      "titulo": "Each step, and what to check",
-      "sub": "Click each step.",
+      "titulo": "Each step, with what to check",
+      "sub": "Tap each step.",
       "passos": [
         {
           "titulo": "Choose a few",
           "sub": "Grocery store",
           "texto": [
-            "For a first Jarvis, the installation video chose eight: personality file, Telegram bot, WhatsApp, memory with SQLite search, encrypted secrets vault, list of forbidden commands, scheduling, and skills.",
-            "You can start with less: personality, Telegram, memory, and vault."
+            "For a first Jarvis, the installation video chose eight: personality file, Telegram bot, WhatsApp, memory with SQLite search, encrypted secrets vault, forbidden-commands list, scheduling, and skills.",
+            "You can start with fewer: personality, Telegram, memory, and vault."
           ],
           "exemplo": {
             "rot": "Done when",
-            "texto": "Your cart has 4 to 8 items, and you can explain what each one does."
+            "texto": "The cart has 4 to 8 items and you can say what each one is for."
           }
         },
         {
-          "titulo": "Export and bring together",
-          "sub": "Brief + plan",
+          "titulo": "Export and combine",
+          "sub": "Briefing + plan",
           "texto": [
-            "Export the brief for Claude Code and download <code>meu-assistente.md</code>. Clone the INTELECTO repository and put the brief inside the folder.",
-            "What the tests revealed: the list alone isn’t enough. What makes the build work is the pointer to <code>doc/intelecto.md</code>."
+            "Export as a briefing for Claude Code and download <code>meu-assistente.md</code>. Clone the INTELECTO repository and put the briefing inside the folder.",
+            "What the tests revealed: the list alone is not enough. What makes the build succeed is the pointer to <code>doc/intelecto.md</code>."
           ],
           "exemplo": {
             "rot": "In the folder",
-            "texto": "intelecto/ with doc/intelecto.md, reference-repos/, and your meu-assistente.md."
+            "texto": "intelecto/ with doc/intelecto.md, reference-repos/ and your meu-assistente.md."
           }
         },
         {
-          "titulo": "Ask for tests",
+          "titulo": "Ask with tests",
           "sub": "Plan first",
           "texto": [
-            "First ask for the plan: the agent reads everything and returns the files, order, and questions (Docker or direct install? OpenRouter or Ollama? Which model?). Reply in Portuguese.",
-            "Once you approve the plan, ask it to build with tests. Approve each command it wants to run only when you understand what it does."
+            "First ask for the plan: the agent reads everything and returns files, order, and questions (Docker or direct install? OpenRouter or Ollama? which model?). Answer in Portuguese.",
+            "With the plan approved, ask for the build with tests. Approve each command it wants to run only when you understand what it is."
           ],
           "exemplo": {
-            "rot": "If it makes a mistake",
+            "rot": "If it gets it wrong",
             "texto": "Describe the problem in Portuguese and ask it to fix it. This cycle is normal and expected."
           }
         },
         {
           "titulo": "Prove it",
-          "sub": "Tests + conversation",
+          "sub": "Tests + chat",
           "texto": [
-            "Run the tests. Then chat in the terminal: \"remember my name is ...\", followed by \"what's my name?\".",
-            "The last line of the example shows the name saved in the database: proof that it isn't fixed text, and that memory and the loop work together."
+            "Run the tests. Then chat in the terminal: \"remember that my name is ...\", and right after, \"what is my name?\".",
+            "The last line of the example shows the name saved in the database: proof that it is not hard-coded text, and that the memory and the loop work together."
           ],
           "exemplo": {
             "rot": "Done when",
-            "texto": "All tests pass, and the name appears on the DB line."
+            "texto": "All tests pass and the name appears on the DB line."
           }
         }
       ]
@@ -159,22 +159,22 @@
     {
       "tipo": "codigo",
       "titulo": "The commands and the request",
-      "sub": "Run these in the terminal, from your projects folder.",
+      "sub": "Run in the terminal, in the projects folder.",
       "blocos": [
         {
           "rot": "Terminal · download INTELECTO",
           "icone": "terminal",
-          "conteudo": "git clone https://github.com/inematds/intelecto.git\ncd intelecto\n# copy here the meu-assistente.md that the grocery store downloaded"
+          "conteudo": "git clone https://github.com/inematds/intelecto.git\ncd intelecto\n# copy the meu-assistente.md that the mercearia downloaded into here"
         },
         {
           "rot": "Request 1 · the plan first",
           "icone": "chat",
-          "conteudo": "Read meu-assistente.md and the plan in doc/intelecto.md. Before writing code, give me the plan: files, order, and decisions that depend on me. Use my identity (SOUL, AGENTS, USER, and MEMORY in workspace/)."
+          "conteudo": "Read meu-assistente.md and the plan in doc/intelecto.md. Before writing any code, give me the plan back: files, order, and the decisions that depend on me. Use my identity (SOUL, AGENTS, USER and MEMORY that are in workspace/)."
         },
         {
           "rot": "Request 2 · build with tests",
           "icone": "chat",
-          "conteudo": "Plan approved. Build my assistant in Python, with tests, following the contracts in doc/intelecto.md. The Telegram bot replies only to my user. Never put secrets in the code. When you're done, run the tests and show me the results."
+          "conteudo": "Plan approved. Build my assistant in Python, with tests, following the contracts in doc/intelecto.md. The Telegram bot answers only to my user. Secrets never in the code. When you finish, run the tests and show me the result."
         },
         {
           "rot": "Terminal · prove the repository example",
@@ -186,49 +186,49 @@
         "selo": "real",
         "abas": [
           {
-            "rot": "smoke.py output",
-            "html": "<pre>USER : remember my name is Nei\nJARVIS: Your name is Nei.\nUSER : what's my name?\nJARVIS: Your name is Nei.\nDB   : ['Meu nome é Nei']</pre><p>The <b>DB</b> line proves that the name was saved in SQLite; it didn't come from fixed text.</p>"
+            "rot": "Output of smoke.py",
+            "html": "<pre>USER : lembre que meu nome é Nei\nJARVIS: Seu nome é Nei.\nUSER : qual meu nome?\nJARVIS: Seu nome é Nei.\nDB   : ['Meu nome é Nei']</pre><p>The <b>DB</b> line proves the name was saved in SQLite, not pulled from fixed text.</p>"
           },
           {
             "rot": "What the 9 tests cover",
-            "html": "<ul><li>Memory: save → search → forget.</li><li>A full loop round: the test model requests a tool, and the loop runs it and responds.</li><li>The blocklist blocks the dangerous command and allows the safe one.</li><li>Settings can be saved and loaded without losing anything.</li><li>The context includes SOUL and USER.</li></ul>"
+            "html": "<ul><li>Memory: save → search → forget.</li><li>One full round of the loop: the test model asks for a tool, the loop runs it and replies.</li><li>The blocklist stops the dangerous command and lets the safe one through.</li><li>Settings go out and come back without losing anything.</li><li>The context contains the SOUL and the USER.</li></ul>"
           }
         ]
       }
     },
     {
       "tipo": "pratica",
-      "titulo": "Practice: build and prove it",
-      "sub": "Exercise E3 from sequence 2, following the path the repository actually uses.",
+      "titulo": "Practice: build and prove",
+      "sub": "Exercise E3 of sequence 2, on the path the repository actually uses.",
       "exercicios": [
         {
           "id": "e3a",
           "titulo": "E3a · Run the example",
           "min": "10 min",
           "texto": "Clone INTELECTO, go into exemplo-jarvis, and run the tests and smoke.py.",
-          "pronto": "All 9 tests pass, and the smoke test shows the DB line with the name."
+          "pronto": "the 9 tests pass and the smoke shows the DB line with the name."
         },
         {
           "id": "e3b",
-          "titulo": "E3b · Your brief",
+          "titulo": "E3b · Your briefing",
           "min": "15 min",
-          "texto": "At the grocery store, select 4 to 8 ingredients and export meu-assistente.md to the INTELECTO folder.",
-          "pronto": "The file is in the folder, and you noted the reason for each ingredient in your meu-jarvis.md."
+          "texto": "In the mercearia, check 4 to 8 ingredients and export meu-assistente.md to the INTELECTO folder.",
+          "pronto": "the file is in the folder and each ingredient has its reason noted in your meu-jarvis.md."
         },
         {
           "id": "e3c",
-          "titulo": "E3c · Your Jarvis, built",
-          "min": "1 hr",
-          "texto": "Copy your workspace/ folder from lesson 2 into the project, make requests 1 and 2, and follow along with the agent.",
-          "pronto": "The tests pass, and in the terminal conversation, it replies with the name and style you defined."
+          "titulo": "E3c · Your built Jarvis",
+          "min": "1 h",
+          "texto": "Copy your workspace/ folder from lesson 2 into the project, make requests 1 and 2, and follow the agent.",
+          "pronto": "the tests pass and, in the conversation in the terminal, it answers with the name and the style you defined."
         }
       ],
-      "fonte": "In the original exercise, the step is <code>./start.sh</code>. In today's repository, the path is: brief + plan + agent builds. The setup assistant is one of the pieces the plan says to build."
+      "fonte": "In the original exercise the step is <code>./start.sh</code>. In today's repository the path is this: briefing + plan + agent builds. The setup assistant is one of the pieces the plan tells it to build."
     },
     {
       "tipo": "video",
-      "titulo": "The installation video",
-      "sub": "From the grocery store to an assistant that replies, with the whole process on screen.",
+      "titulo": "The video install",
+      "sub": "From the mercearia to the assistant answering, with the whole path on screen.",
       "chave": "intelecto-instalacao"
     },
     {
@@ -237,50 +237,50 @@
       "sub": "The explanation appears after your answer.",
       "perguntas": [
         {
-          "p": "Why give the agent meu-assistente.md along with doc/intelecto.md?",
+          "p": "Why give the agent meu-assistente.md together with doc/intelecto.md?",
           "opcoes": [
-            "Because the agent can't read .md files on its own.",
-            "Because the brief is the shopping list, and the plan is the recipe, with the contracts that make each piece fit.",
+            "You don't need to: the briefing is enough.",
+            "Because the agent doesn't read .md files on its own.",
             "Because doc/intelecto.md has the Telegram password.",
-            "You don't need to: the brief is enough."
+            "Because the briefing is the shopping list and the plan is the recipe, with the contracts that make each piece fit."
           ],
-          "certa": 1,
-          "explica": "Validating the example revealed this: the brief alone is a router, not a recipe. The plan's contracts make each piece implementable.",
+          "certa": 3,
+          "explica": "The example's validation found this: the briefing alone is a router, not a recipe. The plan's contracts make each piece implementable.",
           "cert": true,
           "ref": "passos"
         },
         {
-          "p": "The agent finished and said \"done.\" What's the proof it works?",
+          "p": "The agent finished and said \"done\". What is the proof that it works?",
           "opcoes": [
-            "The word \"done.\"",
-            "The number of files created.",
-            "The tests pass, and the terminal conversation saves a fact to the database and recalls it.",
-            "The size of the code."
+            "The tests passing and the conversation in the terminal saving and remembering a fact in the database.",
+            "The size of the code.",
+            "The word \"done\".",
+            "The number of files created."
           ],
-          "certa": 2,
-          "explica": "You don’t need to understand every line; you need the test. The DB line in the smoke test shows that the fact was actually saved.",
+          "certa": 0,
+          "explica": "You don't need to understand every line; you need the test. The smoke's DB line shows the fact was really saved.",
           "ref": "codigo"
         },
         {
-          "p": "What’s the right way to get started?",
+          "p": "What is the right way to start?",
           "opcoes": [
-            "Check off all 140 features at once.",
-            "A few ingredients, passing tests, then grow.",
-            "Start with the cloud server.",
-            "Write the code by hand first."
+            "Check all 140 features at once.",
+            "Write the code by hand first.",
+            "A few ingredients, tests passing, then grow.",
+            "Start with the server in the cloud."
           ],
-          "certa": 1,
-          "explica": "The grocery store lets you come back and add more. What you can’t do is debug 40 pieces at the same time.",
+          "certa": 2,
+          "explica": "Start small. The mercearia lets you come back and add more; what you can't do is debug 40 pieces at the same time.",
           "ref": "diagrama"
         }
       ]
     },
     {
       "tipo": "links",
-      "titulo": "Go further",
+      "titulo": "Going further",
       "links": [
         {
-          "t": "The grocery store: a comparison of frameworks",
+          "t": "The mercearia: framework comparison",
           "href": "https://inematds.github.io/intelecto/doc/framework-comparison-pt.html",
           "icone": "lista"
         },
@@ -290,7 +290,7 @@
           "icone": "arquivo"
         },
         {
-          "t": "example-jarvis in the repository",
+          "t": "exemplo-jarvis in the repository",
           "href": "https://github.com/inematds/intelecto/tree/main/exemplo-jarvis",
           "icone": "git"
         }

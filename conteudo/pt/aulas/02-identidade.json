@@ -173,28 +173,28 @@
         {
           "p": "Qual destes trechos de SOUL.md é o mais fraco?",
           "opcoes": [
-            "Direto e conciso; se não sabe, diz.",
-            "Seja útil e amigável.",
+            "Quero um parceiro que discorde quando eu estiver errado.",
             "Privacidade primeiro: nunca compartilhar meus dados.",
-            "Quero um parceiro que discorde quando eu estiver errado."
+            "Seja útil e amigável.",
+            "Direto e conciso; se não sabe, diz."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "\"Seja útil e amigável\" é vago demais: não dá para testar e todo modelo já tenta isso. Os outros dizem um tom, um valor ou um limite concreto.",
           "cert": true,
           "ref": "passos"
         },
         {
           "p": "\"Nunca apagar arquivo sem confirmação\" vai em qual arquivo?",
-          "opcoes": ["SOUL.md", "AGENTS.md", "USER.md", "MEMORY.md"],
-          "certa": 1,
+          "opcoes": ["MEMORY.md", "SOUL.md", "AGENTS.md", "USER.md"],
+          "certa": 2,
           "explica": "AGENTS.md é o contrato de trabalho: o que fazer sempre e o que nunca fazer. O SOUL diz quem ele é; o USER, quem é você.",
           "ref": "diagrama"
         },
         {
           "p": "Você quer o assistente mais formal. O que fazer?",
           "opcoes": [
-            "Pedir a um programador para mudar o loop.",
             "Trocar de modelo.",
+            "Pedir a um programador para mudar o loop.",
             "Editar o tom no SOUL.md.",
             "Reinstalar tudo."
           ],

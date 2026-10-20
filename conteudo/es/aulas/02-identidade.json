@@ -2,14 +2,14 @@
   "slug": "identidade",
   "num": 2,
   "menu": "Identidad",
-  "titulo": "Diseña tu Jarvis antes de instalarlo",
+  "titulo": "Diseña tu Jarvis antes de instalar",
   "titulo_curto": "Diseño e identidad",
   "minutos": 20,
-  "lead": "El asistente se vuelve tuyo en los archivos de texto, no en el código. Antes de instalar nada, escribes quién es, qué debe hacer, qué nunca debe hacer y qué necesita recordar sobre ti. Ese diseño responde las preguntas de la instalación y se convierte en los cuatro archivos de identidad.",
-  "objetivo": "escribir el meu-jarvis.md y convertirlo en los cuatro archivos de identidad: SOUL, AGENTS, USER y MEMORY.",
+  "lead": "El asistente se vuelve tuyo en los archivos de texto, no en el código. Antes de instalar nada, escribes quién es, qué debe y qué nunca debe hacer, y qué necesita recordar de ti. Ese diseño responde las preguntas de la instalación y se convierte en los cuatro archivos de la identidad.",
+  "objetivo": "escribir el meu-jarvis.md y convertirlo en los cuatro archivos de la identidad: SOUL, AGENTS, USER y MEMORY.",
   "competencias": [
-    "disenar-asistente",
-    "escribir-soul",
+    "desenhar-assistente",
+    "escrever-soul",
     "definir-limites"
   ],
   "aprende": [
@@ -17,16 +17,16 @@
       "t": "Escribir el diseño del asistente en una pantalla"
     },
     {
-      "t": "Qué va en SOUL, AGENTS, USER y MEMORY"
+      "t": "Qué va en SOUL, en AGENTS, en USER y en MEMORY"
     },
     {
       "t": "Diferencia entre un SOUL eficaz y uno débil"
     },
     {
-      "t": "Convertir una intención vaga en una solicitud concreta"
+      "t": "Convertir un deseo vago en un pedido concreto"
     }
   ],
-  "hero_alt": "Cuatro hojas de papel una al lado de la otra sobre la mesa y una mano escribiendo en una de ellas.",
+  "hero_alt": "Cuatro hojas de papel una al lado de otra sobre la mesa y una mano escribiendo en una de ellas.",
   "secoes": [
     {
       "tipo": "diagrama",
@@ -43,7 +43,7 @@
               "t": "Nombre, estilo, debe, nunca, recordar"
             }
           ],
-          "detalhe": "Una pantalla de texto: nombre y forma de hablar, tres cosas que debe hacer cada semana, tres que nunca debe hacer y qué necesita recordar sobre ti. Es la fuente de los cuatro archivos.",
+          "detalhe": "Una pantalla de texto: nombre y forma de hablar, tres cosas que debe hacer cada semana, tres que nunca debe hacer y lo que necesita recordar de ti. Es la fuente de los cuatro archivos.",
           "forte": true
         },
         {
@@ -56,7 +56,7 @@
               "t": "Personalidad, tono, valores"
             }
           ],
-          "detalhe": "Quién es: nombre, personalidad, tono de voz y valores. Escríbelo como si estuvieras contratando a un asistente humano: ¿qué le dirías en la entrevista?"
+          "detalhe": "Quién es: nombre, personalidad, tono de voz y valores. Escribe como si estuvieras contratando a un asistente humano: ¿qué dirías en la entrevista?"
         },
         {
           "icone": "lista",
@@ -72,7 +72,7 @@
               "t": "Nunca"
             }
           ],
-          "detalhe": "El contrato de trabajo: consultar la memoria antes de responder, preguntar cuando tenga dudas, rechazar comandos peligrosos. Una regla escrita es más confiable que esperar que el modelo la adivine."
+          "detalhe": "El contrato de trabajo: consultar la memoria antes de responder, preguntar cuando tengas dudas, rechazar comandos peligrosos. Una regla escrita es más confiable que esperar que el modelo adivine."
         },
         {
           "icone": "alvo",
@@ -84,22 +84,22 @@
               "t": "Rutina, preferencias, idioma"
             }
           ],
-          "detalhe": "Tu perfil: profesión, rutina, cómo te gustan las respuestas y en qué idioma. Es un archivo vivo: si cambias de proyecto, actualízalo."
+          "detalhe": "Tu perfil: profesión, rutina, cómo te gustan las respuestas y en qué idioma. Es un archivo vivo: si cambiaste de proyecto, actualízalo."
         },
         {
           "icone": "memoria",
           "titulo": "MEMORY.md",
-          "sub": "Datos iniciales",
+          "sub": "Hechos iniciales",
           "itens": [
             {
               "icone": "arquivo",
               "t": "Lo que sabe el día 1"
             }
           ],
-          "detalhe": "Los datos que debe conocer desde la primera conversación. Lo que le cuentes después irá a la base de memoria (clase 5)."
+          "detalhe": "Los hechos que debe saber desde la primera conversación. Lo que le cuentes después va al banco de memoria (clase 5)."
         }
       ],
-      "legenda": "Con cada mensaje, el agente agrega SOUL, AGENTS y USER al inicio de la conversación. Editar un archivo de texto cambia al asistente, sin tocar el código."
+      "legenda": "En cada mensaje, el agente junta SOUL, AGENTS y USER al comienzo de la conversación. Editar un archivo de texto cambia al asistente, sin tocar código."
     },
     {
       "tipo": "passos",
@@ -110,8 +110,8 @@
           "titulo": "El diseño",
           "sub": "meu-jarvis.md",
           "texto": [
-            "Responde cinco preguntas: nombre, forma de hablar, tres cosas que debe hacer cada semana, tres que nunca debe hacer y qué necesita recordar sobre ti.",
-            "Sé concreto. «Cuida mi correo» es vago; «cada lunes, enumera las tres prioridades de la semana a partir de lo que te conté» es una petición."
+            "Responde cinco preguntas: nombre, forma de hablar, tres cosas que debe hacer cada semana, tres que nunca debe hacer y qué necesita recordar de ti.",
+            "Sé concreto. \"Cuida mi correo\" es vago; \"cada lunes, lista las tres prioridades de la semana a partir de lo que te conté\" es un pedido."
           ],
           "exemplo": {
             "rot": "Listo cuando",
@@ -122,20 +122,20 @@
           "titulo": "El alma",
           "sub": "SOUL.md",
           "texto": [
-            "Un SOUL eficaz tiene valores claros, un tono específico con un ejemplo, límites explícitos y un estilo de respuesta definido.",
-            "Un SOUL débil dice «sé útil y amable», se contradice (formal y casual al mismo tiempo) o es demasiado largo y pierde el foco."
+            "Un SOUL eficaz tiene valores claros, un tono específico con ejemplo, límites explícitos y un estilo de respuesta definido.",
+            "Un SOUL débil dice \"sé útil y amigable\", se contradice (formal e informal al mismo tiempo) o es demasiado largo y diluye el foco."
           ],
           "exemplo": {
             "rot": "Del ejemplo del repositorio",
-            "texto": "Directo y conciso. Honesto: si no sabe, lo dice. Quiero un compañero que discrepe, no alguien que solo esté de acuerdo."
+            "texto": "Directo y conciso. Honesto: si no sabe, lo dice. Quiero un compañero que discrepe, no alguien que solo está de acuerdo."
           }
         },
         {
           "titulo": "Las reglas",
           "sub": "AGENTS.md",
           "texto": [
-            "Separa en SIEMPRE y NUNCA. Las reglas del ejemplo: consultar la memoria antes de responder, guardar lo que aprenda sobre ti, preguntar cuando tenga dudas.",
-            "Para las herramientas: preferir comandos seguros y de solo lectura, y rechazar los destructivos."
+            "Sepáralo en SIEMPRE y NUNCA. Las reglas del ejemplo: consultar la memoria antes de responder, guardar lo que aprenda sobre ti, preguntar cuando tenga dudas.",
+            "Para herramientas: preferir comandos seguros, de solo lectura, y rechazar los destructivos."
           ],
           "exemplo": {
             "rot": "Regla del NUNCA",
@@ -143,15 +143,15 @@
           }
         },
         {
-          "titulo": "Tú y los datos",
+          "titulo": "Tú y los hechos",
           "sub": "USER.md y MEMORY.md",
           "texto": [
-            "En USER va lo que necesita saber sobre ti sin preguntar cada vez: a qué te dedicas, cómo te gustan las respuestas y en qué idioma.",
-            "En MEMORY, unos pocos datos que valen desde el primer día. Que sea breve: lo que venga después, lo aprenderá conversando."
+            "En el USER va lo que necesita saber de ti sin preguntar cada vez: a qué te dedicas, cómo te gustan las respuestas, en qué idioma.",
+            "En el MEMORY, pocos hechos que valen desde el primer día. Sé breve: lo que venga después, lo aprende conversando."
           ],
           "exemplo": {
             "rot": "USER del ejemplo",
-            "texto": "Prefiere consejos prácticos a la teoría. Valora el tiempo: sé conciso. Habla portugués (pt-BR)."
+            "texto": "Prefiere consejo práctico a teoría. Valora el tiempo: sé conciso. Habla español (es-LA)."
           }
         }
       ]
@@ -159,17 +159,17 @@
     {
       "tipo": "codigo",
       "titulo": "Modelos para copiar",
-      "sub": "Completa primero meu-jarvis.md; los demás salen de ahí.",
+      "sub": "Llena primero el meu-jarvis.md; los otros salen de él.",
       "blocos": [
         {
           "rot": "meu-jarvis.md",
           "icone": "arquivo",
-          "conteudo": "# Mi Jarvis\n\n## Nombre y forma de hablar\nNombre:\nCómo habla (formal, directo, con humor):\n\n## Debe hacer cada semana\n1.\n2.\n3.\n\n## Nunca debe hacer\n1.\n2.\n3.\n\n## Qué necesita recordar sobre mí\n- Profesión:\n- Rutina:\n- Preferencias:"
+          "conteudo": "# Meu Jarvis\n\n## Nombre y forma de hablar\nNombre:\nCómo habla (formal, directo, con humor):\n\n## Debe hacer cada semana\n1.\n2.\n3.\n\n## Nunca debe hacer\n1.\n2.\n3.\n\n## Qué necesita recordar de mí\n- Profesión:\n- Rutina:\n- Preferencias:"
         },
         {
           "rot": "workspace/SOUL.md",
           "icone": "usuario",
-          "conteudo": "# Alma\n\nEres <NOME>, asistente personal de <SEU NOME>.\n\n## Personalidad\n- <tono, con un ejemplo de cómo habla>\n- Honesto: si no sabes, lo dices.\n\n## Valores\n- Privacidad primero: nunca compartir mis datos.\n- <un valor tuyo innegociable>"
+          "conteudo": "# Soul\n\nEres <NOMBRE>, asistente personal de <TU NOMBRE>.\n\n## Personalidad\n- <tono, con un ejemplo de cómo habla>\n- Honesto: si no sabe, lo dice.\n\n## Valores\n- Privacidad primero: nunca compartir mis datos.\n- <un valor no negociable tuyo>"
         },
         {
           "rot": "workspace/AGENTS.md",
@@ -179,19 +179,19 @@
         {
           "rot": "workspace/USER.md y MEMORY.md",
           "icone": "memoria",
-          "conteudo": "# USER.md\n## Sobre <TU NOMBRE>\n- Profesión:\n- Rutina:\n- Cómo me gustan las respuestas:\n- Idioma: portugués (pt-BR)\n\n# MEMORY.md\n## Datos\n- <dato que debe saber desde el día 1>\n- <otro dato>"
+          "conteudo": "# USER.md\n## Sobre <TU NOMBRE>\n- Profesión:\n- Rutina:\n- Cómo me gustan las respuestas:\n- Idioma: español (es-LA)\n\n# MEMORY.md\n## Hechos\n- <hecho que debe saber desde el día 1>\n- <otro hecho>"
         }
       ],
       "saida": {
         "selo": "real",
         "abas": [
           {
-            "rot": "SOUL del ejemplo-jarvis",
-            "html": "<p><b>Personalidad:</b> directo y conciso, sin rodeos; proactivo, sugiere cuando es relevante; honesto, si no sabe, lo dice; recuerda el contexto de conversaciones anteriores.</p><p><b>Valores:</b> privacidad primero, nunca compartir los datos del dueño; tener opinión, porque el dueño quiere un compañero para debatir, no alguien que solo esté de acuerdo.</p>"
+            "rot": "SOUL del exemplo-jarvis",
+            "html": "<p><b>Personalidad:</b> directo y conciso, sin rodeos; proactivo, sugiere cuando es relevante; honesto, si no sabe, lo dice; recuerda el contexto de las conversaciones anteriores.</p><p><b>Valores:</b> privacidad primero, nunca compartir los datos del dueño; tener opinión, porque el dueño quiere un compañero de discusión, no alguien que solo está de acuerdo.</p>"
           },
           {
             "rot": "Eficaz × débil",
-            "html": "<ul><li><b>Eficaz:</b> valores claros y comprobables, tono con ejemplo, límites explícitos, estilo de respuesta definido.</li><li><b>Débil:</b> \"sé útil y amable\", solo comportamientos y ningún valor, contradicciones, demasiado largo.</li></ul>"
+            "html": "<ul><li><b>Eficaz:</b> valores claros y verificables, tono con ejemplo, límites explícitos, estilo de respuesta definido.</li><li><b>Débil:</b> \"sé útil y amigable\", solo comportamientos y ningún valor, contradicciones, demasiado largo.</li></ul>"
           }
         ]
       }
@@ -199,13 +199,13 @@
     {
       "tipo": "pratica",
       "titulo": "Práctica: el diseño de tu Jarvis",
-      "sub": "Ejercicio E1 de la secuencia 2, en profundidad.",
+      "sub": "Ejercicio E1 de la secuencia 2, profundizado.",
       "exercicios": [
         {
           "id": "e1",
           "titulo": "E1 · Diseña tu Jarvis",
           "min": "15 min",
-          "texto": "Escribe el archivo meu-jarvis.md con el modelo: nombre, personalidad, tres cosas que debe hacer, tres que nunca debe hacer y qué debe recordar sobre ti.",
+          "texto": "Escribe el meu-jarvis.md con la plantilla: nombre, estilo, tres \"debe\", tres \"nunca\" y lo que debe recordar de ti.",
           "pronto": "el archivo cabe en una pantalla y otra persona entendería quién es tu asistente."
         },
         {
@@ -213,51 +213,51 @@
           "titulo": "E1b · Los cuatro archivos",
           "min": "25 min",
           "texto": "A partir del diseño, escribe SOUL.md, AGENTS.md, USER.md y MEMORY.md en una carpeta workspace/.",
-          "pronto": "cada \"nunca\" del diseño se convirtió en una línea en NUNCA de AGENTS.md y SOUL no contiene la frase \"sé útil y amable\"."
+          "pronto": "cada \"nunca\" del diseño se convirtió en una línea en el NUNCA de AGENTS.md y el SOUL no tiene la frase \"sé útil y amable\"."
         }
       ],
       "fonte": "Ejercicio original: <a href=\"https://github.com/inematds/jornada-agentes/blob/main/exercicios/02-jarvis.md\" target=\"_blank\" rel=\"noopener\">jornada-agentes/exercicios/02-jarvis.md</a>."
     },
     {
       "tipo": "quiz",
-      "titulo": "Pon a prueba lo que aprendiste",
+      "titulo": "Prueba lo que aprendiste",
       "sub": "La explicación aparece después de tu respuesta.",
       "perguntas": [
         {
           "p": "¿Cuál de estos fragmentos de SOUL.md es el más débil?",
           "opcoes": [
-            "Directo y conciso; si no sabe, lo dice.",
-            "Sé útil y amable.",
+            "Quiero un compañero que me contradiga cuando yo esté equivocado.",
             "Privacidad primero: nunca compartir mis datos.",
-            "Quiero un compañero que no esté de acuerdo cuando me equivoque."
+            "Sé útil y amable.",
+            "Directo y conciso; si no sabe, lo dice."
           ],
-          "certa": 1,
-          "explica": "\"Sé útil y amable\" es demasiado vago: no se puede comprobar y todo modelo ya intenta hacerlo. Los otros expresan un tono, un valor o un límite concreto.",
+          "certa": 2,
+          "explica": "\"Sé útil y amable\" es demasiado vago: no se puede probar y todo modelo ya lo intenta. Los otros dicen un tono, un valor o un límite concreto.",
           "cert": true,
           "ref": "passos"
         },
         {
-          "p": "\"Nunca borrar un archivo sin confirmación\" ¿en qué archivo va?",
+          "p": "\"Nunca borrar un archivo sin confirmación\" va en qué archivo?",
           "opcoes": [
+            "MEMORY.md",
             "SOUL.md",
             "AGENTS.md",
-            "USER.md",
-            "MEMORY.md"
+            "USER.md"
           ],
-          "certa": 1,
-          "explica": "AGENTS.md es el contrato de trabajo: qué hacer siempre y qué nunca hacer. SOUL dice quién es; USER, quién eres tú.",
+          "certa": 2,
+          "explica": "AGENTS.md es el contrato de trabajo: qué hacer siempre y qué nunca hacer. El SOUL dice quién es él; el USER, quién eres tú.",
           "ref": "diagrama"
         },
         {
           "p": "Quieres que el asistente sea más formal. ¿Qué haces?",
           "opcoes": [
-            "Pedirle a un programador que cambie el loop.",
             "Cambiar de modelo.",
-            "Editar el tono en SOUL.md.",
+            "Pedirle a un programador que cambie el loop.",
+            "Editar el tono en el SOUL.md.",
             "Reinstalar todo."
           ],
           "certa": 2,
-          "explica": "La personalidad está en el texto. El agente vuelve a leer los archivos con cada mensaje: editaste SOUL, cambió su forma de hablar.",
+          "explica": "La personalidad es texto. El agente relee los archivos en cada mensaje: editaste el SOUL, cambió su forma de hablar.",
           "ref": "diagrama"
         }
       ]
@@ -272,7 +272,7 @@
           "icone": "lista"
         },
         {
-          "t": "Los cuatro archivos del ejemplo-jarvis",
+          "t": "Los cuatro archivos del exemplo-jarvis",
           "href": "https://github.com/inematds/intelecto/tree/main/exemplo-jarvis/workspace",
           "icone": "pasta"
         }

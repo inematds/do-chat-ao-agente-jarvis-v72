@@ -1,16 +1,16 @@
 {
   "slug": "pecas",
   "num": 1,
-  "menu": "7 parts",
-  "titulo": "The seven parts of a Jarvis",
-  "titulo_curto": "The seven parts",
+  "menu": "7 pieces",
+  "titulo": "The seven pieces of a Jarvis",
+  "titulo_curto": "The seven pieces",
   "minutos": 15,
-  "lead": "Every agent, from the simplest to the most expensive, has the same seven parts: a door, a heart, an identity, a brain, a memory, hands, and a vault. Knowing these parts helps you choose better, spend less, and avoid getting locked into one product. INTELECTO is our example: small on purpose, so you can read through it.",
-  "objetivo": "explain the path of a message and say what each of the seven parts does and where it lives in INTELECTO.",
+  "lead": "Every agent, from the simplest to the most expensive, has the same seven pieces: a door, a heart, an identity, a brain, a memory, hands, and a vault. If you know the pieces, you choose better, spend less, and don't get locked into one product. INTELECTO is our example: small on purpose, so you can read it.",
+  "objetivo": "explain the path of a message and say, for each of the seven pieces, what it does and where it sits in INTELECTO.",
   "competencias": [
-    "explaining-agent-parts",
-    "follow-message-path",
-    "distinguish-chatbot-agent"
+    "explicar-pecas-agente",
+    "seguir-caminho-mensagem",
+    "distinguir-chatbot-agente"
   ],
   "aprende": [
     {
@@ -23,15 +23,15 @@
       "t": "Why the loop with a brake sets an agent apart from a chatbot"
     },
     {
-      "t": "How contracts let you swap one piece without changing the rest"
+      "t": "How contracts let you swap one piece without touching the rest"
     }
   ],
-  "hero_alt": "Seven wooden blocks on a table, each with an object: phone, gear, card, chip, drawer, key, and padlock.",
+  "hero_alt": "Seven wooden blocks on a table, each with an object: a phone, a gear, a card, a chip, a drawer, a key, and a padlock.",
   "secoes": [
     {
       "tipo": "diagrama",
       "titulo": "Seven pieces, one path",
-      "sub": "Scroll the page: each step lights up a piece.",
+      "sub": "Scroll the page: each step lights up one piece.",
       "nos": [
         {
           "icone": "enviar",
@@ -43,7 +43,7 @@
               "t": "Telegram"
             }
           ],
-          "detalhe": "This is where you talk to it. In INTELECTO, that’s Telegram: one token and you’re ready, with no public internet address. The agent checks Telegram for new messages, splits replies longer than 4,000 characters, and shows “typing” while it thinks."
+          "detalhe": "This is where you talk to it. In INTELECTO, that's Telegram: one token and you're set, with no public address on the internet. The agent asks Telegram whether a new message has arrived, splits replies longer than 4,000 characters, and shows \"typing\" while it thinks."
         },
         {
           "icone": "relogio",
@@ -52,10 +52,10 @@
           "itens": [
             {
               "icone": "portao",
-              "t": "Up to 5 rounds"
+              "t": "Maximum of 5 rounds"
             }
           ],
-          "detalhe": "It receives your message, thinks, uses a tool if needed, checks the result, and thinks again until it replies with text. It has a brake: at most five tool rounds per message. After that, it has to reply.",
+          "detalhe": "It receives the message, thinks, uses a tool if it needs to, looks at the result, and thinks again, until it answers with text. It has a brake: at most five tool rounds per message. Past that, it has to answer.",
           "forte": true
         },
         {
@@ -68,7 +68,7 @@
               "t": "SOUL, AGENTS, USER, MEMORY"
             }
           ],
-          "detalhe": "Four simple files in the workspace folder: its soul, the rules, your profile, and the initial facts. The agent reads all four with every message. Change the text, change the assistant, without programming."
+          "detalhe": "Four simple files in the workspace folder: the soul, the rules, your profile, and the starting facts. With every message, the agent reads all four. Change the text, change the assistant, no programming."
         },
         {
           "icone": "chip",
@@ -84,7 +84,7 @@
               "t": "Ollama"
             }
           ],
-          "detalhe": "The AI model. In the cloud, OpenRouter: one key gives you access to more than a hundred models. On your computer, Ollama: no cost per message and nothing is sent outside your computer."
+          "detalhe": "The AI model. In the cloud, OpenRouter: one key gives you access to more than a hundred models. On your own computer, Ollama: no cost per message and nothing sent outside."
         },
         {
           "icone": "memoria",
@@ -93,10 +93,10 @@
           "itens": [
             {
               "icone": "lupa",
-              "t": "Keyword search"
+              "t": "Word search"
             }
           ],
-          "detalhe": "It saves what matters in a SQLite database on your machine, with keyword search and no API cost. With each message, it finds what’s relevant and adds it to the context."
+          "detalhe": "It stores what matters in a SQLite database on your machine, with word search and no API cost. With every message, it looks up what's relevant and puts it in the context."
         },
         {
           "icone": "terminal",
@@ -112,7 +112,7 @@
               "t": "Run commands"
             }
           ],
-          "detalhe": "Without tools, it only chats; with them, it gets things done. The core tools: read and write files, list folders, run commands, save to memory, and search memory. Each tool describes itself, and the model reads that description to decide whether to use it."
+          "detalhe": "Without tools it only talks; with them it gets things done. At the core: read and write files, list a folder, run commands, save to and search memory. Each tool describes itself, and the model reads that description to decide whether to use it."
         },
         {
           "icone": "cadeado",
@@ -124,16 +124,16 @@
               "t": "Blocklist and log"
             }
           ],
-          "detalhe": "API keys encrypted and tied to the machine, a list of blocked commands, a 60-second timeout per command, and an audit log of everything it runs."
+          "detalhe": "API keys that are encrypted and tied to the machine, a list of forbidden commands, a 60-second time limit per command, and an audit log of everything it ran."
         }
       ],
       "volta": "The reply travels back through the channel to your phone",
-      "legenda": "The same seven pieces appear in INTELECTO, OpenClaw, Hermes, or a Jarvis you build yourself.",
+      "legenda": "The same seven pieces show up in INTELECTO, in OpenClaw, in Hermes, or in a Jarvis you build yourself.",
       "rolagem": true,
       "rolagem_fim": {
         "titulo": "The whole path",
         "curto": "Everything",
-        "texto": "You write in Telegram. The loop brings together identity and memory, sends them to the model, runs the tool it requests within the vault’s limits, and sends the reply back through the same channel."
+        "texto": "You write on Telegram. The loop gathers identity and memory, sends them to the model, runs the tool it asks for, within the vault's limits, and the reply comes back through the same channel."
       }
     },
     {
@@ -142,69 +142,69 @@
       "sub": "Click each tab.",
       "passos": [
         {
-          "titulo": "One owner",
-          "sub": "What it isn’t",
+          "titulo": "One owner only",
+          "sub": "What it is not",
           "texto": [
-            "INTELECTO is a personal assistant for one owner. It isn’t multiuser, doesn’t depend on the cloud, doesn’t need Docker, has no web dashboard, and isn’t a black box.",
-            "The plan calls for about three thousand lines and seven dependencies: you can read it."
+            "INTELECTO is a personal assistant for one owner. It is not multi-user, doesn't depend on the cloud, doesn't need Docker, has no web dashboard, and isn't a black box.",
+            "The plan calls for about three thousand lines and seven dependencies: you can read it all."
           ],
           "exemplo": {
-            "rot": "The black box test",
-            "texto": "Can I explain what happens between my message and the response? If not, it’s a black box."
+            "rot": "Black-box test",
+            "texto": "Can I explain what happens between my message and the reply? If not, it's a black box."
           }
         },
         {
           "titulo": "Loop with a brake",
           "sub": "Agent, not chatbot",
           "texto": [
-            "A chatbot responds and forgets. An agent thinks, acts with a tool, looks at the result, and thinks again.",
-            "Without a limit, an agent can keep spinning and spending without finishing. That’s why there’s a five-round brake."
+            "A chatbot answers and forgets. An agent thinks, acts with a tool, looks at the result, and thinks again.",
+            "With no ceiling, an agent can keep spinning and spending without finishing. That's why the five-round brake."
           ],
           "exemplo": {
             "rot": "Loop rule",
-            "texto": "At most 5 tool rounds per message; after that, respond with text."
+            "texto": "At most 5 tool rounds per message; after that, reply with text."
           }
         },
         {
           "titulo": "Contracts",
           "sub": "Swap without rewriting",
           "texto": [
-            "Each part is defined by a contract: the channel has start, send, and stop; the provider receives the conversation and tools, then returns a response.",
-            "Want WhatsApp instead of Telegram, or Ollama instead of OpenRouter? Use a different file with the same contract."
+            "Each piece is defined by a contract: the channel has start, send, and stop; the provider receives the conversation and the tools and returns the response.",
+            "Want WhatsApp instead of Telegram, or Ollama instead of OpenRouter? It's another file with the same contract."
           ],
           "exemplo": {
             "rot": "In practice",
-            "texto": "New tool = new file using the same pattern. The registry finds it automatically, without changing the core."
+            "texto": "New tool = new file in the same pattern. The registry finds it on its own, with no changes to the core."
           }
         },
         {
           "titulo": "Start small",
           "sub": "The core is enough",
           "texto": [
-            "The feature guide organizes everything into eight areas: identity, security, channels, memory, automation, integrations, skills, and architecture.",
-            "You don’t need everything. Scheduling and web search, for example, are in the plan for the next phase."
+            "The features guide organizes everything into eight corridors: identity, security, channels, memory, automation, integrations, skills, and architecture.",
+            "You don't need everything. Scheduling and web search, for example, are in the plan for the next phase."
           ],
           "exemplo": {
-            "rot": "Minimum setup",
-            "texto": "Loop + one brain + one channel + a basic SOUL. Memory comes right after."
+            "rot": "Minimal setup",
+            "texto": "Loop + a brain + a channel + a basic SOUL. Memory comes right after."
           }
         }
       ]
     },
     {
       "tipo": "codigo",
-      "titulo": "Where each part lives",
-      "sub": "The core folder tree that the agent builds in the repository example.",
+      "titulo": "Where each piece lives",
+      "sub": "The core tree that the agent builds in the repository example.",
       "blocos": [
         {
           "rot": "exemplo-jarvis · folders",
           "icone": "pasta",
-          "conteudo": "jarvis/\n  channels/    # the door: terminal and Telegram\n  agent/       # the heart: loop.py and context.py\n  providers/   # the brain: contract + test model\n  memory/      # the memory: SQLite with search\n  tools/       # the hands: files, command, memory\n  security/    # the vault: secrets and blocklist\nworkspace/\n  SOUL.md  AGENTS.md  USER.md  MEMORY.md   # the identity"
+          "conteudo": "jarvis/\n  channels/    # the door: terminal and Telegram\n  agent/       # the heart: loop.py and context.py\n  providers/   # the brain: contract + test model\n  memory/      # the memory: SQLite with search\n  tools/       # the hands: files, command, memory\n  security/    # the vault: secrets and block list\nworkspace/\n  SOUL.md  AGENTS.md  USER.md  MEMORY.md   # the identity"
         },
         {
-          "rot": "My table of the 7 parts",
+          "rot": "My table of the 7 pieces",
           "icone": "lista",
-          "conteudo": "| Part        | What it does (in my own words) | Where it lives |\n|-------------|---------------------------------|----------------|\n| Channel     |                                 |                |\n| Loop        |                                 |                |\n| Identity    |                                 |                |\n| Brain       |                                 |                |\n| Memory      |                                 |                |\n| Tools       |                                 |                |\n| Vault       |                                 |                |"
+          "conteudo": "| Piece       | What it does (in my own words)     | Where it lives |\n|-------------|------------------------------------|----------------|\n| Channel     |                                    |                |\n| Loop        |                                    |                |\n| Identity    |                                    |                |\n| Brain       |                                    |                |\n| Memory      |                                    |                |\n| Tools       |                                    |                |\n| Vault       |                                    |                |"
         }
       ],
       "saida": {
@@ -212,40 +212,40 @@
         "abas": [
           {
             "rot": "The path of a message",
-            "html": "<ol><li>You write in <b>Telegram</b>.</li><li>The <b>channel</b> receives it and passes it to the <b>loop</b>.</li><li>The loop builds the context: <b>SOUL + AGENTS + USER</b> and relevant <b>memories</b>.</li><li>The <b>model</b> responds or requests a <b>tool</b>; the loop runs it and returns the result (up to 5 rounds).</li><li>The response goes back through the <b>channel</b>.</li></ol>"
+            "html": "<ol><li>You write on <b>Telegram</b>.</li><li>The <b>channel</b> receives it and hands it to the <b>loop</b>.</li><li>The loop builds the context: <b>SOUL + AGENTS + USER</b> and the relevant <b>memories</b>.</li><li>The <b>model</b> answers or asks for a <b>tool</b>; the loop runs it and returns the result (up to 5 rounds).</li><li>The answer goes back through the <b>channel</b>.</li></ol>"
           },
           {
             "rot": "Chatbot × Jarvis",
-            "html": "<p><b>Chatbot:</b> responds, forgets when the conversation ends, has no identity, doesn’t act, and doesn’t know you.</p><p><b>Jarvis:</b> remembers past conversations, has a name and written values, uses tools, and knows your context.</p>"
+            "html": "<p><b>Chatbot:</b> answers, forgets when the conversation ends, has no identity, takes no action, doesn't know you.</p><p><b>Jarvis:</b> remembers past conversations, has a written name and values, uses tools, and knows your context.</p>"
           }
         ]
       }
     },
     {
       "tipo": "pratica",
-      "titulo": "Practice: map the parts",
-      "sub": "Before you build, understand what you’re going to build.",
+      "titulo": "Practice: map the pieces",
+      "sub": "Before you build, understand what you're going to build.",
       "exercicios": [
         {
           "id": "p1",
-          "titulo": "P1 · The 7 parts in your own words",
+          "titulo": "P1 · The 7 pieces in your own words",
           "min": "15 min",
-          "texto": "Copy the table above and fill in each row with a sentence of your own and the folder where the part lives.",
-          "pronto": "all seven rows are filled in, and none of the sentences were copied from the lesson text."
+          "texto": "Copy the table above and fill in each row with a sentence of your own and the folder where the piece lives.",
+          "pronto": "all seven rows are filled in and no sentence was copied from the lesson text."
         },
         {
           "id": "p2",
-          "titulo": "P2 · Explain the path out loud",
+          "titulo": "P2 · The path out loud",
           "min": "5 min",
-          "texto": "Explain to someone (or record an audio message) how a message travels from Telegram to the response.",
+          "texto": "Explain to someone (or record an audio) the path of a message from Telegram to the answer.",
           "pronto": "you named channel, loop, identity, memory, model, and tool in the right order, without looking."
         }
       ]
     },
     {
       "tipo": "video",
-      "titulo": "The seven parts on video",
-      "sub": "Nei opens up INTELECTO, one part at a time.",
+      "titulo": "The seven pieces on video",
+      "sub": "Nei opens INTELECTO piece by piece.",
       "chave": "intelecto-estrutura"
     },
     {
@@ -256,57 +256,57 @@
         {
           "p": "What makes an agent more than just a chatbot?",
           "opcoes": [
+            "The loop: think, use a tool, look at the result, and think again until it answers.",
             "Using a more expensive model.",
-            "The loop: think, use a tool, check the result, and think again until it can answer.",
             "Having a nice web interface.",
-            "Responding faster."
+            "Answering faster."
           ],
-          "certa": 1,
-          "explica": "The loop turns conversation into action. The model can stay the same; what changes is its ability to use tools and check the result before answering.",
+          "certa": 0,
+          "explica": "The loop is what turns conversation into action. The model can be the same; what changes is being able to use tools and look at the result before answering.",
           "cert": true,
           "ref": "passos"
         },
         {
-          "p": "What is the five-tool-round limit for?",
+          "p": "What is the five-round tool limit for?",
           "opcoes": [
-            "To save your phone’s memory.",
-            "It’s a Telegram requirement.",
-            "It’s a brake: without it, the agent can keep going in circles and spending money without ever finishing.",
-            "To make the model think less."
+            "To save phone memory.",
+            "It's a Telegram requirement.",
+            "It's the brake: without it, the agent can keep spinning and spending without ever finishing.",
+            "So the model thinks less."
           ],
           "certa": 2,
-          "explica": "The cap makes the agent answer after five rounds. A short, clear loop with a limit is what separates a useful agent from one that spends endlessly.",
+          "explica": "The cap forces the agent to answer after five rounds. A short, readable loop with a cap is what separates a useful agent from one that spends nonstop.",
           "ref": "diagrama"
         },
         {
-          "p": "You want to switch from Telegram to WhatsApp. What changes?",
+          "p": "You want to swap Telegram for WhatsApp. What changes?",
           "opcoes": [
+            "A new channel file that fulfills the same contract (start, send, stop); everything else stays the same.",
             "You have to rewrite the whole agent.",
-            "A new channel file that follows the same contract (start, send, stop); everything else stays the same.",
-            "You also have to switch models.",
-            "You can’t: INTELECTO only works with Telegram."
+            "It can't be done: INTELECTO only speaks Telegram.",
+            "You also have to switch models."
           ],
-          "certa": 1,
-          "explica": "Each part has a contract. A new channel implements the same three functions, and the loop doesn’t even notice the switch.",
+          "certa": 0,
+          "explica": "Each piece is a contract. A new channel implements the same three functions and the loop doesn't even notice the swap.",
           "ref": "passos"
         },
         {
-          "p": "Where does the assistant’s personality live?",
+          "p": "Where does the assistant's personality live?",
           "opcoes": [
-            "In the loop code.",
             "In the Telegram settings.",
-            "In four text files in the workspace folder.",
-            "In the selected model."
+            "In the chosen model.",
+            "In the loop's code.",
+            "In four text files in the workspace folder."
           ],
-          "certa": 2,
-          "explica": "SOUL, AGENTS, USER, and MEMORY are plain text. The agent reads all four with every message: change the text, and you change the assistant.",
+          "certa": 3,
+          "explica": "SOUL, AGENTS, USER, and MEMORY are plain text. The agent reads all four with every message: change the text, change the assistant.",
           "ref": "codigo"
         }
       ]
     },
     {
       "tipo": "links",
-      "titulo": "Go further",
+      "titulo": "Going further",
       "links": [
         {
           "t": "INTELECTO: project page",

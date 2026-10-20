@@ -1,0 +1,978 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.710
+Anyone can build their own AI assistant, their own Jarvis.
+
+2
+00:00:02.760 --> 00:00:04.090
+Here's how. It's simple.
+
+3
+00:00:04.140 --> 00:00:06.630
+It fits in about 3000 lines and four text files.
+
+4
+00:00:06.680 --> 00:00:08.410
+It's not magic. It's a loop.
+
+5
+00:00:08.460 --> 00:00:12.200
+Every agent, from the simplest to the most expensive, has the same seven parts.
+
+6
+00:00:12.531 --> 00:00:14.011
+a door, a heart,
+
+7
+00:00:14.011 --> 00:00:15.391
+an identity, a brain,
+
+8
+00:00:15.391 --> 00:00:16.591
+a memory, hands,
+
+9
+00:00:16.591 --> 00:00:17.091
+and a vault.
+
+10
+00:00:17.091 --> 00:00:18.451
+In this video,
+
+11
+00:00:18.451 --> 00:00:19.611
+I’ll open up INTELECTO,
+
+12
+00:00:19.611 --> 00:00:21.511
+the personal assistant we designed from scratch,
+
+13
+00:00:21.511 --> 00:00:22.811
+and show you what each part does
+
+14
+00:00:22.811 --> 00:00:23.751
+and where it lives.
+
+15
+00:00:23.751 --> 00:00:24.331
+And at the end,
+
+16
+00:00:24.331 --> 00:00:25.391
+I’ll tell you what’s coming in the
+
+17
+00:00:25.391 --> 00:00:26.991
+next video: you’ll set up the files
+
+18
+00:00:26.991 --> 00:00:27.911
+and install your own,
+
+19
+00:00:27.911 --> 00:00:29.101
+step by step.
+
+20
+00:00:29.101 --> 00:00:31.031
+INTELECTO is a personal AI assistant for
+
+21
+00:00:31.031 --> 00:00:31.771
+one owner.
+
+22
+00:00:31.771 --> 00:00:33.631
+It’s designed to run on your computer,
+
+23
+00:00:33.631 --> 00:00:35.011
+talk with you through Telegram,
+
+24
+00:00:35.011 --> 00:00:35.991
+remember what you say,
+
+25
+00:00:35.991 --> 00:00:37.531
+and have the personality you write for
+
+26
+00:00:37.531 --> 00:00:37.911
+it.
+
+27
+00:00:37.911 --> 00:00:39.751
+What it isn’t matters just as much.
+
+28
+00:00:39.751 --> 00:00:40.911
+It’s not multi-user,
+
+29
+00:00:40.911 --> 00:00:42.431
+it doesn’t depend on the cloud,
+
+30
+00:00:42.431 --> 00:00:43.571
+it doesn’t need Docker,
+
+31
+00:00:43.571 --> 00:00:44.831
+it has no web dashboard,
+
+32
+00:00:44.831 --> 00:00:45.891
+and it’s not a black box.
+
+33
+00:00:45.891 --> 00:00:48.271
+The plan calls for seven dependencies and
+
+34
+00:00:48.271 --> 00:00:50.031
+about three thousand lines you can read.
+
+35
+00:00:50.031 --> 00:00:52.211
+It’s an antidote to bloated agent frameworks
+
+36
+00:00:52.211 --> 00:00:54.171
+where nobody knows what’s running anymore.
+
+37
+00:00:54.171 --> 00:00:55.451
+Before we look at the parts,
+
+38
+00:00:55.451 --> 00:00:57.311
+here’s the full path a message takes.
+
+39
+00:00:57.311 --> 00:00:58.411
+You write in Telegram.
+
+40
+00:00:58.411 --> 00:01:00.211
+The channel receives it and passes it
+
+41
+00:01:00.211 --> 00:01:01.111
+to the agent loop.
+
+42
+00:01:01.111 --> 00:01:02.731
+The loop builds the context:
+
+43
+00:01:02.731 --> 00:01:03.751
+who the agent is,
+
+44
+00:01:03.751 --> 00:01:04.471
+who you are,
+
+45
+00:01:04.471 --> 00:01:05.871
+and what it already knows about the
+
+46
+00:01:05.871 --> 00:01:06.291
+topic.
+
+47
+00:01:06.291 --> 00:01:07.791
+Then it sends everything to the AI
+
+48
+00:01:07.791 --> 00:01:08.331
+model.
+
+49
+00:01:08.331 --> 00:01:09.851
+If the model asks for a tool,
+
+50
+00:01:09.851 --> 00:01:11.111
+the loop runs it and returns the
+
+51
+00:01:11.111 --> 00:01:11.471
+result.
+
+52
+00:01:11.471 --> 00:01:13.051
+When the model responds with text,
+
+53
+00:01:13.051 --> 00:01:14.611
+the answer travels back through the channel
+
+54
+00:01:14.611 --> 00:01:15.561
+to your phone.
+
+55
+00:01:15.561 --> 00:01:16.951
+Seven parts, one path.
+
+56
+00:01:16.951 --> 00:01:18.251
+Now, one by one.
+
+57
+00:01:18.251 --> 00:01:20.151
+Part one: the channel,
+
+58
+00:01:20.151 --> 00:01:21.091
+the way in.
+
+59
+00:01:21.091 --> 00:01:22.411
+In the INTELECTO plan,
+
+60
+00:01:22.411 --> 00:01:24.151
+that’s Telegram because it’s the simplest:
+
+61
+00:01:24.151 --> 00:01:25.631
+one token and you’re set,
+
+62
+00:01:25.631 --> 00:01:27.311
+with no public internet address.
+
+63
+00:01:27.311 --> 00:01:29.671
+The agent keeps asking Telegram if a
+
+64
+00:01:29.671 --> 00:01:30.771
+new message has arrived.
+
+65
+00:01:30.771 --> 00:01:32.484
+If the reply is longer than four
+
+66
+00:01:32.484 --> 00:01:34.531
+thousand characters, it splits it into several
+
+67
+00:01:34.531 --> 00:01:35.091
+messages.
+
+68
+00:01:35.091 --> 00:01:37.171
+And it shows that it’s typing while
+
+69
+00:01:37.171 --> 00:01:37.891
+it thinks.
+
+70
+00:01:37.891 --> 00:01:39.591
+The channel is a contract with three
+
+71
+00:01:39.591 --> 00:01:41.351
+functions: start, send,
+
+72
+00:01:41.351 --> 00:01:42.091
+and stop.
+
+73
+00:01:42.091 --> 00:01:43.911
+Want WhatsApp, Discord,
+
+74
+00:01:43.911 --> 00:01:44.951
+or Slack?
+
+75
+00:01:44.951 --> 00:01:46.811
+That’s another file with the same contract,
+
+76
+00:01:46.811 --> 00:01:48.691
+without changing anything else.
+
+77
+00:01:48.691 --> 00:01:50.071
+Part two: the loop,
+
+78
+00:01:50.071 --> 00:01:51.131
+the agent’s heart.
+
+79
+00:01:51.131 --> 00:01:52.711
+This is where it stops being a
+
+80
+00:01:52.711 --> 00:01:53.411
+chatbot.
+
+81
+00:01:53.411 --> 00:01:54.991
+It receives the message,
+
+82
+00:01:54.991 --> 00:01:57.111
+thinks, uses a tool if needed,
+
+83
+00:01:57.111 --> 00:01:57.951
+checks the result,
+
+84
+00:01:57.951 --> 00:02:00.251
+and thinks again until it responds with
+
+85
+00:02:00.251 --> 00:02:00.891
+text.
+
+86
+00:02:00.891 --> 00:02:01.771
+There’s a brake:
+
+87
+00:02:01.771 --> 00:02:03.771
+at most five tool rounds per message.
+
+88
+00:02:03.771 --> 00:02:05.551
+After that, it has to respond.
+
+89
+00:02:05.551 --> 00:02:06.631
+Without this brake,
+
+90
+00:02:06.631 --> 00:02:08.051
+an agent can keep spinning,
+
+91
+00:02:08.051 --> 00:02:09.631
+spending money, and never finish.
+
+92
+00:02:09.631 --> 00:02:12.791
+A short, readable loop with a limit:
+
+93
+00:02:12.791 --> 00:02:15.031
+that’s what separates an agent from a
+
+94
+00:02:15.031 --> 00:02:15.831
+conversation.
+
+95
+00:02:15.831 --> 00:02:17.491
+Part three: the identity.
+
+96
+00:02:17.491 --> 00:02:18.971
+This is the part you’ll change the
+
+97
+00:02:18.971 --> 00:02:19.471
+most.
+
+98
+00:02:19.471 --> 00:02:21.231
+It’s four plain text files in a
+
+99
+00:02:21.231 --> 00:02:22.571
+folder called workspace.
+
+100
+00:02:22.571 --> 00:02:24.771
+Soul is the assistant’s personality,
+
+101
+00:02:24.771 --> 00:02:26.371
+tone, and values.
+
+102
+00:02:26.371 --> 00:02:28.511
+Agents contains the behavior rules:
+
+103
+00:02:28.511 --> 00:02:30.011
+check memory before answering,
+
+104
+00:02:30.011 --> 00:02:31.131
+ask when unsure,
+
+105
+00:02:31.131 --> 00:02:33.111
+refuse dangerous commands.
+
+106
+00:02:33.111 --> 00:02:34.511
+User is your profile:
+
+107
+00:02:34.511 --> 00:02:35.931
+how you like your answers and what
+
+108
+00:02:35.931 --> 00:02:36.731
+language you use.
+
+109
+00:02:36.731 --> 00:02:38.851
+And Memory contains the starting facts.
+
+110
+00:02:38.851 --> 00:02:39.851
+With every message,
+
+111
+00:02:39.851 --> 00:02:41.311
+the agent reads all four and builds
+
+112
+00:02:41.311 --> 00:02:42.371
+the prompt for the model.
+
+113
+00:02:42.371 --> 00:02:43.391
+Change the text,
+
+114
+00:02:43.391 --> 00:02:44.171
+change the assistant,
+
+115
+00:02:44.171 --> 00:02:45.951
+without writing any code.
+
+116
+00:02:45.951 --> 00:02:47.111
+Part four: the brain,
+
+117
+00:02:47.111 --> 00:02:48.491
+the AI model.
+
+118
+00:02:48.491 --> 00:02:49.991
+INTELECTO works with two kinds.
+
+119
+00:02:49.991 --> 00:02:50.751
+In the cloud,
+
+120
+00:02:50.751 --> 00:02:52.771
+there’s OpenRouter: one key gives you access
+
+121
+00:02:52.771 --> 00:02:53.891
+to more than a hundred models,
+
+122
+00:02:53.891 --> 00:02:56.091
+from Claude and GPT to DeepSeek.
+
+123
+00:02:56.091 --> 00:02:57.211
+On your computer,
+
+124
+00:02:57.211 --> 00:02:59.091
+there’s Ollama: the model runs locally,
+
+125
+00:02:59.091 --> 00:03:01.151
+with no per-message cost and nothing sent
+
+126
+00:03:01.151 --> 00:03:02.171
+outside your computer.
+
+127
+00:03:02.171 --> 00:03:03.271
+You can use both:
+
+128
+00:03:03.271 --> 00:03:04.411
+the cloud for power,
+
+129
+00:03:04.411 --> 00:03:05.371
+local for privacy.
+
+130
+00:03:05.371 --> 00:03:07.751
+And switching brains doesn’t change anything else,
+
+131
+00:03:07.751 --> 00:03:09.991
+because the provider is also a contract:
+
+132
+00:03:09.991 --> 00:03:11.831
+it receives the conversation and tools,
+
+133
+00:03:11.831 --> 00:03:13.291
+then returns the response.
+
+134
+00:03:13.591 --> 00:03:14.671
+Part five: memory.
+
+135
+00:03:14.671 --> 00:03:16.351
+It’s the difference between an AI that
+
+136
+00:03:16.351 --> 00:03:18.331
+forgets everything when it restarts and one
+
+137
+00:03:18.331 --> 00:03:19.721
+that’s known you for months.
+
+138
+00:03:19.721 --> 00:03:21.451
+INTELECTO stores things in a database on
+
+139
+00:03:21.451 --> 00:03:22.091
+your own computer,
+
+140
+00:03:22.091 --> 00:03:23.331
+with keyword search.
+
+141
+00:03:23.331 --> 00:03:25.351
+No API cost and no extra model,
+
+142
+00:03:25.351 --> 00:03:26.731
+and that covers most of what you
+
+143
+00:03:26.731 --> 00:03:27.371
+need to remember.
+
+144
+00:03:27.371 --> 00:03:28.671
+Each memory has a category:
+
+145
+00:03:28.671 --> 00:03:29.651
+a fact about you,
+
+146
+00:03:29.651 --> 00:03:30.771
+a conversation summary,
+
+147
+00:03:30.771 --> 00:03:32.151
+or a solution that worked.
+
+148
+00:03:32.151 --> 00:03:33.738
+If a new memory is more than
+
+149
+00:03:33.738 --> 00:03:34.891
+eighty percent like an old one,
+
+150
+00:03:34.891 --> 00:03:36.431
+it updates it instead of making a
+
+151
+00:03:36.431 --> 00:03:36.911
+duplicate.
+
+152
+00:03:36.911 --> 00:03:38.171
+And with every message,
+
+153
+00:03:38.171 --> 00:03:39.991
+it searches for what’s relevant and adds
+
+154
+00:03:39.991 --> 00:03:40.631
+it to the context.
+
+155
+00:03:40.631 --> 00:03:41.651
+Part
+
+156
+00:03:41.651 --> 00:03:42.751
+six: the tools,
+
+157
+00:03:42.751 --> 00:03:43.791
+the agent’s hands.
+
+158
+00:03:43.791 --> 00:03:45.371
+Without them, it only chats.
+
+159
+00:03:45.371 --> 00:03:47.031
+With them, it gets things done.
+
+160
+00:03:47.031 --> 00:03:48.731
+The core includes reading a file,
+
+161
+00:03:48.731 --> 00:03:49.671
+writing a file,
+
+162
+00:03:49.671 --> 00:03:50.791
+listing a folder,
+
+163
+00:03:50.791 --> 00:03:51.811
+running a command,
+
+164
+00:03:51.811 --> 00:03:53.431
+and saving and searching memory.
+
+165
+00:03:53.431 --> 00:03:55.111
+Each tool describes itself:
+
+166
+00:03:55.111 --> 00:03:56.891
+its name, what it does,
+
+167
+00:03:56.891 --> 00:03:58.831
+and which parameters it accepts.
+
+168
+00:03:58.831 --> 00:04:00.871
+The model reads that description to decide
+
+169
+00:04:00.871 --> 00:04:01.711
+whether to use it.
+
+170
+00:04:01.711 --> 00:04:02.731
+Want a calendar,
+
+171
+00:04:02.731 --> 00:04:03.911
+GitHub, or Notion?
+
+172
+00:04:03.911 --> 00:04:05.391
+That’s a new file that follows the
+
+173
+00:04:05.391 --> 00:04:06.111
+same pattern.
+
+174
+00:04:06.111 --> 00:04:07.691
+The registry finds the tool on its
+
+175
+00:04:07.691 --> 00:04:10.111
+own, without you changing the core.
+
+176
+00:04:10.111 --> 00:04:11.931
+Part seven: the vault.
+
+177
+00:04:11.931 --> 00:04:13.971
+An agent with hands needs limits.
+
+178
+00:04:13.971 --> 00:04:15.971
+API keys are encrypted and tied to
+
+179
+00:04:15.971 --> 00:04:16.871
+the machine’s hardware,
+
+180
+00:04:16.871 --> 00:04:18.471
+so if someone steals the file,
+
+181
+00:04:18.471 --> 00:04:19.451
+they can’t read them.
+
+182
+00:04:19.451 --> 00:04:21.371
+Every command goes through a blocklist:
+
+183
+00:04:21.371 --> 00:04:22.671
+commands to delete everything,
+
+184
+00:04:22.671 --> 00:04:23.491
+format a disk,
+
+185
+00:04:23.491 --> 00:04:24.931
+or restart don’t even run.
+
+186
+00:04:24.931 --> 00:04:26.971
+Each command has a sixty-second time limit.
+
+187
+00:04:26.971 --> 00:04:28.891
+And everything it runs is recorded in
+
+188
+00:04:28.891 --> 00:04:29.671
+an audit log.
+
+189
+00:04:29.671 --> 00:04:31.111
+You know what your agent did,
+
+190
+00:04:31.111 --> 00:04:32.011
+when it did it,
+
+191
+00:04:32.011 --> 00:04:33.551
+and which command it used.
+
+192
+00:04:33.551 --> 00:04:34.991
+Now, here’s the idea that holds the
+
+193
+00:04:34.991 --> 00:04:36.271
+seven parts together:
+
+194
+00:04:36.271 --> 00:04:36.811
+contracts.
+
+195
+00:04:36.811 --> 00:04:38.531
+Each part is defined by an interface,
+
+196
+00:04:38.531 --> 00:04:40.631
+and you can swap out its implementation.
+
+197
+00:04:40.631 --> 00:04:42.051
+Switch Telegram for WhatsApp,
+
+198
+00:04:42.051 --> 00:04:43.311
+OpenRouter for Ollama,
+
+199
+00:04:43.311 --> 00:04:45.071
+or one memory system for another,
+
+200
+00:04:45.071 --> 00:04:46.611
+without rewriting the agent.
+
+201
+00:04:46.611 --> 00:04:47.771
+And how was it built?
+
+202
+00:04:47.771 --> 00:04:49.271
+First, the grocery store:
+
+203
+00:04:49.271 --> 00:04:51.651
+a page that compares frameworks like OpenClaw,
+
+204
+00:04:51.651 --> 00:04:52.991
+NanoBot, and Hermes,
+
+205
+00:04:52.991 --> 00:04:54.571
+where you choose the ingredients.
+
+206
+00:04:54.571 --> 00:04:56.791
+Those choices become a specification document.
+
+207
+00:04:56.791 --> 00:04:58.011
+You give it to Claude Code with
+
+208
+00:04:58.011 --> 00:04:59.871
+one sentence: read this and build it.
+
+209
+00:04:59.871 --> 00:05:01.731
+The Jarvis example in the repository came
+
+210
+00:05:01.731 --> 00:05:03.531
+from this process and passes all nine
+
+211
+00:05:03.531 --> 00:05:04.031
+tests.
+
+212
+00:05:04.031 --> 00:05:05.291
+And how do you build it out?
+
+213
+00:05:05.291 --> 00:05:07.291
+The feature guide organizes everything into eight
+
+214
+00:05:07.291 --> 00:05:09.251
+aisles: identity, security,
+
+215
+00:05:09.251 --> 00:05:11.191
+channels, memory, automation,
+
+216
+00:05:11.191 --> 00:05:13.251
+integrations, skills, and architecture.
+
+217
+00:05:13.251 --> 00:05:15.611
+Today, the core covers the essentials.
+
+218
+00:05:15.611 --> 00:05:17.531
+Scheduling, like sending a summary every Monday
+
+219
+00:05:17.531 --> 00:05:19.191
+at nine, and web search are planned
+
+220
+00:05:19.191 --> 00:05:20.191
+for the next phase.
+
+221
+00:05:20.191 --> 00:05:22.251
+Each aisle shows what other frameworks offer
+
+222
+00:05:22.251 --> 00:05:24.131
+and which INTELECTO files to change.
+
+223
+00:05:24.131 --> 00:05:25.291
+You don’t need everything.
+
+224
+00:05:25.291 --> 00:05:26.811
+Choose what helps with your day.
+
+225
+00:05:26.811 --> 00:05:28.991
+Let’s recap: every agent has seven parts.
+
+226
+00:05:28.991 --> 00:05:30.111
+The door, which is the channel.
+
+227
+00:05:30.111 --> 00:05:31.431
+The heart, which is the loop with
+
+228
+00:05:31.431 --> 00:05:31.891
+a brake.
+
+229
+00:05:31.891 --> 00:05:33.711
+The identity, in four text files.
+
+230
+00:05:33.711 --> 00:05:35.611
+The brain, in the cloud or locally.
+
+231
+00:05:35.611 --> 00:05:37.311
+Memory, tools, and the vault.
+
+232
+00:05:37.311 --> 00:05:38.311
+In the next video,
+
+233
+00:05:38.311 --> 00:05:39.411
+we’ll get hands-on:
+
+234
+00:05:39.411 --> 00:05:40.531
+set up the files,
+
+235
+00:05:40.531 --> 00:05:42.431
+write the personality and profile for your
+
+236
+00:05:42.431 --> 00:05:44.511
+assistant, create the bot in Telegram,
+
+237
+00:05:44.511 --> 00:05:45.511
+choose the brain,
+
+238
+00:05:45.511 --> 00:05:47.251
+then build and install it step by
+
+239
+00:05:47.251 --> 00:05:48.771
+step, all the way to your first
+
+240
+00:05:48.771 --> 00:05:49.211
+message.
+
+241
+00:05:49.211 --> 00:05:50.091
+In the meantime,
+
+242
+00:05:50.091 --> 00:05:51.651
+you can find INTELECTO at INEMA dot
+
+243
+00:05:51.651 --> 00:05:53.511
+club, in the Beginner’s Learning Path.
+
+244
+00:05:53.511 --> 00:05:54.951
+See you in the next video.
+

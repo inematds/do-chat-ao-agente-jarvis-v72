@@ -175,12 +175,12 @@
         {
           "p": "Qual é um bom pedido fixo?",
           "opcoes": [
-            "\"Me ajude com tudo.\"",
             "\"Quando eu mandar 'dia', liste as minhas três prioridades a partir do que eu te contei ontem.\"",
-            "\"Seja proativo.\"",
-            "\"Faça o que achar melhor toda manhã.\""
+            "\"Me ajude com tudo.\"",
+            "\"Faça o que achar melhor toda manhã.\"",
+            "\"Seja proativo.\""
           ],
-          "certa": 1,
+          "certa": 0,
           "explica": "Tem gatilho (a palavra), tarefa, limite (três) e fonte (o que você contou). Dá para conferir se ele fez certo.",
           "cert": true,
           "ref": "passos"
@@ -189,11 +189,11 @@
           "p": "Você fecha o notebook e o assistente para de responder. O que resolve?",
           "opcoes": [
             "Trocar de modelo.",
+            "Apagar a memória.",
             "Um servidor alugado (VPS) que fica ligado 24 horas, com o mesmo caminho de construção.",
-            "Mudar o SOUL.md.",
-            "Apagar a memória."
+            "Mudar o SOUL.md."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "No notebook ele dorme junto. Num servidor, fica ligado dia e noite; o empacotamento indicado para servidor é o Docker.",
           "ref": "diagrama"
         },

@@ -165,12 +165,12 @@
         {
           "p": "Quando faz sentido um modelo local (Ollama)?",
           "opcoes": [
+            "Nunca, o Telegram não aceita.",
             "Sempre, porque é mais inteligente.",
             "Quando o computador aguenta e os seus números de tempo, qualidade e custo mostram que vale, ou quando o dado não pode sair.",
-            "Nunca, o Telegram não aceita.",
             "Só de madrugada."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "A escolha é medida: mesma pergunta nos dois, tabela, decisão. Privacidade é o outro motivo forte: no local nada sai da máquina.",
           "cert": true,
           "ref": "passos"
@@ -178,22 +178,22 @@
         {
           "p": "Você trocou o OpenRouter pelo Ollama. O que precisa mudar no canal e na memória?",
           "opcoes": [
-            "Tudo: canal e memória dependem do modelo.",
-            "Nada: o provedor é um contrato, e o resto do agente não sabe qual modelo está respondendo.",
+            "Só o canal.",
             "Só a memória.",
-            "Só o canal."
+            "Tudo: canal e memória dependem do modelo.",
+            "Nada: o provedor é um contrato, e o resto do agente não sabe qual modelo está respondendo."
           ],
-          "certa": 1,
+          "certa": 3,
           "explica": "O loop chama o provedor pelo contrato. Trocar de cérebro é configuração; os testes rodam iguais.",
           "ref": "diagrama"
         },
         {
           "p": "Por que rodar a pergunta duas vezes no modelo local antes de anotar o tempo?",
           "opcoes": [
-            "Porque a primeira resposta sempre está errada.",
-            "Porque a primeira chamada costuma ser mais lenta enquanto o modelo carrega.",
             "Para gastar menos créditos.",
-            "Não precisa."
+            "Porque a primeira chamada costuma ser mais lenta enquanto o modelo carrega.",
+            "Não precisa.",
+            "Porque a primeira resposta sempre está errada."
           ],
           "certa": 1,
           "explica": "Comparação justa mede o uso normal. A primeira chamada inclui carregar o modelo na memória.",

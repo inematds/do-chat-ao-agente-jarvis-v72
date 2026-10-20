@@ -1,0 +1,950 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.570
+Cualquiera puede construir su asistente de inteligencia artificial, su Jarvis.
+
+2
+00:00:03.620 --> 00:00:05.030
+Mira cómo, es simple,
+
+3
+00:00:05.080 --> 00:00:08.070
+cabe en unas 3 ,000 líneas y 4 archivos de texto.
+
+4
+00:00:08.120 --> 00:00:09.910
+No es magia, es un bucle.
+
+5
+00:00:09.960 --> 00:00:14.160
+Todo agente, del más sencillo al más caro, tiene las mismas 7 piezas.
+
+6
+00:00:14.496 --> 00:00:16.096
+una puerta, un corazón,
+
+7
+00:00:16.096 --> 00:00:17.636
+una identidad, un cerebro,
+
+8
+00:00:17.636 --> 00:00:19.976
+una memoria, manos y una caja fuerte.
+
+9
+00:00:19.976 --> 00:00:22.336
+En este video voy a abrir el
+
+10
+00:00:22.336 --> 00:00:24.816
+INTELECTO, el asistente personal que diseñamos desde
+
+11
+00:00:24.816 --> 00:00:26.556
+cero, y te voy a mostrar pieza
+
+12
+00:00:26.556 --> 00:00:28.576
+por pieza qué hace cada una y
+
+13
+00:00:28.576 --> 00:00:29.196
+dónde está.
+
+14
+00:00:29.196 --> 00:00:30.736
+Y al final te cuento qué viene
+
+15
+00:00:30.736 --> 00:00:31.736
+en el próximo video:
+
+16
+00:00:31.736 --> 00:00:33.796
+vas a configurar los archivos e instalar
+
+17
+00:00:33.796 --> 00:00:35.536
+el tuyo, paso a paso.
+
+18
+00:00:35.536 --> 00:00:37.956
+El INTELECTO es un asistente de IA
+
+19
+00:00:37.956 --> 00:00:40.096
+personal, para un solo dueño.
+
+20
+00:00:40.096 --> 00:00:42.296
+Está diseñado para funcionar en tu computadora,
+
+21
+00:00:42.296 --> 00:00:44.036
+conversar contigo por Telegram,
+
+22
+00:00:44.036 --> 00:00:45.816
+recordar lo que dices y tener la
+
+23
+00:00:45.816 --> 00:00:47.076
+personalidad que tú escribas.
+
+24
+00:00:47.076 --> 00:00:48.716
+Lo que no es importa tanto como
+
+25
+00:00:48.716 --> 00:00:49.236
+lo que sí.
+
+26
+00:00:49.236 --> 00:00:50.396
+No es multiusuario,
+
+27
+00:00:50.396 --> 00:00:51.476
+no depende de la nube,
+
+28
+00:00:51.476 --> 00:00:52.636
+no necesita Docker,
+
+29
+00:00:52.636 --> 00:00:54.076
+no tiene panel web y no es
+
+30
+00:00:54.076 --> 00:00:54.836
+una caja negra.
+
+31
+00:00:54.836 --> 00:00:56.989
+El plan contempla siete dependencias y unas
+
+32
+00:00:56.989 --> 00:00:58.336
+tres mil líneas que puedes leer.
+
+33
+00:00:58.336 --> 00:01:00.136
+Es el antídoto contra los frameworks de
+
+34
+00:01:00.136 --> 00:01:02.616
+agentes inflados, donde ya nadie sabe qué
+
+35
+00:01:02.616 --> 00:01:03.376
+está funcionando.
+
+36
+00:01:03.376 --> 00:01:04.656
+Antes de ver las piezas,
+
+37
+00:01:04.656 --> 00:01:07.016
+veamos el recorrido completo de un mensaje.
+
+38
+00:01:07.016 --> 00:01:08.196
+Escribes en Telegram.
+
+39
+00:01:08.196 --> 00:01:09.736
+El canal lo recibe y se lo
+
+40
+00:01:09.736 --> 00:01:10.996
+entrega al bucle del agente.
+
+41
+00:01:10.996 --> 00:01:12.336
+El bucle arma el contexto:
+
+42
+00:01:12.336 --> 00:01:14.336
+quién es, quién eres tú y qué
+
+43
+00:01:14.336 --> 00:01:15.216
+sabe ya sobre el tema.
+
+44
+00:01:15.216 --> 00:01:16.996
+Se lo envía todo al modelo de
+
+45
+00:01:16.996 --> 00:01:18.156
+IA.
+
+46
+00:01:18.156 --> 00:01:20.316
+Si el modelo pide una herramienta,
+
+47
+00:01:20.316 --> 00:01:22.736
+el bucle la ejecuta y le devuelve
+
+48
+00:01:22.736 --> 00:01:23.496
+el resultado.
+
+49
+00:01:23.496 --> 00:01:25.376
+Cuando el modelo responde con texto,
+
+50
+00:01:25.376 --> 00:01:27.176
+la respuesta vuelve por el canal hasta
+
+51
+00:01:27.176 --> 00:01:27.976
+tu celular.
+
+52
+00:01:27.976 --> 00:01:30.076
+Siete piezas, un recorrido.
+
+53
+00:01:30.076 --> 00:01:31.856
+Ahora, una por una.
+
+54
+00:01:31.856 --> 00:01:33.356
+Pieza uno: el canal,
+
+55
+00:01:33.356 --> 00:01:34.636
+la puerta de entrada.
+
+56
+00:01:34.636 --> 00:01:36.756
+En el plan del INTELECTO es Telegram,
+
+57
+00:01:36.756 --> 00:01:37.996
+porque es lo más simple:
+
+58
+00:01:37.996 --> 00:01:39.416
+un token y listo,
+
+59
+00:01:39.416 --> 00:01:41.296
+sin una dirección pública en internet.
+
+60
+00:01:41.296 --> 00:01:43.096
+El agente le pregunta a Telegram si
+
+61
+00:01:43.096 --> 00:01:43.976
+llegó un mensaje nuevo.
+
+62
+00:01:43.976 --> 00:01:46.136
+Si la respuesta supera los cuatro mil
+
+63
+00:01:46.136 --> 00:01:47.996
+caracteres, la divide en varios mensajes.
+
+64
+00:01:47.996 --> 00:01:50.436
+Y muestra que está escribiendo mientras piensa.
+
+65
+00:01:50.436 --> 00:01:52.096
+El canal es un contrato con tres
+
+66
+00:01:52.096 --> 00:01:54.676
+funciones: iniciar, enviar y parar.
+
+67
+00:01:54.676 --> 00:01:57.096
+¿Quieres WhatsApp, Discord o Slack?
+
+68
+00:01:57.096 --> 00:01:59.096
+Es otro archivo con el mismo contrato,
+
+69
+00:01:59.096 --> 00:02:00.276
+sin cambiar lo demás.
+
+70
+00:02:00.276 --> 00:02:02.076
+Pieza dos: el bucle,
+
+71
+00:02:02.076 --> 00:02:03.336
+el corazón del agente.
+
+72
+00:02:03.336 --> 00:02:04.796
+Aquí es donde deja de ser un
+
+73
+00:02:04.796 --> 00:02:05.356
+chatbot.
+
+74
+00:02:05.356 --> 00:02:06.716
+Recibe el mensaje,
+
+75
+00:02:06.716 --> 00:02:09.276
+piensa, usa una herramienta si la necesita,
+
+76
+00:02:09.276 --> 00:02:11.376
+revisa el resultado y vuelve a pensar,
+
+77
+00:02:11.376 --> 00:02:12.916
+hasta responder con texto.
+
+78
+00:02:12.916 --> 00:02:13.896
+Tiene un freno:
+
+79
+00:02:13.896 --> 00:02:16.056
+como máximo cinco rondas de herramientas por
+
+80
+00:02:16.056 --> 00:02:16.596
+mensaje.
+
+81
+00:02:16.596 --> 00:02:17.816
+Al llegar a ese límite,
+
+82
+00:02:17.816 --> 00:02:18.756
+tiene que responder.
+
+83
+00:02:18.756 --> 00:02:19.816
+Sin ese freno,
+
+84
+00:02:19.816 --> 00:02:21.616
+un agente puede quedarse dando vueltas,
+
+85
+00:02:21.616 --> 00:02:23.516
+gastando dinero, sin terminar nunca.
+
+86
+00:02:23.516 --> 00:02:24.656
+Un bucle corto,
+
+87
+00:02:24.656 --> 00:02:26.216
+legible y con límite:
+
+88
+00:02:26.216 --> 00:02:27.636
+eso es lo que distingue a un
+
+89
+00:02:27.636 --> 00:02:29.103
+agente de una conversación.
+
+90
+00:02:29.103 --> 00:02:30.616
+Pieza tres: la identidad.
+
+91
+00:02:30.616 --> 00:02:31.956
+Y es la parte que más vas
+
+92
+00:02:31.956 --> 00:02:32.696
+a modificar.
+
+93
+00:02:32.696 --> 00:02:34.436
+Son cuatro archivos de texto simple,
+
+94
+00:02:34.436 --> 00:02:36.576
+en una carpeta llamada workspace.
+
+95
+00:02:36.576 --> 00:02:39.156
+El soul es el alma:
+
+96
+00:02:39.176 --> 00:02:41.276
+personalidad, tono y valores.
+
+97
+00:02:41.276 --> 00:02:43.256
+El agents contiene las reglas de comportamiento:
+
+98
+00:02:43.256 --> 00:02:45.336
+consultar la memoria antes de responder,
+
+99
+00:02:45.336 --> 00:02:46.916
+preguntar cuando tenga dudas,
+
+100
+00:02:46.916 --> 00:02:48.496
+rechazar comandos peligrosos.
+
+101
+00:02:48.496 --> 00:02:49.896
+El user es tu perfil:
+
+102
+00:02:49.896 --> 00:02:51.496
+cómo te gustan las respuestas y en
+
+103
+00:02:51.496 --> 00:02:52.076
+qué idioma.
+
+104
+00:02:52.076 --> 00:02:54.136
+Y el memory contiene los datos iniciales.
+
+105
+00:02:54.136 --> 00:02:55.196
+Con cada mensaje,
+
+106
+00:02:55.196 --> 00:02:56.916
+el agente lee los cuatro y arma
+
+107
+00:02:56.916 --> 00:02:58.196
+la solicitud para el modelo.
+
+108
+00:02:58.196 --> 00:02:59.196
+Cambias el texto,
+
+109
+00:02:59.196 --> 00:03:00.256
+cambia el asistente,
+
+110
+00:03:00.256 --> 00:03:01.676
+sin programar nada.
+
+111
+00:03:01.676 --> 00:03:03.376
+Pieza cuatro: el cerebro,
+
+112
+00:03:03.376 --> 00:03:05.116
+el modelo de IA.
+
+113
+00:03:05.116 --> 00:03:07.416
+El INTELECTO se comunica con dos tipos.
+
+114
+00:03:07.416 --> 00:03:08.736
+En la nube,
+
+115
+00:03:08.736 --> 00:03:10.936
+OpenRouter: con una sola clave tienes acceso
+
+116
+00:03:10.936 --> 00:03:12.016
+a más de cien modelos,
+
+117
+00:03:12.016 --> 00:03:14.656
+desde Claude y GPT hasta DeepSeek.
+
+118
+00:03:14.656 --> 00:03:16.096
+En tu computadora,
+
+119
+00:03:16.096 --> 00:03:18.116
+Ollama: el modelo funciona de forma local,
+
+120
+00:03:18.116 --> 00:03:19.956
+sin costo por mensaje y sin enviar
+
+121
+00:03:19.956 --> 00:03:20.996
+nada afuera.
+
+122
+00:03:20.996 --> 00:03:22.056
+Puedes usar los dos:
+
+123
+00:03:22.056 --> 00:03:23.456
+la nube para potencia,
+
+124
+00:03:23.456 --> 00:03:25.096
+lo local para privacidad.
+
+125
+00:03:25.096 --> 00:03:26.836
+Y cambiar de cerebro no modifica lo
+
+126
+00:03:26.836 --> 00:03:28.636
+demás, porque el proveedor también es un
+
+127
+00:03:28.636 --> 00:03:31.236
+contrato: recibe la conversación y las herramientas,
+
+128
+00:03:31.236 --> 00:03:32.516
+y devuelve la respuesta.
+
+129
+00:03:32.716 --> 00:03:34.376
+Pieza cinco: la memoria.
+
+130
+00:03:34.376 --> 00:03:36.816
+Es la diferencia entre una IA que
+
+131
+00:03:36.816 --> 00:03:39.156
+lo olvida todo al reiniciarse y una
+
+132
+00:03:39.156 --> 00:03:40.636
+que te conoce desde hace meses.
+
+133
+00:03:40.636 --> 00:03:42.656
+El INTELECTO guarda todo en una base
+
+134
+00:03:42.656 --> 00:03:44.176
+de datos en la misma computadora,
+
+135
+00:03:44.176 --> 00:03:45.596
+con búsqueda por palabras.
+
+136
+00:03:45.596 --> 00:03:47.256
+Sin costo de API y sin un
+
+137
+00:03:47.256 --> 00:03:49.296
+modelo adicional; eso cubre la mayor parte
+
+138
+00:03:49.296 --> 00:03:50.656
+de lo que necesitas recordar.
+
+139
+00:03:50.656 --> 00:03:52.656
+Cada recuerdo tiene una categoría:
+
+140
+00:03:52.656 --> 00:03:53.876
+un dato sobre ti,
+
+141
+00:03:53.876 --> 00:03:56.016
+un resumen de conversación o una solución
+
+142
+00:03:56.016 --> 00:03:56.516
+que funcionó.
+
+143
+00:03:56.516 --> 00:03:58.696
+Si un recuerdo nuevo es más de
+
+144
+00:03:58.696 --> 00:04:00.216
+un ochenta por ciento igual a uno
+
+145
+00:04:00.216 --> 00:04:02.656
+anterior, lo actualiza en vez de duplicarlo.
+
+146
+00:04:02.656 --> 00:04:04.156
+Y con cada mensaje busca lo que
+
+147
+00:04:04.156 --> 00:04:06.096
+es relevante y lo agrega al contexto.
+
+148
+00:04:06.096 --> 00:04:07.816
+Pieza seis: las herramientas,
+
+149
+00:04:07.816 --> 00:04:09.056
+las manos del agente.
+
+150
+00:04:09.056 --> 00:04:10.636
+Sin ellas, solo conversa.
+
+151
+00:04:10.636 --> 00:04:12.076
+Con ellas, hace cosas.
+
+152
+00:04:12.076 --> 00:04:14.156
+El núcleo incluye leer archivos,
+
+153
+00:04:14.156 --> 00:04:16.556
+escribir archivos, listar carpetas,
+
+154
+00:04:16.556 --> 00:04:17.776
+ejecutar un comando,
+
+155
+00:04:17.776 --> 00:04:19.596
+y guardar y buscar en la memoria.
+
+156
+00:04:19.596 --> 00:04:21.596
+Cada herramienta se describe sola:
+
+157
+00:04:21.596 --> 00:04:24.216
+nombre, qué hace y qué parámetros acepta.
+
+158
+00:04:24.216 --> 00:04:26.816
+El modelo lee esa descripción para decidir
+
+159
+00:04:26.816 --> 00:04:27.576
+si la usa.
+
+160
+00:04:27.576 --> 00:04:30.076
+¿Quieres agenda, GitHub o Notion?
+
+161
+00:04:30.076 --> 00:04:31.876
+Es un archivo nuevo que sigue el
+
+162
+00:04:31.876 --> 00:04:32.656
+mismo modelo.
+
+163
+00:04:32.656 --> 00:04:34.736
+El registro encuentra la herramienta por sí
+
+164
+00:04:34.736 --> 00:04:36.896
+solo, sin que tengas que modificar el
+
+165
+00:04:36.896 --> 00:04:37.276
+núcleo.
+
+166
+00:04:37.276 --> 00:04:38.326
+Pieza
+
+167
+00:04:38.326 --> 00:04:39.676
+siete: la caja fuerte.
+
+168
+00:04:39.676 --> 00:04:42.436
+Un agente con manos necesita límites.
+
+169
+00:04:42.436 --> 00:04:44.596
+Las claves de API se guardan cifradas
+
+170
+00:04:44.596 --> 00:04:46.736
+y vinculadas al hardware de la computadora:
+
+171
+00:04:46.736 --> 00:04:47.936
+si alguien roba el archivo,
+
+172
+00:04:47.936 --> 00:04:48.976
+no puede leerlas.
+
+173
+00:04:48.976 --> 00:04:50.636
+Todo comando pasa por una lista de
+
+174
+00:04:50.636 --> 00:04:52.056
+bloqueo: borrar todo,
+
+175
+00:04:52.056 --> 00:04:53.176
+formatear el disco,
+
+176
+00:04:53.176 --> 00:04:55.376
+reiniciar… ni siquiera llega a ejecutarse.
+
+177
+00:04:55.376 --> 00:04:57.136
+Cada comando tiene un límite de tiempo
+
+178
+00:04:57.136 --> 00:04:58.116
+de sesenta segundos.
+
+179
+00:04:58.116 --> 00:05:00.256
+Y todo lo que ejecuta queda registrado
+
+180
+00:05:00.256 --> 00:05:01.616
+en un registro de auditoría.
+
+181
+00:05:01.616 --> 00:05:03.076
+Sabes qué hizo tu agente,
+
+182
+00:05:03.076 --> 00:05:04.376
+cuándo y con qué comando.
+
+183
+00:05:04.376 --> 00:05:06.016
+Ahora, la idea que sostiene las siete
+
+184
+00:05:06.016 --> 00:05:07.276
+piezas: los contratos.
+
+185
+00:05:07.276 --> 00:05:09.696
+Cada pieza se define mediante una interfaz,
+
+186
+00:05:09.696 --> 00:05:11.416
+y puedes cambiar su implementación.
+
+187
+00:05:11.416 --> 00:05:13.116
+Cambias Telegram por WhatsApp,
+
+188
+00:05:13.116 --> 00:05:15.076
+OpenRouter por Ollama o la memoria por
+
+189
+00:05:15.076 --> 00:05:16.756
+otra, sin reescribir el agente.
+
+190
+00:05:16.756 --> 00:05:18.196
+¿Y cómo se construyó?
+
+191
+00:05:18.196 --> 00:05:19.396
+Primero, la tienda:
+
+192
+00:05:19.396 --> 00:05:22.349
+una página que compara frameworks como OpenClaw,
+
+193
+00:05:22.349 --> 00:05:23.336
+Nano Bot y Hermes,
+
+194
+00:05:23.336 --> 00:05:24.916
+donde eliges los ingredientes.
+
+195
+00:05:24.916 --> 00:05:27.296
+Las elecciones se convierten en un documento
+
+196
+00:05:27.296 --> 00:05:28.216
+de especificación.
+
+197
+00:05:28.216 --> 00:05:30.316
+Se lo entregas a Claude Code con
+
+198
+00:05:30.316 --> 00:05:32.296
+una frase: lee y construye.
+
+199
+00:05:32.296 --> 00:05:34.876
+El ejemplo Jarvis del repositorio siguió ese
+
+200
+00:05:34.876 --> 00:05:36.736
+camino y pasa las nueve pruebas.
+
+201
+00:05:36.736 --> 00:05:37.716
+¿Y cómo crece?
+
+202
+00:05:37.716 --> 00:05:40.236
+La guía de funcionalidades organiza todo en
+
+203
+00:05:40.236 --> 00:05:41.876
+ocho pasillos: identidad,
+
+204
+00:05:41.876 --> 00:05:44.096
+seguridad, canales, memoria,
+
+205
+00:05:44.096 --> 00:05:45.256
+automatización,
+
+206
+00:05:45.256 --> 00:05:46.256
+integraciones,
+
+207
+00:05:46.256 --> 00:05:47.916
+skills y arquitectura.
+
+208
+00:05:47.916 --> 00:05:51.196
+Hoy el núcleo cubre lo esencial.
+
+209
+00:05:51.416 --> 00:05:53.516
+Programar tareas, como enviar un resumen todos
+
+210
+00:05:53.516 --> 00:05:54.416
+los lunes a las nueve,
+
+211
+00:05:54.416 --> 00:05:56.116
+y buscar en la web están en
+
+212
+00:05:56.116 --> 00:05:57.416
+el plan para la próxima fase.
+
+213
+00:05:57.416 --> 00:05:59.356
+Cada pasillo muestra lo que ofrecen los
+
+214
+00:05:59.356 --> 00:06:01.616
+otros frameworks y qué archivos del INTELECTO
+
+215
+00:06:01.616 --> 00:06:02.576
+hay que modificar.
+
+216
+00:06:02.576 --> 00:06:03.776
+No necesitas todo.
+
+217
+00:06:03.776 --> 00:06:05.316
+Elige lo que te resuelve el día.
+
+218
+00:06:05.316 --> 00:06:07.536
+En resumen: todo agente tiene siete piezas.
+
+219
+00:06:07.536 --> 00:06:08.796
+La puerta, que es el canal.
+
+220
+00:06:08.796 --> 00:06:10.416
+El corazón, que es el bucle con
+
+221
+00:06:10.416 --> 00:06:10.836
+freno.
+
+222
+00:06:10.836 --> 00:06:13.376
+La identidad, en cuatro archivos de texto.
+
+223
+00:06:13.376 --> 00:06:15.116
+El cerebro, en la nube o de
+
+224
+00:06:15.116 --> 00:06:15.796
+forma local.
+
+225
+00:06:15.796 --> 00:06:18.196
+La memoria, las herramientas y la caja
+
+226
+00:06:18.196 --> 00:06:18.676
+fuerte.
+
+227
+00:06:18.676 --> 00:06:19.796
+En el próximo video,
+
+228
+00:06:19.796 --> 00:06:21.596
+vamos a poner manos a la obra:
+
+229
+00:06:21.596 --> 00:06:22.916
+configurar los archivos,
+
+230
+00:06:22.916 --> 00:06:24.636
+escribir el alma y el perfil de
+
+231
+00:06:24.636 --> 00:06:26.716
+tu asistente, crear el bot en Telegram,
+
+232
+00:06:26.716 --> 00:06:28.956
+elegir el cerebro y armarlo e instalarlo
+
+233
+00:06:28.956 --> 00:06:29.556
+paso a paso,
+
+234
+00:06:29.556 --> 00:06:31.456
+hasta enviar el primer mensaje.
+
+235
+00:06:31.456 --> 00:06:33.976
+Mientras tanto, el INTELECTO está en INEMA
+
+236
+00:06:33.976 --> 00:06:35.976
+punto club, en la Trilha para Iniciantes.
+
+237
+00:06:35.976 --> 00:06:37.436
+Hasta el próximo video.
+

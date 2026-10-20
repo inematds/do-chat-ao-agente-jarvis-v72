@@ -2,31 +2,31 @@
   "slug": "telegram",
   "num": 3,
   "menu": "Telegram",
-  "titulo": "The gate: the Telegram bot, with one owner",
+  "titulo": "The door: the Telegram bot, with a single owner",
   "titulo_curto": "The Telegram bot",
   "minutos": 15,
-  "lead": "Telegram is the simplest gate: you create the bot in two minutes and get a token. That token is the key to the gate. Whoever has the token controls the bot, and anyone can message a bot. That's why this lesson is half creation and half protection.",
-  "objetivo": "create the bot with @BotFather, store the token only in .env, and set the assistant to respond only to you.",
+  "lead": "Telegram is the simplest door: you create the bot in two minutes and get a token. That token is the key to the door. Whoever has the token controls the bot, and anyone can send a message to a bot. That's why this lesson is half creating and half protecting.",
+  "objetivo": "create the bot with @BotFather, keep the token only in the .env, and set the assistant to respond only to you.",
   "competencias": [
-    "configure-telegram-bot",
-    "store-secret",
-    "restrict-owner"
+    "configurar-bot-telegram",
+    "guardar-segredo",
+    "restringir-dono"
   ],
   "aprende": [
     {
       "t": "Create the bot with /newbot in @BotFather"
     },
     {
-      "t": "Why the token stays only in .env and out of Git"
+      "t": "Why the token stays only in the .env and out of Git"
     },
     {
-      "t": "How the channel talks to Telegram (long polling)"
+      "t": "How the channel talks to Telegram (long-polling)"
     },
     {
-      "t": "Why the bot should accept messages only from its owner"
+      "t": "Why the bot needs to accept only the owner"
     }
   ],
-  "hero_alt": "Hands holding a phone with a messaging app open to a conversation.",
+  "hero_alt": "Hands holding a phone with a messaging app open on a conversation.",
   "secoes": [
     {
       "tipo": "diagrama",
@@ -43,7 +43,7 @@
               "t": "/newbot"
             }
           ],
-          "detalhe": "Telegram’s official bot for creating bots. Send /newbot, choose a name and a @username (ending in bot), and you’ll get the token."
+          "detalhe": "Telegram's official bot that creates bots. You send /newbot, choose the name and the @username (which ends in bot), and get the token."
         },
         {
           "icone": "cadeado",
@@ -52,10 +52,10 @@
           "itens": [
             {
               "icone": "arquivo",
-              "t": "Only in .env"
+              "t": "Only in the .env"
             }
           ],
-          "detalhe": "A string of numbers and letters. Whoever has the token controls the bot. It goes only in .env (or in the encrypted vault the plan calls for), never in code, a screenshot, or a commit.",
+          "detalhe": "A string of numbers and letters. Whoever has the token controls the bot. It goes only into the .env (or the encrypted vault the plan provides for), never into the code, a screenshot, or a commit.",
           "forte": true
         },
         {
@@ -65,38 +65,38 @@
           "itens": [
             {
               "icone": "relogio",
-              "t": "Long polling"
+              "t": "Long-polling"
             }
           ],
-          "detalhe": "The channel keeps asking Telegram if a new message has arrived. It doesn’t need a public address. It splits replies longer than 4096 characters and refuses to start without a token, by design."
+          "detalhe": "The channel keeps asking Telegram whether a new message has arrived. It doesn't need a public address. It splits replies longer than 4096 characters and refuses to start without a token, on purpose."
         },
         {
           "icone": "usuario",
           "titulo": "You",
-          "sub": "The sole owner",
+          "sub": "The only owner",
           "itens": [
             {
               "icone": "escudo",
-              "t": "List of who can talk to it"
+              "t": "List of who can talk"
             }
           ],
-          "detalhe": "Anyone who finds your bot’s @username can message it. Without a list of who can talk to it, anyone can chat with your Jarvis and use its tools."
+          "detalhe": "Anyone who finds your bot's @ can send it a message. Without a list of who can talk, anyone can chat with your Jarvis and use its tools."
         }
       ],
       "volta": "Replies go back to the same chat",
-      "legenda": "INTELECTO was designed for one user. A Jarvis with access to your machine is powerful, and that’s exactly why it deserves care."
+      "legenda": "INTELECTO was designed for one user. A Jarvis with access to your machine is powerful, and that is exactly why it deserves care."
     },
     {
       "tipo": "passos",
-      "titulo": "Create and protect it, step by step",
-      "sub": "Click each step.",
+      "titulo": "Create and protect, step by step",
+      "sub": "Tap each step.",
       "passos": [
         {
           "titulo": "Create the bot",
           "sub": "2 minutes",
           "texto": [
-            "On Telegram, search for <b>@BotFather</b> (the official one, with a verified badge) and send <code>/newbot</code>.",
-            "Choose the name shown in the conversation and the @username, which must end in <code>bot</code>. It will reply with the token."
+            "In Telegram, search for <b>@BotFather</b> (the official one, with the verified badge) and send <code>/newbot</code>.",
+            "Choose the name that appears in the chat and the @username, which must end in <code>bot</code>. It replies with the token."
           ],
           "exemplo": {
             "rot": "Name",
@@ -107,31 +107,31 @@
           "titulo": "Save the token",
           "sub": ".env",
           "texto": [
-            "Paste the token on a line in the project folder’s <code>.env</code>, as you learned in step 1.",
-            "Check that <code>.env</code> is in <code>.gitignore</code>. Bots find exposed keys on GitHub quickly."
+            "Paste the token on a line of the <code>.env</code> in the project folder, as you learned in step 1.",
+            "Check that <code>.env</code> is in <code>.gitignore</code>. Bots find keys exposed on GitHub within minutes."
           ],
           "exemplo": {
-            "rot": "Step 1 rule",
-            "texto": "The token doesn’t appear in any file other than .env."
+            "rot": "Rule from step 1",
+            "texto": "The token doesn't appear in any file other than .env."
           }
         },
         {
-          "titulo": "One owner",
-          "sub": "List of who can talk to it",
+          "titulo": "One owner only",
+          "sub": "List of who can talk",
           "texto": [
-            "When you build it (lesson 4), ask the agent to have the bot reply only to your Telegram user and ignore everyone else.",
-            "In the vault (lesson 7), you’ll see why this matters even more when the assistant runs commands."
+            "When you build it (lesson 4), ask the agent to make the bot answer only your Telegram user and ignore everyone else.",
+            "In the vault (lesson 7) you'll see why this matters even more when the assistant runs commands."
           ],
           "exemplo": {
-            "rot": "Request for the agent",
-            "texto": "The bot replies only to my Telegram user; messages from other people are ignored and logged."
+            "rot": "Request to the agent",
+            "texto": "The bot answers only my Telegram user; messages from other people are ignored and logged."
           }
         },
         {
           "titulo": "If the token leaks",
-          "sub": "Change the key",
+          "sub": "Swap the key",
           "texto": [
-            "A token in a screenshot, group, or commit has leaked. Don’t delete it and hope for the best: generate a new one in @BotFather and replace it in .env.",
+            "A token in a screenshot, in a group, or in a commit is a leaked token. Don't delete it and hope: generate a new one in @BotFather and swap it in the .env.",
             "The old token stops working, and whoever got it loses access."
           ],
           "exemplo": {
@@ -149,17 +149,17 @@
         {
           "rot": ".env (in the project folder)",
           "icone": "cadeado",
-          "conteudo": "TELEGRAM_BOT_TOKEN=<paste the token from @BotFather here>"
+          "conteudo": "TELEGRAM_BOT_TOKEN=<paste the @BotFather token here>"
         },
         {
-          "rot": "Terminal · check that .env does not get pushed",
+          "rot": "Terminal · check that .env doesn't get uploaded",
           "icone": "terminal",
           "conteudo": "grep -n \".env\" .gitignore\ngit status --short"
         },
         {
           "rot": "Terminal · look for the token outside .env",
           "icone": "lupa",
-          "conteudo": "grep -rn \"<the first 6 characters of the token>\" . --exclude=.env"
+          "conteudo": "grep -rn \"<first 6 characters of the token>\" . --exclude=.env"
         }
       ],
       "saida": {
@@ -167,10 +167,10 @@
         "abas": [
           {
             "rot": "All good",
-            "html": "<p><code>grep</code> shows the <code>.env</code> line in .gitignore.</p><p><code>git status</code> does not list .env.</p><p>The search for the start of the token finds nothing outside .env.</p>"
+            "html": "<p><code>grep</code> shows the <code>.env</code> line in .gitignore.</p><p><code>git status</code> doesn't list .env.</p><p>Searching for the start of the token finds nothing outside .env.</p>"
           },
           {
-            "rot": "Something is wrong",
+            "rot": "Something's wrong",
             "html": "<p>If <code>git status</code> shows <code>?? .env</code>, the line is missing from .gitignore: add it before any commit.</p><p>If the search finds the token in another file, delete it there and generate a new token in @BotFather.</p>"
           }
         ]
@@ -178,22 +178,22 @@
     },
     {
       "tipo": "pratica",
-      "titulo": "Practice: the Telegram bot",
-      "sub": "Exercise E2 in sequence 2.",
+      "titulo": "Practice: the bot on Telegram",
+      "sub": "Exercise E2 of sequence 2.",
       "exercicios": [
         {
           "id": "e2",
-          "titulo": "E2 · The Telegram bot",
+          "titulo": "E2 · The bot on Telegram",
           "min": "10 min",
-          "texto": "Create the bot in @BotFather with /newbot and save the token in the project's .env file.",
-          "pronto": "you have the token, and it does not appear in any file besides .env (the search in the third block finds nothing)."
+          "texto": "Create the bot in @BotFather with /newbot and keep the token in the .env of the project folder.",
+          "pronto": "you have the token and it doesn't appear in any file other than .env (the search in the third block finds nothing)."
         },
         {
           "id": "e2b",
-          "titulo": "E2b · Write down the sole owner's request",
+          "titulo": "E2b · Write down the single-owner request",
           "min": "5 min",
-          "texto": "In your meu-jarvis.md, add the rule: it only responds to me on Telegram.",
-          "pronto": "the rule is written down and will go with the build request in lesson 4."
+          "texto": "In your meu-jarvis.md, add the rule: reply only to me on Telegram.",
+          "pronto": "the rule is written down and goes along in the build request in lesson 4."
         }
       ]
     },
@@ -203,47 +203,47 @@
       "sub": "The explanation appears after your answer.",
       "perguntas": [
         {
-          "p": "Where can the bot token appear?",
+          "p": "Where can the bot's token appear?",
           "opcoes": [
-            "In the code, for convenience.",
-            "Only in .env (or the encrypted vault), outside Git.",
             "In the README, as a reminder.",
-            "In the team group, so everyone can test."
+            "In the team group, so everyone can test.",
+            "Only in .env (or in the encrypted vault), outside Git.",
+            "In the code, to make things easier."
           ],
-          "certa": 1,
-          "explica": "Whoever has the token controls the bot. It belongs only in .env, which is in .gitignore; anywhere else, treat it as leaked and replace it.",
+          "certa": 2,
+          "explica": "Whoever has the token controls the bot. It lives only in .env, which is in .gitignore; anywhere else, count it as leaked and replace it.",
           "cert": true,
           "ref": "passos"
         },
         {
-          "p": "Why does the bot need a list of people who can talk to it?",
+          "p": "Why does the bot need a list of who is allowed to talk to it?",
           "opcoes": [
             "Because Telegram charges per user.",
-            "Because anyone can message a bot and use your assistant.",
-            "So the bot responds faster.",
-            "It doesn't need one: bots are private."
+            "So the bot replies faster.",
+            "It doesn't: bots are private.",
+            "Because anyone can message a bot and would end up using your assistant."
           ],
-          "certa": 1,
-          "explica": "A Telegram bot is public to anyone who finds its @. Without the list, a stranger can talk to your Jarvis and use its tools.",
+          "certa": 3,
+          "explica": "A Telegram bot is public to anyone who finds its @. Without the list, a stranger can chat with your Jarvis and use its tools.",
           "ref": "diagrama"
         },
         {
-          "p": "Your token appeared in a screenshot you posted. What should you do?",
+          "p": "Your token showed up in a screenshot you posted. Which is the right move?",
           "opcoes": [
-            "Delete the post and move on.",
-            "Generate a new token in @BotFather and replace it in .env.",
+            "Create another .env.",
             "Change the bot's name.",
-            "Create another .env."
+            "Delete the post and move on.",
+            "Generate a new token in @BotFather and swap it in .env."
           ],
-          "certa": 1,
-          "explica": "Deleting the post does not undo the leak. Generating a new token invalidates the old one; anyone who copied it loses access.",
+          "certa": 3,
+          "explica": "Deleting doesn't undo the leak. Generating a new token invalidates the old one; whoever copied it loses access.",
           "ref": "passos"
         }
       ]
     },
     {
       "tipo": "links",
-      "titulo": "Go further",
+      "titulo": "Going further",
       "links": [
         {
           "t": "INTELECTO course: communication channels",

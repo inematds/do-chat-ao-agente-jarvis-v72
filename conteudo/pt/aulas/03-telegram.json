@@ -161,12 +161,12 @@
         {
           "p": "Onde o token do bot pode aparecer?",
           "opcoes": [
-            "No código, para facilitar.",
-            "Só no .env (ou no cofre cifrado), fora do Git.",
             "No README, para lembrar.",
-            "No grupo da equipe, para todos testarem."
+            "No grupo da equipe, para todos testarem.",
+            "Só no .env (ou no cofre cifrado), fora do Git.",
+            "No código, para facilitar."
           ],
-          "certa": 1,
+          "certa": 2,
           "explica": "Quem tem o token controla o bot. Ele vive só no .env, que está no .gitignore; em qualquer outro lugar, conte como vazado e troque.",
           "cert": true,
           "ref": "passos"
@@ -175,23 +175,23 @@
           "p": "Por que o bot precisa de uma lista de quem pode falar?",
           "opcoes": [
             "Porque o Telegram cobra por usuário.",
-            "Porque qualquer pessoa pode mandar mensagem para um bot e usaria o seu assistente.",
             "Para o bot responder mais rápido.",
-            "Não precisa: bots são privados."
+            "Não precisa: bots são privados.",
+            "Porque qualquer pessoa pode mandar mensagem para um bot e usaria o seu assistente."
           ],
-          "certa": 1,
+          "certa": 3,
           "explica": "Bot do Telegram é público para quem achar o @. Sem a lista, um estranho conversa com o seu Jarvis e com as ferramentas dele.",
           "ref": "diagrama"
         },
         {
           "p": "O seu token apareceu num print que você postou. Qual o certo?",
           "opcoes": [
-            "Apagar o post e seguir.",
-            "Gerar um token novo no @BotFather e trocar no .env.",
+            "Criar outro .env.",
             "Mudar o nome do bot.",
-            "Criar outro .env."
+            "Apagar o post e seguir.",
+            "Gerar um token novo no @BotFather e trocar no .env."
           ],
-          "certa": 1,
+          "certa": 3,
           "explica": "Apagar não desfaz o vazamento. Gerar um token novo invalida o antigo; quem copiou perde o acesso.",
           "ref": "passos"
         }

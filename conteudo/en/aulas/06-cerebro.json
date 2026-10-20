@@ -5,28 +5,28 @@
   "titulo": "The brain: cloud or local, decided with your numbers",
   "titulo_curto": "Cloud or local",
   "minutos": 15,
-  "lead": "The AI model is the easiest part to swap. In the cloud, OpenRouter gives you access to more than a hundred models with one key. On your computer, Ollama runs at no cost per message and sends nothing outside your machine. The choice isn't a matter of taste: it's a table with speed, quality, and cost.",
-  "objetivo": "compare one cloud model and one local model using the same question, then decide what to use each for based on your numbers.",
+  "lead": "The AI model is the easiest piece to swap. In the cloud, OpenRouter gives you access to more than a hundred models with one key. On your computer, Ollama runs with no cost per message and sends nothing outside. The choice is not a matter of taste: it is a table with time, quality, and cost.",
+  "objetivo": "compare a cloud model and a local one with the same question and decide, with your own numbers, which to use for what.",
   "competencias": [
-    "choose-cloud-local-model",
-    "measure-speed-quality-cost",
-    "protect-api-key"
+    "escolher-modelo-nuvem-local",
+    "medir-tempo-qualidade-custo",
+    "proteger-chave-api"
   ],
   "aprende": [
     {
       "t": "What OpenRouter and Ollama do"
     },
     {
-      "t": "Why changing the brain doesn't change the rest"
+      "t": "Why swapping brains does not change the rest"
     },
     {
-      "t": "Build the speed × quality × cost table"
+      "t": "Building the time × quality × cost table"
     },
     {
       "t": "Where the cloud key is stored"
     }
   ],
-  "hero_alt": "A small desktop computer beside a laptop, with cables neatly arranged on a dark desk.",
+  "hero_alt": "A desktop mini computer next to a laptop, with organized cables on the dark desk.",
   "secoes": [
     {
       "tipo": "diagrama",
@@ -36,14 +36,14 @@
         {
           "icone": "relogio",
           "titulo": "Loop",
-          "sub": "Ask for an answer",
+          "sub": "Asks for a reply",
           "itens": [
             {
               "icone": "chat",
               "t": "Conversation + tools"
             }
           ],
-          "detalhe": "The loop doesn't know which model is on the other end. It sends the conversation and the list of tools, then waits for a reply."
+          "detalhe": "The loop does not know which model is on the other side. It hands over the conversation and the list of tools and waits for the reply."
         },
         {
           "icone": "camadas",
@@ -52,10 +52,10 @@
           "itens": [
             {
               "icone": "seta",
-              "t": "chat(messages, tools)"
+              "t": "chat(mensagens, ferramentas)"
             }
           ],
-          "detalhe": "A provider is a contract: it receives the conversation and the tools, then returns a reply. In tests, a mock provider responds without internet or cost. To change brains, switch providers in the configuration.",
+          "detalhe": "The provider is a contract: it receives the conversation and the tools, and returns the reply. In tests, a fake provider answers with no internet and no cost. Swapping brains means swapping the provider in the configuration.",
           "forte": true
         },
         {
@@ -69,10 +69,10 @@
             },
             {
               "icone": "grafico",
-              "t": "Pay per use"
+              "t": "Cost per use"
             }
           ],
-          "detalhe": "One key gives you access to Claude, GPT, Gemini, DeepSeek, Llama, and others. It automatically retries when the service fails and tracks the tokens used, so you can control the cost."
+          "detalhe": "One key gives access to Claude, GPT, Gemini, DeepSeek, Llama, and others. It retries automatically when the service fails and logs the tokens spent, so you can control the cost."
         },
         {
           "icone": "chip",
@@ -88,7 +88,7 @@
               "t": "Nothing leaves the machine"
             }
           ],
-          "detalhe": "The model runs locally. You need a computer that can handle it (memory and, preferably, a graphics card). In the INTELECTO plan, it’s also the automatic backup if OpenRouter fails."
+          "detalhe": "The model runs locally. It needs a computer that can handle it (memory and, preferably, a graphics card). In the INTELECTO plan it is also the automatic fallback if OpenRouter fails."
         }
       ],
       "legenda": "Cloud for power, local for privacy. You can use both."
@@ -96,26 +96,26 @@
     {
       "tipo": "passos",
       "titulo": "How to compare fairly",
-      "sub": "Click each step.",
+      "sub": "Tap each step.",
       "passos": [
         {
           "titulo": "A real question",
           "sub": "From your work",
           "texto": [
-            "Choose a question you would actually ask the assistant, preferably one related to a task in your meu-jarvis.md.",
-            "Use exactly the same text with both models."
+            "Pick a question you would really ask the assistant, preferably tied to one of the tasks in your meu-jarvis.md.",
+            "Use exactly the same text in both models."
           ],
           "exemplo": {
             "rot": "Example",
-            "texto": "Organize these into three priorities: finish the sales report, reply to two clients, and prepare for Thursday’s meeting."
+            "texto": "Organize into three priorities: close the sales report, reply to two customers, and prepare Thursday's meeting."
           }
         },
         {
           "titulo": "Measure the time",
-          "sub": "From sending to reply",
+          "sub": "From sending to the answer",
           "texto": [
-            "Time it from sending until the full response arrives. Run it twice: the first call to the local model is usually slower because it needs to load.",
-            "Write down the second time."
+            "Time it from sending to the full answer. Run it twice: the first call on the local model is usually slower, because it has to load.",
+            "Write down the time of the second one."
           ],
           "exemplo": {
             "rot": "Write down",
@@ -123,67 +123,67 @@
           }
         },
         {
-          "titulo": "Give it a rating",
+          "titulo": "Score it",
           "sub": "Quality from 1 to 5",
           "texto": [
-            "Read both responses without knowing which is which, if you can ask someone to switch their order. Rate each from 1 to 5: Was it accurate? Did it follow your style? Was it useful?",
-            "A short note for each response is enough."
+            "Read both answers without knowing which is which, if you can get someone to shuffle the order. Score from 1 to 5: did it get it right, did it follow your style, was it useful?",
+            "One short score per answer is enough."
           ],
           "exemplo": {
             "rot": "Criterion",
-            "texto": "Would I use this response without rewriting it? Yes = 4 or 5."
+            "texto": "Would I use this answer without rewriting it? Yes = 4 or 5."
           }
         },
         {
-          "titulo": "Check the cost",
+          "titulo": "See the cost",
           "sub": "And decide",
           "texto": [
-            "For the cloud model, check the OpenRouter dashboard to see how much the question cost. Locally, each message costs nothing; the cost is keeping the computer on.",
-            "Write your decision in one line: which model for what."
+            "For the cloud, check the OpenRouter dashboard to see what the question cost. For local, the cost per message is zero; the cost is the computer being on.",
+            "Write the decision in one line: which model for what."
           ],
           "exemplo": {
             "rot": "Decision",
-            "texto": "Daily routine locally; client messages in the cloud."
+            "texto": "Daily routine on local; client text on the cloud."
           }
         }
       ]
     },
     {
       "tipo": "codigo",
-      "titulo": "Configuration and table",
-      "sub": "The cloud key follows the same rule as the token: only in .env or the vault.",
+      "titulo": "Setup and table",
+      "sub": "The cloud key follows the same rule as the token: only in the .env or in the vault.",
       "blocos": [
         {
           "rot": ".env · cloud key",
           "icone": "cadeado",
-          "conteudo": "OPENROUTER_API_KEY=<paste the key you created at openrouter.ai/keys>"
+          "conteudo": "OPENROUTER_API_KEY=<paste here the key created at openrouter.ai/keys>"
         },
         {
-          "rot": "config.json · both providers (from the README)",
+          "rot": "config.json · the two providers (from the README)",
           "icone": "arquivo",
           "conteudo": "\"providers\": {\n  \"default\": \"openrouter\",\n  \"openrouter\": { \"model\": \"anthropic/claude-sonnet-4-20250514\" },\n  \"ollama\": { \"model\": \"llama3.2\", \"base_url\": \"http://localhost:11434\" }\n}"
         },
         {
-          "rot": "Request to the agent · switch the brain",
+          "rot": "Request to the agent · swap the brain",
           "icone": "chat",
-          "conteudo": "Switch the default provider to ollama (model llama3.2), keep openrouter as an alternative, and run the tests again. Don’t change anything outside the configuration."
+          "conteudo": "Switch the default provider to ollama (model llama3.2), keep openrouter as an alternative, and run the tests again. Don't change anything outside the configuration."
         },
         {
           "rot": "minha-comparacao.md",
           "icone": "lista",
-          "conteudo": "Question: \n\n| Model | Time (s) | Rating 1-5 | Cost |\n|--------|----------|------------|------|\n| Cloud: |          |            |      |\n| Local: |          |            | 0    |\n\nDecision: I’ll use ____ for ____ and ____ for ____."
+          "conteudo": "Question: \n\n| Model | Time (s) | Score 1-5 | Cost |\n|--------|-----------|----------|-------|\n| Cloud: |           |          |       |\n| Local: |           |          | 0     |\n\nDecision: I use ____ for ____ and ____ for ____."
         }
       ],
       "saida": {
         "selo": "simulacao",
         "abas": [
           {
-            "rot": "When cloud wins",
-            "html": "<ul><li>Difficult questions, long text, and multi-step reasoning.</li><li>A computer without enough memory or a graphics card for a good local model.</li><li>You’re willing to pay for usage and send the text outside your machine.</li></ul>"
+            "rot": "When the cloud wins",
+            "html": "<ul><li>Hard question, long text, multi-step reasoning.</li><li>A computer without enough memory or a graphics card for a good local model.</li><li>You accept paying per use and sending the text outside.</li></ul>"
           },
           {
             "rot": "When local wins",
-            "html": "<ul><li>Sensitive data that can’t leave the machine.</li><li>Many simple messages per day, where usage costs would add up.</li><li>Working without internet, or as a backup when the cloud goes down.</li></ul>"
+            "html": "<ul><li>Sensitive data that can't leave the machine.</li><li>Lots of simple messages per day, where the per-use cost would add up.</li><li>Working without internet, or as a backup when the cloud goes down.</li></ul>"
           }
         ]
       }
@@ -191,21 +191,21 @@
     {
       "tipo": "pratica",
       "titulo": "Practice: cloud or local",
-      "sub": "Exercise E5 in sequence 2.",
+      "sub": "Exercise E5 of sequence 2.",
       "exercicios": [
         {
           "id": "e5",
           "titulo": "E5 · Cloud or local",
           "min": "20 min",
-          "texto": "Run the same question through a cloud model (OpenRouter) and a local one (Ollama), if your computer can handle it. Fill in the minha-comparacao.md table.",
-          "pronto": "you can say which model to use for what, using your own numbers."
+          "texto": "Run the same question on a cloud model (OpenRouter) and a local one (Ollama), if your computer can handle it. Fill in the minha-comparacao.md table.",
+          "pronto": "you can say which model to use for what, with your own numbers."
         },
         {
           "id": "e5b",
-          "titulo": "E5b · The saved key",
+          "titulo": "E5b · The key stored safely",
           "min": "5 min",
-          "texto": "Check that the OpenRouter key is only in .env (or in the vault) and that .env does not appear in git status.",
-          "pronto": "A search for the key outside .env finds nothing."
+          "texto": "Check that the OpenRouter key is only in the .env (or in the vault) and that the .env doesn't show up in git status.",
+          "pronto": "the search for the key outside the .env finds nothing."
         }
       ]
     },
@@ -217,35 +217,35 @@
         {
           "p": "When does a local model (Ollama) make sense?",
           "opcoes": [
-            "Always, because it is smarter.",
-            "When your computer can handle it and your numbers for speed, quality, and cost show it is worth it, or when the data cannot leave your machine.",
-            "Never, Telegram does not support it.",
-            "Only in the middle of the night."
+            "Never, Telegram doesn't accept it.",
+            "Always, because it's smarter.",
+            "When your computer can handle it and your numbers for time, quality, and cost show it's worth it, or when the data can't leave.",
+            "Only late at night."
           ],
-          "certa": 1,
-          "explica": "The choice is based on measurement: same question in both, table, decision. Privacy is the other strong reason: with a local model, nothing leaves your machine.",
+          "certa": 2,
+          "explica": "The choice is measured: same question in both, a table, a decision. Privacy is the other strong reason: with a local model, nothing leaves your machine.",
           "cert": true,
           "ref": "passos"
         },
         {
-          "p": "You switched from OpenRouter to Ollama. What needs to change in the channel and memory?",
+          "p": "You swapped OpenRouter for Ollama. What needs to change in the channel and in the memory?",
           "opcoes": [
-            "Everything: the channel and memory depend on the model.",
-            "Nothing: the provider is a contract, and the rest of the agent does not know which model is responding.",
+            "Only the channel.",
             "Only the memory.",
-            "Only the channel."
+            "Everything: channel and memory depend on the model.",
+            "Nothing: the provider is a contract, and the rest of the agent doesn't know which model is answering."
           ],
-          "certa": 1,
-          "explica": "The loop calls the provider through the contract. Switching brains is a configuration change; the tests run the same way.",
+          "certa": 3,
+          "explica": "The loop calls the provider through the contract. Switching brains is configuration; the tests run the same.",
           "ref": "diagrama"
         },
         {
-          "p": "Why run the question twice on the local model before recording the time?",
+          "p": "Why run the question twice on the local model before noting the time?",
           "opcoes": [
-            "Because the first answer is always wrong.",
-            "Because the first call is usually slower while the model loads.",
             "To spend fewer credits.",
-            "No need."
+            "Because the first call is usually slower while the model loads.",
+            "You don't need to.",
+            "Because the first answer is always wrong."
           ],
           "certa": 1,
           "explica": "A fair comparison measures normal use. The first call includes loading the model into memory.",
@@ -255,10 +255,10 @@
     },
     {
       "tipo": "links",
-      "titulo": "Go further",
+      "titulo": "Going further",
       "links": [
         {
-          "t": "INTELECTO Course: AI providers",
+          "t": "INTELECTO course: AI providers",
           "href": "https://inematds.github.io/intelecto-curso/curso/trilha4/modulo-4-1.html",
           "icone": "chip"
         },
